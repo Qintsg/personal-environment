@@ -1,0 +1,15 @@
+﻿[user]
+	email = <email>
+	name = Qintsg
+[core]
+	editor = \"C:\\Users\\qinta\\AppData\\Local\\Programs\\Microsoft VS Code\\bin\\code\" --wait
+[safe]
+	directory = *
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[http]
+	sslbackend = schannel
+

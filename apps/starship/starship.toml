@@ -1,0 +1,185 @@
+﻿"$schema" = "https://starship.rs/config-schema.json"
+
+# Unified Starship configuration for Windows, WSL, Linux, macOS, and Termux.
+# Palette is tuned for Windows Terminal One Half Light with acrylic enabled.
+# left = identity, path, git; right = runtime context, duration, status, time.
+add_newline = false
+scan_timeout = 30
+command_timeout = 500
+palette = "qinta"
+
+format = "$os$shell$hostname${custom.termux}$directory$git_branch$git_status$line_break$character"
+right_format = "$python$nodejs$rust$golang$java$docker_context$jobs$cmd_duration$status$time"
+
+[palettes.qinta]
+blue = "#0184BC"
+cyan = "#0997B3"
+green = "#50A14F"
+yellow = "#986801"
+orange = "#C45A00"
+red = "#E45649"
+purple = "#A626A4"
+fg = "#383A42"
+muted = "#6A6D78"
+
+[character]
+success_symbol = "[ 鉂痌(bold blue)"
+error_symbol = "[ 鉂痌(bold red)"
+vimcmd_symbol = "[ 鉂甝(bold blue)"
+
+[directory]
+style = "bold fg"
+read_only = " 蟀尵"
+read_only_style = "bold red"
+truncation_length = 4
+truncate_to_repo = false
+fish_style_pwd_dir_length = 1
+home_symbol = "~"
+format = "[顥?$path]($style)[$read_only]($read_only_style) "
+
+[git_branch]
+symbol = "飷?"
+style = "bold yellow"
+truncation_length = 32
+format = "[$symbol$branch]($style) "
+
+[git_status]
+style = "bold muted"
+format = "([$all_status$ahead_behind]($style) )"
+conflicted = "=${count}"
+ahead = "鈬?{count}"
+behind = "鈬?{count}"
+diverged = "鈬曗嚒${ahead_count}鈬?{behind_count}"
+untracked = "?${count}"
+stashed = "*${count}"
+modified = "!${count}"
+staged = "+${count}"
+renamed = "禄${count}"
+deleted = "鉁?{count}"
+
+[cmd_duration]
+min_time = 750
+show_milliseconds = true
+format = "[蟊帿 $duration]($style) "
+style = "bold muted"
+
+[status]
+disabled = false
+format = "[鉁?$status]($style) "
+style = "bold red"
+symbol = ""
+
+[jobs]
+symbol = "飥?"
+style = "bold purple"
+format = "[$symbol$number]($style) "
+
+[shell]
+disabled = false
+format = "[蟀啀 $indicator]($style) "
+style = "bold blue"
+nu_indicator = "nu"
+bash_indicator = "bash"
+fish_indicator = "fish"
+powershell_indicator = "pwsh"
+cmd_indicator = "cmd"
+unknown_indicator = "shell"
+
+[hostname]
+ssh_only = true
+ssh_symbol = "瞵?"
+format = "[$ssh_symbol$hostname]($style) "
+style = "bold blue"
+
+[os]
+disabled = false
+format = "[$symbol]($style) "
+style = "bold muted"
+
+[os.symbols]
+Android = "飬?"
+Windows = "蟀嵅 "
+Ubuntu = "蟀晥 "
+Debian = "蟀 "
+Linux = "蟀尳 "
+Macos = "蟀€?"
+Unknown = "蟀牓 "
+
+[python]
+symbol = "顪?"
+style = "bold green"
+format = '[${symbol}${pyenv_prefix}(${version})( \($virtualenv\))]($style) '
+detect_files = ["pyproject.toml", "requirements.txt", ".python-version", "uv.lock", "poetry.lock"]
+detect_folders = [".venv", "venv"]
+
+[nodejs]
+symbol = "顪?"
+style = "bold green"
+format = "[$symbol($version)]($style) "
+detect_files = ["package.json", ".nvmrc", "pnpm-lock.yaml", "yarn.lock", "package-lock.json", "bun.lock", "bun.lockb"]
+detect_folders = ["node_modules"]
+
+[rust]
+symbol = "顬?"
+style = "bold orange"
+format = "[$symbol($version)]($style) "
+
+[golang]
+symbol = "顦?"
+style = "bold cyan"
+format = "[$symbol($version)]($style) "
+
+[java]
+symbol = "顗?"
+style = "bold red"
+format = "[$symbol($version)]($style) "
+
+[dart]
+disabled = true
+symbol = "顬?"
+style = "bold cyan"
+format = "[$symbol($version)]($style) "
+
+[custom.termux]
+shell = ["nu", "-n", "--no-history", "-c"]
+when = """
+let script = if ($env.STARSHIP_CONTEXT_SCRIPT? | is-not-empty) {
+  $env.STARSHIP_CONTEXT_SCRIPT
+} else if ($env.HOME? | is-not-empty) {
+  ($env.HOME | path join '.config' 'starship-context.nu')
+} else {
+  ($env.USERPROFILE | path join '.config' 'starship-context.nu')
+}
+if not ($script | path exists) { exit 1 }
+source $script
+if (__is-termux) { exit 0 } else { exit 1 }
+"""
+command = """
+let script = if ($env.STARSHIP_CONTEXT_SCRIPT? | is-not-empty) {
+  $env.STARSHIP_CONTEXT_SCRIPT
+} else if ($env.HOME? | is-not-empty) {
+  ($env.HOME | path join '.config' 'starship-context.nu')
+} else {
+  ($env.USERPROFILE | path join '.config' 'starship-context.nu')
+}
+if not ($script | path exists) { exit 1 }
+source $script
+print (__termux-label)
+"""
+format = "[飬?$output]($style) "
+style = "bold green"
+
+[docker_context]
+format = "[飳?$context]($style) "
+style = "bold blue"
+only_with_files = true
+
+[time]
+disabled = false
+time_format = "%H:%M:%S"
+format = "[飥?$time]($style)"
+style = "bold muted"
+
+[package]
+disabled = true
+

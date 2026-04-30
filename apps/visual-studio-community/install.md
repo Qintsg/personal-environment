@@ -1,0 +1,21 @@
+# Visual Studio Community
+
+## 默认平台
+
+默认安装平台为 Windows；本文件中的安装命令默认在 Windows PowerShell 中执行。
+
+## 当前记录
+
+- 来源：winget / 注册表扫描
+- 当前版本：Visual Studio 2022 17.14.30、Visual Studio 2026 18.5.1
+- 包 ID：`Microsoft.VisualStudio.2022.Community`
+
+## 安装方式
+
+```powershell
+winget install --id Microsoft.VisualStudio.2022.Community --exact --accept-package-agreements --accept-source-agreements --disable-interactivity
+```
+
+## 备注
+
+- 本机同时存在 Visual Studio Community 2022 和 2026 记录。

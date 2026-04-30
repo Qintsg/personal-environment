@@ -1,0 +1,21 @@
+# Visual Studio Build Tools
+
+## 默认平台
+
+默认安装平台为 Windows；本文件中的安装命令默认在 Windows PowerShell 中执行。
+
+## 当前记录
+
+- 来源：winget / choco
+- 当前版本：17.14.31
+- 包 ID：`Microsoft.VisualStudio.2022.BuildTools`
+
+## 安装方式
+
+```powershell
+winget install --id Microsoft.VisualStudio.2022.BuildTools --exact --accept-package-agreements --accept-source-agreements --disable-interactivity
+```
+
+## 备注
+
+- Chocolatey 中也记录了 `visualstudio2022buildtools`。

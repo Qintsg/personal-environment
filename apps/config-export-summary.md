@@ -1,0 +1,105 @@
+﻿# Config Export Summary
+
+Exported at: 2026-04-30 15:15:58
+
+## Exported
+
+- git config
+- vscode settings
+- vscode insiders settings
+- cursor settings
+- windows terminal settings
+- windows terminal preview settings
+- starship config
+- nushell config
+- nushell env
+- nushell module config
+- github cli config
+- powershell profile Microsoft.PowerShell_profile.ps1
+- wezterm/terminal-profiles.toml
+- wezterm/wezterm.lua
+- wezterm/modules\fonts.lua
+- wezterm/modules\keys.lua
+- wezterm/modules\launch.lua
+- wezterm/modules\metrics.lua
+- wezterm/modules\nvim_dashboard.lua
+- wezterm/modules\profiles.lua
+- wezterm/modules\status.lua
+- wezterm/modules\tabs.lua
+- wezterm/modules\theme.lua
+- wezterm/modules\ui.lua
+- wezterm/modules\util.lua
+- neovim/.gitignore
+- neovim/.stylua.toml
+- neovim/init.lua
+- neovim/lazy-lock.json
+- neovim/lazyvim.json
+- neovim/README.md
+- neovim/lua\config\autocmds.lua
+- neovim/lua\config\keymaps.lua
+- neovim/lua\config\lazy.lua
+- neovim/lua\config\neovide.lua
+- neovim/lua\config\options.lua
+- neovim/lua\core\basic.lua
+- neovim/lua\core\commands.lua
+- neovim/lua\core\ft.lua
+- neovim/lua\core\health.lua
+- neovim/lua\core\init.lua
+- neovim/lua\core\keymap.lua
+- neovim/lua\core\miscellaneous.lua
+- neovim/lua\core\symbols.lua
+- neovim/lua\core\utils.lua
+- neovim/lua\custom\init.lua
+- neovim/lua\custom\lib.lua
+- neovim/lua\custom\lsp_setup.lua
+- neovim/lua\custom\plugins\dashboard_home.lua
+- neovim/lua\custom\plugins\icenvim_i18n.lua
+- neovim/lua\custom\plugins\lazy_i18n.lua
+- neovim/lua\custom\plugins\mason_i18n.lua
+- neovim/lua\custom\plugins\session_support.lua
+- neovim/lua\custom\plugins\status_hints.lua
+- neovim/lua\lazy_plugins\editor.lua
+- neovim/lua\lazy_plugins\extras.lua
+- neovim/lua\lazy_plugins\frameworks.lua
+- neovim/lua\lazy_plugins\i18n.lua
+- neovim/lua\lazy_plugins\lsp.lua
+- neovim/lua\lazy_plugins\ui.lua
+- neovim/lua\lsp\completion.lua
+- neovim/lua\lsp\extra.lua
+- neovim/lua\lsp\format.lua
+- neovim/lua\lsp\init.lua
+- neovim/lua\lsp\lsp.lua
+- neovim/lua\lsp\plugins.lua
+- neovim/lua\plugins\colorscheme.lua
+- neovim/lua\plugins\config.lua
+- neovim/lua\plugins\init.lua
+- neovim/lua\plugins\lazy.lua
+- neovim/lua\plugins\utils.lua
+- neovim/lua\user\hints.lua
+- vscode extensions
+- vscode insiders extensions
+- scoop config
+- scoop buckets
+- chocolatey config
+- npm config
+- pnpm config
+- yarn config
+- pip config
+- go env
+- rustup show
+- cargo install list
+- dotnet global tools
+- docker settings store
+- docker credentials skipped note
+- github cli credentials skipped note
+- azure cli credentials skipped note
+- termius credentials skipped note
+- ztools config skipped note
+
+## Safety Handling
+
+- User profile paths were replaced with `%USERPROFILE%`.
+- Email addresses were replaced with `<email>`.
+- Common token, password, secret, api key, cookie, and session fields were redacted.
+- Known high-risk credential files were skipped.
+

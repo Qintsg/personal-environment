@@ -1,0 +1,13 @@
+﻿{
+  "AutoStart": false,
+  "DesktopTerminalEnabled": true,
+  "DisplayedOnboarding": true,
+  "EnableDockerAI": true,
+  "InferenceCanUseGPUVariant": true,
+  "LastContainerdSnapshotterEnable": 1758368198,
+  "LicenseTermsVersion": 2,
+  "SettingsVersion": 43,
+  "UpdateInstallTime": 0,
+  "UseContainerdSnapshotter": true
+}
+

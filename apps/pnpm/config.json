@@ -1,0 +1,10 @@
+﻿{
+  "@jsr:registry": "https://npm.jsr.io/",
+  "globalconfig": "C:\\Users\\qinta\\AppData\\Local\\pnpm\\config\\rc",
+  "json": true,
+  "npm-globalconfig": "C:\\Program Files\\nodejs\\etc\\npmrc",
+  "registry": "http://registry.npmmirror.com",
+  "strict-ssl": false,
+  "user-agent": "pnpm/10.33.2 npm/? node/v24.13.0 win32 x64"
+}
+

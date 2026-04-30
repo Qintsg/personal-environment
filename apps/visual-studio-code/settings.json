@@ -1,0 +1,158 @@
+﻿{
+  "editor.unicodeHighlight.nonBasicASCII": false,
+  "editor.language.brackets": [],
+  "files.autoSave": "afterDelay",
+  "files.autoGuessEncoding": true,
+  "editor.smoothScrolling": true,
+  "workbench.list.smoothScrolling": true,
+  "terminal.integrated.smoothScrolling": true,
+  "editor.cursorSmoothCaretAnimation": "explicit",
+  "editor.mouseWheelZoom": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "editor.formatOnPaste": true,
+  "editor.wordWrap": "on",
+  "editor.guides.bracketPairs": true,
+  "editor.acceptSuggestionOnEnter": "smart",
+  "window.dialogStyle": "custom",
+  "debug.showBreakpointsInOverviewRuler": true,
+  "workbench.iconTheme": "vscode-jetbrains-icon-theme",
+  "remote.SSH.remotePlatform": {
+    "localhost": "windows",
+    "106.14.209.7": "linux",
+    "120.220.73.200": "linux"
+  },
+  "cSpell.userWords": [
+    "Clion",
+    "foxmail",
+    "Mathtype",
+    "Namecheap",
+    "qinta",
+    "Qintsg",
+    "sspu",
+    "Typora"
+  ],
+  "leetcode.endpoint": "leetcode-cn",
+  "editor.inlineSuggest.enabled": false,
+  "gitlens.ai.model": "vscode",
+  "gitlens.ai.vscode.model": "copilot:gpt-4.1",
+  "C_Cpp.clang_format_fallbackStyle": "Microsoft",
+"chat.mcp.gallery.enabled": true,
+  "editor.fontFamily": "JetBrains Mono",
+  "editor.fontLigatures": true,
+  "git.enableSmartCommit": true,
+  "git.autofetch": true,
+  "github.copilot.chat.anthropic.contextEditing.enabled": true,
+  "github.copilot.chat.alternateGptPrompt.enabled": true,
+  "github.copilot.chat.claudeAgent.allowDangerouslySkipPermissions": true,
+  "github.copilot.chat.generateTests.codeLens": true,
+  "github.copilot.chat.githubMcpServer.enabled": true,
+  "github.copilot.chat.languageContext.fix.typescript.enabled": true,
+  "github.copilot.chat.languageContext.inline.typescript.enabled": true,
+  "github.copilot.chat.languageContext.typescript.enabled": true,
+  "github.copilot.chat.languageContext.typescript.includeDocumentation": true,
+  "mssql.connectionGroups": [
+    {
+      "name": "ROOT",
+      "id": "ROOT"
+    }
+  ],
+  "http.proxyAuthorization": null,
+  "http.proxyStrictSSL": false,
+  "http.proxySupport": "on",
+  "python.analysis.typeCheckingMode": "standard",
+  "chat.tools.terminal.autoApprove": {
+    "git add": true,
+    "git commit": true,
+    "/^cd \"e:\\\\Projects\\\\WisdomEdu\\\\wisdom-edu-api\" ; python -c \"\nimport pandas as pd\n# Read the knowledge graph Excel\nxls = pd\\.ExcelFile\\('璧勬枡/鏅烘収鏁欒偛骞冲彴-璇剧▼璧勬簮/澶ф暟鎹浘璋辨瀯寤篭\.xlsx'\\)\nprint\\('=== 鐭ヨ瘑鍥捐氨 Sheet names:', xls\\.sheet_names\\)\nfor sheet in xls\\.sheet_names:\n    df = pd\\.read_excel\\(xls, sheet_name=sheet\\)\n    print\\(f'\\\\n--- Sheet: \\{sheet\\} ---'\\)\n    print\\('Columns:', list\\(df\\.columns\\)\\)\n    print\\('Rows:', len\\(df\\)\\)\n    print\\(df\\.head\\(5\\)\\.to_string\\(\\)\\)\n\"\n$/": {
+      "approve": true,
+      "matchCommandLine": true
+    },
+    "/^Set-Location backend; E:/Projects/WisdomEdu/wisdom-edu/\\.venv/Scripts/python\\.exe manage\\.py test ai_services\\.tests\\.DKTSyntheticDataRealismTests --verbosity 2$/": {
+      "approve": true,
+      "matchCommandLine": true
+    }
+  },
+  "chat.agent.maxRequests": 50000,
+  "[vue]": {
+    "editor.defaultFormatter": "Vue.volar"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+  },
+  "settingsSync.ignoredExtensions": [],
+  "github.copilot.chat.anthropic.tools.websearch.userLocation": {},
+  "chat.useClaudeHooks": true,
+  "editor.unicodeHighlight.allowedLocales": {
+    "zh-hans": true
+  },
+  "chat.viewSessions.orientation": "stacked",
+  "github.copilot.nextEditSuggestions.eagerness": "high",
+  "security.allowedUNCHosts": [
+    "wsl.localhost"
+  ],
+  "dart.flutterSdkPath": "E:\\Tools\\flutter",
+  "redhat.telemetry.enabled": true,
+  "workbench.browser.enableChatTools": true,
+  "python.createEnvironment.trigger": "off",
+  "remote.SSH.configFile": "C:\\Users\\qinta\\.ssh\\config",
+  "github.copilot.chat.localeOverride": "zh-CN",
+  "chat.tips.enabled": false,
+  "github.copilot.enable": {
+    "*": true,
+    "markdown": true,
+    "scminput": false,
+    "plaintext": true
+  },
+  "github.copilot.chat.anthropic.thinking.budgetTokens": "<redacted>"
+  "github.copilot.chat.responsesApiContextManagement.enabled": true,
+  "github.copilot.chat.gpt54LargePrompt.enabled": true,
+  "terminal.integrated.defaultProfile.windows": "Nushell",
+  "terminal.integrated.profiles.windows": {
+    "PowerShell": {
+      "path": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+    },
+    "Command Prompt": {
+      "path": [
+        "${env:windir}\\Sysnative\\cmd.exe",
+        "${env:windir}\\System32\\cmd.exe"
+      ],
+      "args": [],
+      "icon": "terminal-cmd"
+    },
+    "Git Bash": {
+      "source": "Git Bash",
+      "icon": "terminal-git-bash"
+    }
+  },
+  "terminal.integrated.fontFamily": "\"JetBrainsMono Nerd Font Mono\", \"JetBrainsMono Nerd Font\", \"Fira Code Retina\", \"Consolas\", \"monospace\"",
+"powershell.suppressTerminalStoppedNotification": true,
+  "github.copilot.chat.anthropic.tools.websearch.maxUses": 20,
+  "github.copilot.chat.anthropic.contextEditing.mode": "clear-both",
+  "github.copilot.chat.agent.autoFix": true,
+  "github.copilot.chat.conversationTranscriptLookup.enabled": true,
+  "github.copilot.chat.newWorkspace.useContext7": true,
+"security.workspace.trust.untrustedFiles": "open",
+"github.copilot.chat.cli.sessionController.enabled": true,
+"github.copilot.chat.cli.sessionControllerForSessionsApp.enabled": true,
+"github.copilot.chat.cli.showExternalSessions": true,
+"github.copilot.chat.otel.dbSpanExporter.enabled": true,
+"github.copilot.chat.otel.captureContent": true,
+"github.copilot.chat.otel.enabled": true,
+"github.copilot.chat.searchSubagent.useAgenticProxy": true,
+"github.copilot.chat.executionSubagent.model": "",
+"chat.useCustomAgentHooks": true,
+"chat.useCustomizationsInParentRepositories": true,
+"[dart]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.rulers": [
+        80
+    ],
+    "editor.selectionHighlight": false,
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": "off"
+},
+"cmake.showConfigureWithDebuggerNotification": false
+}
+
