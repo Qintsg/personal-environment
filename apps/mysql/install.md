@@ -1,0 +1,21 @@
+# mysql
+
+## 默认平台
+
+默认安装平台为 Windows；本文件中的安装命令默认在 Windows PowerShell 中执行。
+
+## 当前记录
+
+- 来源：scoop
+- 当前版本：9.7.0
+- 包 ID：`mysql`
+
+## 安装方式
+
+```powershell
+scoop install mysql
+```
+
+## 备注
+
+- 当前记录来自 Scoop 清单。
