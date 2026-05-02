@@ -1,4 +1,4 @@
-"$schema" = "https://starship.rs/config-schema.json"
+﻿"$schema" = "https://starship.rs/config-schema.json"
 
 # Unified Starship configuration for Windows, WSL, Linux, macOS, and Termux.
 # Palette is tuned for Windows Terminal One Half Light with acrylic enabled.
@@ -23,22 +23,22 @@ fg = "#383A42"
 muted = "#6A6D78"
 
 [character]
-success_symbol = "[ ❯](bold blue)"
-error_symbol = "[ ❯](bold red)"
-vimcmd_symbol = "[ ❮](bold blue)"
+success_symbol = "[ 鉂痌(bold blue)"
+error_symbol = "[ 鉂痌(bold red)"
+vimcmd_symbol = "[ 鉂甝(bold blue)"
 
 [directory]
 style = "bold fg"
-read_only = " 󰌾"
+read_only = " 蟀尵"
 read_only_style = "bold red"
 truncation_length = 4
 truncate_to_repo = false
 fish_style_pwd_dir_length = 1
 home_symbol = "~"
-format = "[ $path]($style)[$read_only]($read_only_style) "
+format = "[顥?$path]($style)[$read_only]($read_only_style) "
 
 [git_branch]
-symbol = " "
+symbol = "飷?"
 style = "bold yellow"
 truncation_length = 32
 format = "[$symbol$branch]($style) "
@@ -47,36 +47,36 @@ format = "[$symbol$branch]($style) "
 style = "bold muted"
 format = "([$all_status$ahead_behind]($style) )"
 conflicted = "=${count}"
-ahead = "⇡${count}"
-behind = "⇣${count}"
-diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+ahead = "鈬?{count}"
+behind = "鈬?{count}"
+diverged = "鈬曗嚒${ahead_count}鈬?{behind_count}"
 untracked = "?${count}"
 stashed = "*${count}"
 modified = "!${count}"
 staged = "+${count}"
-renamed = "»${count}"
-deleted = "✘${count}"
+renamed = "禄${count}"
+deleted = "鉁?{count}"
 
 [cmd_duration]
 min_time = 750
 show_milliseconds = true
-format = "[󱎫 $duration]($style) "
+format = "[蟊帿 $duration]($style) "
 style = "bold muted"
 
 [status]
 disabled = false
-format = "[✘ $status]($style) "
+format = "[鉁?$status]($style) "
 style = "bold red"
 symbol = ""
 
 [jobs]
-symbol = " "
+symbol = "飥?"
 style = "bold purple"
 format = "[$symbol$number]($style) "
 
 [shell]
 disabled = false
-format = "[󰆍 $indicator]($style) "
+format = "[蟀啀 $indicator]($style) "
 style = "bold blue"
 nu_indicator = "nu"
 bash_indicator = "bash"
@@ -87,7 +87,7 @@ unknown_indicator = "shell"
 
 [hostname]
 ssh_only = true
-ssh_symbol = " "
+ssh_symbol = "瞵?"
 format = "[$ssh_symbol$hostname]($style) "
 style = "bold blue"
 
@@ -97,46 +97,46 @@ format = "[$symbol]($style) "
 style = "bold muted"
 
 [os.symbols]
-Android = " "
-Windows = "󰍲 "
-Ubuntu = "󰕈 "
-Debian = "󰣚 "
-Linux = "󰌽 "
-Macos = "󰀵 "
-Unknown = "󰠥 "
+Android = "飬?"
+Windows = "蟀嵅 "
+Ubuntu = "蟀晥 "
+Debian = "蟀 "
+Linux = "蟀尳 "
+Macos = "蟀€?"
+Unknown = "蟀牓 "
 
 [python]
-symbol = " "
+symbol = "顪?"
 style = "bold green"
 format = '[${symbol}${pyenv_prefix}(${version})( \($virtualenv\))]($style) '
 detect_files = ["pyproject.toml", "requirements.txt", ".python-version", "uv.lock", "poetry.lock"]
 detect_folders = [".venv", "venv"]
 
 [nodejs]
-symbol = " "
+symbol = "顪?"
 style = "bold green"
 format = "[$symbol($version)]($style) "
 detect_files = ["package.json", ".nvmrc", "pnpm-lock.yaml", "yarn.lock", "package-lock.json", "bun.lock", "bun.lockb"]
 detect_folders = ["node_modules"]
 
 [rust]
-symbol = " "
+symbol = "顬?"
 style = "bold orange"
 format = "[$symbol($version)]($style) "
 
 [golang]
-symbol = " "
+symbol = "顦?"
 style = "bold cyan"
 format = "[$symbol($version)]($style) "
 
 [java]
-symbol = " "
+symbol = "顗?"
 style = "bold red"
 format = "[$symbol($version)]($style) "
 
 [dart]
 disabled = true
-symbol = " "
+symbol = "顬?"
 style = "bold cyan"
 format = "[$symbol($version)]($style) "
 
@@ -166,18 +166,18 @@ if not ($script | path exists) { exit 1 }
 source $script
 print (__termux-label)
 """
-format = "[ $output]($style) "
+format = "[飬?$output]($style) "
 style = "bold green"
 
 [docker_context]
-format = "[ $context]($style) "
+format = "[飳?$context]($style) "
 style = "bold blue"
 only_with_files = true
 
 [time]
 disabled = false
 time_format = "%H:%M:%S"
-format = "[ $time]($style)"
+format = "[飥?$time]($style)"
 style = "bold muted"
 
 [package]

@@ -1,4 +1,4 @@
-# 通用帮助函数
+﻿# 閫氱敤甯姪鍑芥暟
 
 export def has-cmd [name: string] {
   (which $name | is-not-empty)

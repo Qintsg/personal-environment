@@ -1,5 +1,4 @@
-# Shell 主配置
-
+﻿# Shell 涓婚厤缃?
 $env.config = (
   $env.config
   | merge {

@@ -1,0 +1,199 @@
+﻿{
+  "$schema": "https://opencode.ai/config.json",
+  "server": {
+    "hostname": "127.0.0.1",
+    "port": 4096
+  },
+  "instructions": [
+    "~/.config/opencode/AGENTS.md",
+    "~/.config/opencode/plugin/shell-strategy/shell_strategy.md",
+    "~/.config/opencode/shell-strategy-zh.md"
+  ],
+  "plugin": [
+    "@tarquinen/opencode-dcp@latest",
+    "opencode-handoff@latest",
+    "@plannotator/opencode@latest",
+    "%USERPROFILE%\\AppData\\Roaming\\npm\\node_modules\\opencode-codex-usage\\dist\\index.js"
+  ],
+  "mcp": {
+    "context7": {
+      "type": "remote",
+      "url": "https://mcp.context7.com/mcp",
+      "headers": {
+        "CONTEXT7_API_KEY": "<redacted>"
+      },
+      "enabled": true
+    },
+    "microsoft-learn": {
+      "type": "remote",
+      "url": "https://learn.microsoft.com/api/mcp",
+      "enabled": true
+    },
+    "linear": {
+      "type": "remote",
+      "url": "https://mcp.linear.app/mcp",
+      "enabled": true
+    },
+    "github": {
+      "type": "remote",
+      "url": "https://api.githubcopilot.com/mcp/",
+      "oauth": false,
+      "headers": {
+        "Authorization": "<redacted>",
+        "X-MCP-Insiders": "true"
+      },
+      "enabled": true,
+      "timeout": 120000
+    },
+    "playwright": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "@playwright/mcp@latest",
+        "--headless",
+        "--browser=chromium"
+      ],
+      "enabled": true,
+      "timeout": 30000
+    },
+    "sequential-thinking": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "@modelcontextprotocol/server-sequential-thinking"
+      ],
+      "environment": {
+        "DISABLE_THOUGHT_LOGGING": "true"
+      },
+      "enabled": true
+    },
+    "fetch": {
+      "type": "local",
+      "command": [
+        "uvx",
+        "mcp-server-fetch"
+      ],
+      "enabled": true,
+      "timeout": 30000
+    },
+    "memory": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "@modelcontextprotocol/server-memory"
+      ],
+      "environment": {
+        "MEMORY_FILE_PATH": "%USERPROFILE%/.mcp/data/memory.jsonl"
+      },
+      "enabled": true
+    },
+    "tavily": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "tavily-mcp@latest"
+      ],
+      "environment": {
+        "TAVILY_API_KEY": "<redacted>",
+        "DEFAULT_PARAMETERS": "{\"search_depth\":\"basic\",\"max_results\":5,\"include_images\":false}"
+      },
+      "enabled": true,
+      "timeout": 30000
+    },
+    "mermaid": {
+      "type": "local",
+      "command": [
+        "mermaid-mcp-server"
+      ],
+      "enabled": true,
+      "timeout": 30000
+    },
+    "wireshark": {
+      "type": "local",
+      "command": [
+        "uvx",
+        "wireshark-mcp"
+      ],
+      "enabled": false,
+      "timeout": 60000
+    },
+    "nmap": {
+      "type": "local",
+      "command": [
+        "uv",
+        "--directory",
+        "%USERPROFILE%\\.local\\share\\mcp-servers\\Nmap-MCP-Server",
+        "run",
+        "server.py"
+      ],
+      "enabled": false,
+      "timeout": 120000
+    },
+    "figma": {
+      "type": "remote",
+      "url": "https://mcp.figma.com/mcp",
+      "enabled": false
+    },
+    "notion": {
+      "type": "remote",
+      "url": "https://mcp.notion.com/mcp",
+      "enabled": false
+    },
+    "vercel": {
+      "type": "remote",
+      "url": "https://mcp.vercel.com",
+      "enabled": false
+    },
+    "openapi": {
+      "type": "local",
+      "command": [
+        "uvx",
+        "awslabs.openapi-mcp-server@latest"
+      ],
+      "environment": {
+        "API_NAME": "{env:API_NAME}",
+        "API_BASE_URL": "{env:API_BASE_URL}",
+        "API_SPEC_URL": "{env:API_SPEC_URL}",
+        "INCLUDE_TAGS": "{env:OPENAPI_INCLUDE_TAGS}",
+        "EXCLUDE_TAGS": "{env:OPENAPI_EXCLUDE_TAGS}",
+        "LOG_LEVEL": "ERROR",
+        "ENABLE_PROMETHEUS": "false",
+        "ENABLE_OPERATION_PROMPTS": "true"
+      },
+      "enabled": false,
+      "timeout": 60000
+    },
+    "excalidraw": {
+      "type": "remote",
+      "url": "https://mcp.excalidraw.com",
+      "enabled": false
+    },
+    "alibaba-cloud-ops": {
+      "type": "local",
+      "command": [
+        "uvx",
+        "alibaba-cloud-ops-mcp-server@latest",
+        "--services",
+        "ecs,vpc,oss,rds",
+        "--env",
+        "domestic"
+      ],
+      "environment": {
+        "ALIBABA_CLOUD_ACCESS_KEY_ID": "<redacted>",
+        "ALIBABA_CLOUD_ACCESS_KEY_SECRET": "<redacted>"
+      },
+      "enabled": false,
+      "timeout": 600000
+    },
+    "alibaba-cloud-openapi": {
+      "type": "remote",
+      "url": "https://api.aliyun.com/mcp",
+      "enabled": false
+    }
+  }
+}
+

@@ -1,19 +1,16 @@
-# 本机私有覆盖层示例
-#
-# 使用方式：
-# 1. 复制本文件为 local.nu
-# 2. 按需修改
-# 3. 不要提交 local.nu
+﻿# 鏈満绉佹湁瑕嗙洊灞傜ず渚?#
+# 浣跨敤鏂瑰紡锛?# 1. 澶嶅埗鏈枃浠朵负 local.nu
+# 2. 鎸夐渶淇敼
+# 3. 涓嶈鎻愪氦 local.nu
 
 export-env {
-  # 示例：代理
-  # load-env {
+  # 绀轰緥锛氫唬鐞?  # load-env {
   #   HTTP_PROXY: "http://127.0.0.1:7890"
   #   HTTPS_PROXY: "http://127.0.0.1:7890"
   # }
 }
 
 export def my-local-alias [] {
-  print "这里放你自己的本机命令"
+  print "杩欓噷鏀句綘鑷繁鐨勬湰鏈哄懡浠?
 }
 

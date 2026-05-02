@@ -1,4 +1,4 @@
-# Windows 原生平台差异
+﻿# Windows 鍘熺敓骞冲彴宸紓
 
 if ((is-windows)) {
   $env.NU_PLATFORM = 'windows'

@@ -1,4 +1,4 @@
-frame = "full"
+﻿frame = "full"
 maximized = false
 tabs = false
 vsync = true

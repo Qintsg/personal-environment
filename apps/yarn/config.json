@@ -1,41 +1,41 @@
-[
-  {
-    "type": "info",
-    "data": "yarn config"
-  },
-  {
-    "type": "inspect",
-    "data": {
-      "version-tag-prefix": "v",
-      "version-git-tag": true,
-      "version-commit-hooks": true,
-      "version-git-sign": false,
-      "version-git-message": "v%s",
-      "init-version": "1.0.0",
-      "init-license": "MIT",
-      "save-prefix": "^",
-      "bin-links": true,
-      "ignore-scripts": false,
-      "ignore-optional": false,
-      "registry": "https://registry.yarnpkg.com",
-      "strict-ssl": true,
-      "user-agent": "yarn/1.22.22 npm/? node/v24.13.0 win32 x64",
-      "cache-folder": "%USERPROFILE%\\scoop\\apps\\yarn\\current\\cache",
-      "global-folder": "%USERPROFILE%\\scoop\\apps\\yarn\\current\\global",
-      "prefix": "%USERPROFILE%\\scoop\\apps\\yarn\\current\\global",
-      "yarn-offline-mirror": "%USERPROFILE%\\scoop\\apps\\yarn\\current\\mirror"
+﻿[
+    {
+        "type":  "info",
+        "data":  "yarn config"
+    },
+    {
+        "type":  "inspect",
+        "data":  {
+                     "version-tag-prefix":  "v",
+                     "version-git-tag":  true,
+                     "version-commit-hooks":  true,
+                     "version-git-sign":  false,
+                     "version-git-message":  "v%s",
+                     "init-version":  "1.0.0",
+                     "init-license":  "MIT",
+                     "save-prefix":  "^",
+                     "bin-links":  true,
+                     "ignore-scripts":  false,
+                     "ignore-optional":  false,
+                     "registry":  "https://registry.yarnpkg.com",
+                     "strict-ssl":  true,
+                     "user-agent":  "yarn/1.22.22 npm/? node/v24.13.0 win32 x64",
+                     "cache-folder":  "%USERPROFILE%\\scoop\\apps\\yarn\\current\\cache",
+                     "global-folder":  "%USERPROFILE%\\scoop\\apps\\yarn\\current\\global",
+                     "prefix":  "%USERPROFILE%\\scoop\\apps\\yarn\\current\\global",
+                     "yarn-offline-mirror":  "%USERPROFILE%\\scoop\\apps\\yarn\\current\\mirror"
+                 }
+    },
+    {
+        "type":  "info",
+        "data":  "npm config"
+    },
+    {
+        "type":  "inspect",
+        "data":  {
+                     "registry":  "http://registry.npmmirror.com",
+                     "strict-ssl":  false
+                 }
     }
-  },
-  {
-    "type": "info",
-    "data": "npm config"
-  },
-  {
-    "type": "inspect",
-    "data": {
-      "registry": "http://registry.npmmirror.com",
-      "strict-ssl": false
-    }
-  }
 ]
 

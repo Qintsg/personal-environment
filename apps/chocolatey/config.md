@@ -1,4 +1,4 @@
-cacheLocation||Cache location if not TEMP folder. Replaces `$env:TEMP` value for choco.exe process. It is highly recommended this be set to make Chocolatey more deterministic in cleanup.
+﻿cacheLocation||Cache location if not TEMP folder. Replaces `$env:TEMP` value for choco.exe process. It is highly recommended this be set to make Chocolatey more deterministic in cleanup.
 commandExecutionTimeoutSeconds|2700|Default timeout for command execution. '0' for infinite.
 containsLegacyPackageInstalls|true|
 defaultPushSource||Default source to push packages to when running 'choco push' command.

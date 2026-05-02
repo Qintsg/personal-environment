@@ -1,4 +1,4 @@
----@diagnostic disable: need-check-nil
+﻿---@diagnostic disable: need-check-nil
 local utils = {}
 
 -- Set up colorscheme and Ice.colorscheme, but does not take care of lualine

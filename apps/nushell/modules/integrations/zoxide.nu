@@ -1,4 +1,4 @@
-# zoxide integration
+﻿# zoxide integration
 
 def __zoxide_bookmark_file [] {
   (config-root | path join 'zoxide-bookmarks.json')

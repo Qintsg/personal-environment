@@ -1,4 +1,4 @@
-local wezterm = require 'wezterm'
+﻿local wezterm = require 'wezterm'
 
 local M = {}
 
@@ -53,7 +53,7 @@ local function run_child(args)
   local ok, stdout, stderr = wezterm.run_child_process(args)
   if not ok then
     if stderr and stderr ~= '' then
-      wezterm.log_warn('系统指标命令执行失败：' .. stderr)
+      wezterm.log_warn('绯荤粺鎸囨爣鍛戒护鎵ц澶辫触锛? .. stderr)
     end
     return nil
   end

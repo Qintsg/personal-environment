@@ -1,4 +1,4 @@
--- While null-ls can do a lot more than just formatting, I am leaving the rest to LspSaga
+﻿-- While null-ls can do a lot more than just formatting, I am leaving the rest to LspSaga
 -- See extra.lua
 Ice.plugins["null-ls"] = {
     "nvimtools/none-ls.nvim",

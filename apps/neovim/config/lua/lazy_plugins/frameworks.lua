@@ -1,4 +1,4 @@
-return {
+﻿return {
   {
     "nvim-flutter/flutter-tools.nvim",
     ft = "dart",
@@ -27,7 +27,7 @@ return {
           background = false,
           foreground = false,
           virtual_text = true,
-          virtual_text_str = "■",
+          virtual_text_str = "鈻?,
         },
         settings = {
           showTodos = true,
@@ -60,12 +60,12 @@ return {
       package_manager = "npm",
     },
     keys = {
-      { "<leader>ns", "<cmd>PackageInfoShow<cr>", desc = "显示 npm 依赖版本" },
-      { "<leader>nh", "<cmd>PackageInfoHide<cr>", desc = "隐藏 npm 依赖版本" },
-      { "<leader>nt", "<cmd>PackageInfoToggle<cr>", desc = "切换 npm 依赖版本" },
-      { "<leader>nu", "<cmd>PackageInfoUpdate<cr>", desc = "更新 npm 依赖" },
-      { "<leader>nd", "<cmd>PackageInfoDelete<cr>", desc = "删除 npm 依赖" },
-      { "<leader>ni", "<cmd>PackageInfoInstall<cr>", desc = "安装 npm 依赖" },
+      { "<leader>ns", "<cmd>PackageInfoShow<cr>", desc = "鏄剧ず npm 渚濊禆鐗堟湰" },
+      { "<leader>nh", "<cmd>PackageInfoHide<cr>", desc = "闅愯棌 npm 渚濊禆鐗堟湰" },
+      { "<leader>nt", "<cmd>PackageInfoToggle<cr>", desc = "鍒囨崲 npm 渚濊禆鐗堟湰" },
+      { "<leader>nu", "<cmd>PackageInfoUpdate<cr>", desc = "鏇存柊 npm 渚濊禆" },
+      { "<leader>nd", "<cmd>PackageInfoDelete<cr>", desc = "鍒犻櫎 npm 渚濊禆" },
+      { "<leader>ni", "<cmd>PackageInfoInstall<cr>", desc = "瀹夎 npm 渚濊禆" },
     },
   },
 
@@ -73,12 +73,12 @@ return {
     "nvim-mini/mini.icons",
     opts = {
       file = {
-        [".npmrc"] = { glyph = "", hl = "MiniIconsRed" },
-        [".nvmrc"] = { glyph = "", hl = "MiniIconsGreen" },
-        ["package-lock.json"] = { glyph = "", hl = "MiniIconsRed" },
-        ["vite.config.js"] = { glyph = "", hl = "MiniIconsYellow" },
-        ["vite.config.mjs"] = { glyph = "", hl = "MiniIconsYellow" },
-        ["vite.config.ts"] = { glyph = "", hl = "MiniIconsAzure" },
+        [".npmrc"] = { glyph = "顪?, hl = "MiniIconsRed" },
+        [".nvmrc"] = { glyph = "顪?, hl = "MiniIconsGreen" },
+        ["package-lock.json"] = { glyph = "顪?, hl = "MiniIconsRed" },
+        ["vite.config.js"] = { glyph = "飪?, hl = "MiniIconsYellow" },
+        ["vite.config.mjs"] = { glyph = "飪?, hl = "MiniIconsYellow" },
+        ["vite.config.ts"] = { glyph = "飪?, hl = "MiniIconsAzure" },
       },
       extension = {
         nu = { glyph = "N", hl = "MiniIconsBlue" },

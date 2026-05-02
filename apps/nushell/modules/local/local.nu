@@ -1,4 +1,4 @@
-# Local per-user/per-machine overlay
+﻿# Local per-user/per-machine overlay
 
 export-env {
   let home_dir = ($env.HOME? | default ($env.USERPROFILE? | default ''))

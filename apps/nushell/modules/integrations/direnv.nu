@@ -1,7 +1,6 @@
-# direnv 集成
+﻿# direnv 闆嗘垚
 #
-# 进入目录时自动加载项目环境变量。
-
+# 杩涘叆鐩綍鏃惰嚜鍔ㄥ姞杞介」鐩幆澧冨彉閲忋€?
 def __direnv_winget_package_exe [] {
   if not (is-windows) {
     return null

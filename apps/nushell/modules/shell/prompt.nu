@@ -1,9 +1,7 @@
-# Prompt 说明
+﻿# Prompt 璇存槑
 #
-# Starship 现统一通过 Nushell 的 vendor autoload 接入：
-# - 自动加载目录：$nu.vendor-autoload-dirs
-# - 当前生效文件：vendor/autoload/starship.nu
+# Starship 鐜扮粺涓€閫氳繃 Nushell 鐨?vendor autoload 鎺ュ叆锛?# - 鑷姩鍔犺浇鐩綍锛?nu.vendor-autoload-dirs
+# - 褰撳墠鐢熸晥鏂囦欢锛歷endor/autoload/starship.nu
 #
-# 因此这里不再手动设置 PROMPT_COMMAND / PROMPT_COMMAND_RIGHT，
-# 避免与 vendor autoload 形成两套并行接入逻辑。
+# 鍥犳杩欓噷涓嶅啀鎵嬪姩璁剧疆 PROMPT_COMMAND / PROMPT_COMMAND_RIGHT锛?# 閬垮厤涓?vendor autoload 褰㈡垚涓ゅ骞惰鎺ュ叆閫昏緫銆?
 

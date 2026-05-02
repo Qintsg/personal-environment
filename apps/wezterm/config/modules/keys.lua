@@ -1,15 +1,13 @@
-local util = require 'modules.util'
+﻿local util = require 'modules.util'
 
 return function(wezterm, config)
   local act = wezterm.action
 
   config.keys = {
-    -- 常用复制粘贴。
-    { key = 'c', mods = 'CTRL|SHIFT', action = act.CopyTo('Clipboard') },
+    -- 甯哥敤澶嶅埗绮樿创銆?    { key = 'c', mods = 'CTRL|SHIFT', action = act.CopyTo('Clipboard') },
     { key = 'v', mods = 'CTRL|SHIFT', action = act.PasteFrom('Clipboard') },
 
-    -- Ctrl+C：有选区时复制，否则透传给前台程序。
-    {
+    -- Ctrl+C锛氭湁閫夊尯鏃跺鍒讹紝鍚﹀垯閫忎紶缁欏墠鍙扮▼搴忋€?    {
       key = 'c',
       mods = 'CTRL',
       action = wezterm.action_callback(function(window, pane)
@@ -24,8 +22,7 @@ return function(wezterm, config)
     },
     { key = 'v', mods = 'CTRL',        action = act.PasteFrom('Clipboard') },
 
-    -- 新建标签页时回到用户主目录。
-    {
+    -- 鏂板缓鏍囩椤垫椂鍥炲埌鐢ㄦ埛涓荤洰褰曘€?    {
       key = 't',
       mods = 'CTRL',
       action = act.SpawnCommandInNewTab({
@@ -33,8 +30,7 @@ return function(wezterm, config)
       }),
     },
 
-    -- 关闭标签页时不再二次确认。
-    { key = 'w', mods = 'CTRL',        action = act.CloseCurrentTab({ confirm = false }) },
+    -- 鍏抽棴鏍囩椤垫椂涓嶅啀浜屾纭銆?    { key = 'w', mods = 'CTRL',        action = act.CloseCurrentTab({ confirm = false }) },
     { key = 'W', mods = 'CTRL',        action = act.CloseCurrentTab({ confirm = false }) },
     { key = 'w', mods = 'CTRL|SHIFT',  action = act.CloseCurrentTab({ confirm = false }) },
     { key = 'W', mods = 'CTRL|SHIFT',  action = act.CloseCurrentTab({ confirm = false }) },
@@ -43,15 +39,13 @@ return function(wezterm, config)
     { key = 'w', mods = 'SUPER|SHIFT', action = act.CloseCurrentTab({ confirm = false }) },
     { key = 'W', mods = 'SUPER|SHIFT', action = act.CloseCurrentTab({ confirm = false }) },
 
-    -- 搜索当前选中内容；未选中时打开空搜索。
-    { key = 'f', mods = 'CTRL',        action = act.Search('CurrentSelectionOrEmptyString') },
+    -- 鎼滅储褰撳墠閫変腑鍐呭锛涙湭閫変腑鏃舵墦寮€绌烘悳绱€?    { key = 'f', mods = 'CTRL',        action = act.Search('CurrentSelectionOrEmptyString') },
 
-    -- 手动设置当前标签页标题，优先级高于自动标题。
-    {
+    -- 鎵嬪姩璁剧疆褰撳墠鏍囩椤垫爣棰橈紝浼樺厛绾ч珮浜庤嚜鍔ㄦ爣棰樸€?    {
       key = 'e',
       mods = 'CTRL|SHIFT',
       action = act.PromptInputLine({
-        description = '请输入当前标签页标题，留空表示清除手动标题',
+        description = '璇疯緭鍏ュ綋鍓嶆爣绛鹃〉鏍囬锛岀暀绌鸿〃绀烘竻闄ゆ墜鍔ㄦ爣棰?,
         action = wezterm.action_callback(function(window, _, line)
           if line ~= nil then
             local tab = window:active_tab()
@@ -71,8 +65,7 @@ return function(wezterm, config)
       end),
     },
 
-    -- 标签页切换。
-    { key = 'Tab',        mods = 'CTRL',       action = act.ActivateTabRelative(1) },
+    -- 鏍囩椤靛垏鎹€?    { key = 'Tab',        mods = 'CTRL',       action = act.ActivateTabRelative(1) },
     { key = 'Tab',        mods = 'CTRL|SHIFT', action = act.ActivateTabRelative(-1) },
     { key = 'LeftArrow',  mods = 'ALT',        action = act.ActivateTabRelative(-1) },
     { key = 'RightArrow', mods = 'ALT',        action = act.ActivateTabRelative(1) },

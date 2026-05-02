@@ -1,4 +1,4 @@
-pcall(vim.cmd, "language zh_CN.UTF-8")
+﻿pcall(vim.cmd, "language zh_CN.UTF-8")
 
 vim.g.lazyvim_python_lsp = "pyright"
 vim.g.lazyvim_python_ruff = "ruff"
@@ -87,8 +87,8 @@ opt.inccommand = "split"
 opt.virtualedit = "block"
 opt.jumpoptions = "view"
 opt.list = true
-opt.listchars = { tab = "  ", trail = "·", extends = "»", precedes = "«", nbsp = "␣" }
-opt.fillchars = { eob = " ", fold = " ", foldopen = "", foldsep = " ", foldclose = "" }
+opt.listchars = { tab = "  ", trail = "路", extends = "禄", precedes = "芦", nbsp = "鈵? }
+opt.fillchars = { eob = " ", fold = " ", foldopen = "飸?, foldsep = " ", foldclose = "飸? }
 opt.diffopt:append({ "algorithm:histogram", "indent-heuristic", "linematch:60" })
 opt.shortmess:append("cC")
 opt.sessionoptions:remove("options")

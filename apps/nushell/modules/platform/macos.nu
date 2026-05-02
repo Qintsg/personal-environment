@@ -1,4 +1,4 @@
-# macOS 平台差异
+﻿# macOS 骞冲彴宸紓
 
 if ((is-macos)) {
   $env.NU_PLATFORM = 'macos'

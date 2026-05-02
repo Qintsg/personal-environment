@@ -1,4 +1,4 @@
-ms-ceintl.vscode-language-pack-zh-hans@1.118.2026050120
+﻿ms-ceintl.vscode-language-pack-zh-hans@1.118.2026050120
 ms-python.debugpy@2026.6.0
 ms-python.python@2026.4.0
 ms-python.vscode-pylance@2026.2.1

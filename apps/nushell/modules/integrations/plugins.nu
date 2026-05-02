@@ -1,4 +1,4 @@
-# Nushell plugin helpers
+﻿# Nushell plugin helpers
 
 def nu-plugin-status [] {
   if (which plugin | is-not-empty) {

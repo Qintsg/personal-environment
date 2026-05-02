@@ -1,4 +1,4 @@
-local wezterm = require 'wezterm'
+﻿local wezterm = require 'wezterm'
 local util = require 'modules.util'
 
 local M = {}
@@ -26,7 +26,7 @@ end
 local function read_file(path)
   local handle, err = io.open(path, 'rb')
   if not handle then
-    error(string.format('无法读取 %s：%s', path, err or '未知错误'))
+    error(string.format('鏃犳硶璇诲彇 %s锛?s', path, err or '鏈煡閿欒'))
   end
 
   local content = handle:read('*a')
@@ -303,8 +303,7 @@ local function build_spawn_command(profile)
     return nil
   end
 
-  -- 命令提示符单独处理，避免额外命令串导致标题或路径异常。
-  if profile.id == 'cmd' or profile.icon == 'cmd' then
+  -- 鍛戒护鎻愮ず绗﹀崟鐙鐞嗭紝閬垮厤棰濆鍛戒护涓插鑷存爣棰樻垨璺緞寮傚父銆?  if profile.id == 'cmd' or profile.icon == 'cmd' then
     local comspec = os.getenv('ComSpec') or program
     spawn.args = { comspec }
     spawn.cwd = startup_cwd
@@ -349,7 +348,7 @@ function M.load(path)
           default_profile = profile
         end
       else
-        wezterm.log_warn('忽略无法启动的终端配置：' .. (profile.id or profile.label or '<unknown>'))
+        wezterm.log_warn('蹇界暐鏃犳硶鍚姩鐨勭粓绔厤缃細' .. (profile.id or profile.label or '<unknown>'))
       end
     end
   end
@@ -378,8 +377,7 @@ function M.load(path)
   return data
 end
 
--- 应用启动配置，并同步生成 WezTerm 原生 launch_menu。
-function M.apply(config)
+-- 搴旂敤鍚姩閰嶇疆锛屽苟鍚屾鐢熸垚 WezTerm 鍘熺敓 launch_menu銆?function M.apply(config)
   local path = wezterm.config_dir .. '/terminal-profiles.toml'
   local loaded = M.load(path)
 

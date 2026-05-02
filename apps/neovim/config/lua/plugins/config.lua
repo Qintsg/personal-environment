@@ -1,4 +1,4 @@
--- Configuration for each individual plugin
+﻿-- Configuration for each individual plugin
 ---@diagnostic disable: need-check-nil
 local config = {}
 local symbols = Ice.symbols

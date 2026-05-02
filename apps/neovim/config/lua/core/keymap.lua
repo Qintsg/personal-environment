@@ -1,4 +1,4 @@
-vim.g.mapleader = " "
+﻿vim.g.mapleader = " "
 vim.g.maplocalleader = ","
 
 -- Generates a comment function that can be used in a keymap

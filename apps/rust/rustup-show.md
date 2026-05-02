@@ -1,4 +1,4 @@
-Default host: x86_64-pc-windows-msvc
+﻿Default host: x86_64-pc-windows-msvc
 rustup home:  %USERPROFILE%\.rustup
 
 installed toolchains

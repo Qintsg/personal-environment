@@ -1,0 +1,305 @@
+﻿# oh-my-codex top-level settings (must be before any [table])
+notify = ["node", "%USERPROFILE%\\AppData\\Roaming\\npm\\node_modules\\oh-my-codex\\dist\\scripts\\notify-hook.js"]
+model_reasoning_effort = "xhigh"
+developer_instructions = "You have oh-my-codex installed. AGENTS.md is your orchestration brain and the main orchestration surface. Use skill/keyword routing like $name plus spawned role-specialized subagents for specialized work. Codex native subagents are available via .codex/agents and may be used for independent parallel subtasks within a single session or team pane. Skills are loaded from installed SKILL.md files under .codex/skills, not from native agent TOMLs. Use workflow skills via $name when explicitly invoked or clearly routed by AGENTS.md. Treat installed prompts as narrower internal execution surfaces under AGENTS.md authority, even when user-facing docs prefer $name keywords."
+
+approval_policy = "never"
+model = "gpt-5.3-codex-spark"
+model_auto_compact_token_limit = <redacted>
+model_context_window = 1000000
+model_reasoning_summary = "detailed"
+model_verbosity = "high"
+model_supports_reasoning_summaries = true
+service_tier = "fast"
+
+personality = "pragmatic"
+
+review_model = "gpt-5.5"
+plan_mode_reasoning_effort = "xhigh"
+
+sandbox = "unelevated"
+sandbox_private_desktop = false
+sandbox_mode = "danger-full-access"
+allow_login_shell = true
+
+check_for_update_on_startup = true
+web_search = "live"
+
+suppress_unstable_features_warning = true
+
+[features]
+apply_patch_freeform = true                 # under development
+apply_patch_streaming_events = true         # under development
+apps = true                                 # stable
+apps_mcp_path_override = true               # under development
+artifact = true                             # under development
+browser_use = true                          # stable
+child_agents_md = true                      # under development
+chronicle = true                            # under development
+code_mode = true                            # under development
+code_mode_only = false                      # under development
+codex_git_commit = true                     # under development
+codex_hooks = true                          # stable
+collaboration_modes = false                 # removed    
+computer_use = true                         # stable MacOS only
+default_mode_request_user_input = true      # under development
+enable_fanout = true                        # under development
+enable_mcp_apps = true                      # under development
+enable_request_compression = true           # stable
+exec_permission_approvals = true            # under development
+external_migration = true                   # experimental
+fast_mode = true                            # stable
+general_analytics = true                    # stable
+goals = true                                # under development
+guardian_approval = true                    # stable
+image_detail_original =false                # removed
+image_generation = true                     # stable
+in_app_browser = true                       # stable
+js_repl = true                              # experimental
+js_repl_tools_only = false                  # under development
+memories = true                             # experimental
+multi_agent = false                         # stable
+multi_agent_v2 = true                       # under development
+personality = true                          # stable
+plugin_hooks = true                         # under development
+plugins = true                              # stable
+prevent_idle_sleep = true                   # experimental
+realtime_conversation = true                # under development
+remote_control = true                       # under development
+remote_models = false                       # removed
+remote_plugin = true                        # under development
+request_permissions_tool = true             # under development
+request_rule = false                        # removed
+responses_websockets = false                # removed
+responses_websockets_v2 = false             # removed
+runtime_metrics = true                      # under development
+search_tool = false                         # removed
+shell_snapshot = true                       # stable
+shell_tool = true                           # stable
+shell_zsh_fork = false                      # under development Unix/Macos only
+skill_env_var_dependency_prompt = true      # under development
+skill_mcp_dependency_install = true         # stable
+sqlite = true                               # removed
+steer = true                                # removed
+tool_call_mcp_elicitation = true            # stable
+tool_search = true                          # stable
+tool_search_always_defer_mcp_tools = true   # under development
+tool_suggest = true                         # stable
+tui_app_server = true                       # removed
+unavailable_dummy_tools = true              # under development
+undo = true                                 # removed
+unified_exec = true                         # stable
+use_linux_sandbox_bwrap = false             # removed Linux only
+workspace_dependencies = true               # stable
+workspace_owner_usage_nudge = true          # under development
+
+[mcp_servers.exa]
+type = "http"
+url = "https://mcp.exa.ai/mcp"
+
+[mcp_servers.memory]
+type = "stdio"
+args = [
+    "-y",
+    "@modelcontextprotocol/server-memory",
+]
+command = "npx"
+startup_timeout_sec = 15
+
+[mcp_servers.memory.env]
+MEMORY_FILE_PATH = "%USERPROFILE%/.mcp/data/memory.jsonl"
+
+[mcp_servers.context7]
+type = "stdio"
+args = [
+    "@upstash/context7-mcp",
+]
+command = "npx"
+startup_timeout_sec = 15
+
+[mcp_servers.context7.env]
+CONTEXT7_API_KEY = <redacted>
+
+[mcp_servers.playwright]
+type = "stdio"
+command = "npx"
+args = ["@playwright/mcp@latest"]
+startup_timeout_sec = 15
+
+[mcp_servers.sequential_thinking]
+args = [
+    "-y",
+    "@modelcontextprotocol/server-sequential-thinking",
+]
+command = "npx"
+startup_timeout_sec = 15
+
+
+[projects.'%USERPROFILE%
+trust_level = "trusted"
+
+[projects.'E:\Projects\Qintsg\QWeb']
+trust_level = "trusted"
+
+[projects.'e:\projects\qintsg\sspu-all-in-one']
+trust_level = "trusted"
+
+[projects.'e:\projects\wisdomedu\wisdom-edu']
+trust_level = "trusted"
+
+[projects.'e:\projects\scp-cv']
+trust_level = "trusted"
+
+[projects.'%USERPROFILE%']
+trust_level = "trusted"
+
+[projects.'%USERPROFILE%\documents\codex\2026-05-02\temp']
+trust_level = "trusted"
+
+[projects.'e:\projects\qintsg\personal-environment']
+trust_level = "trusted"
+
+[env]
+USE_OMX_EXPLORE_CMD = "1"
+
+# ============================================================
+# oh-my-codex (OMX) Configuration
+# Managed by omx setup - manual edits preserved on next setup
+# ============================================================
+
+# OMX State Management MCP Server
+[mcp_servers.omx_state]
+command = "node"
+args = ["%USERPROFILE%\\AppData\\Roaming\\npm\\node_modules\\oh-my-codex\\dist\\mcp\\state-server.js"]
+enabled = true
+startup_timeout_sec = 5
+
+# OMX Project Memory MCP Server
+[mcp_servers.omx_memory]
+command = "node"
+args = ["%USERPROFILE%\\AppData\\Roaming\\npm\\node_modules\\oh-my-codex\\dist\\mcp\\memory-server.js"]
+enabled = true
+startup_timeout_sec = 5
+
+# OMX Code Intelligence MCP Server (LSP diagnostics, AST search)
+[mcp_servers.omx_code_intel]
+command = "node"
+args = ["%USERPROFILE%\\AppData\\Roaming\\npm\\node_modules\\oh-my-codex\\dist\\mcp\\code-intel-server.js"]
+enabled = true
+startup_timeout_sec = 10
+
+# OMX Trace MCP Server (agent flow timeline & statistics)
+[mcp_servers.omx_trace]
+command = "node"
+args = ["%USERPROFILE%\\AppData\\Roaming\\npm\\node_modules\\oh-my-codex\\dist\\mcp\\trace-server.js"]
+enabled = true
+startup_timeout_sec = 5
+
+# OMX Wiki MCP Server (persistent project knowledge base)
+[mcp_servers.omx_wiki]
+command = "node"
+args = ["%USERPROFILE%\\AppData\\Roaming\\npm\\node_modules\\oh-my-codex\\dist\\mcp\\wiki-server.js"]
+enabled = true
+startup_timeout_sec = 5
+
+# OMX TUI StatusLine (Codex CLI v0.101.0+)
+[tui]
+status_line = ["model-with-reasoning", "git-branch", "context-remaining", "total-input-tokens", "total-output-tokens", "five-hour-limit", "weekly-limit"]
+
+[tui.model_availability_nux]
+"gpt-5.5" = 4
+
+[memories]
+no_memories_if_mcp_or_web_search = true
+
+[plugins."github@openai-curated"]
+enabled = true
+
+[plugins."test-android-apps@openai-curated"]
+enabled = true
+
+[plugins."browser-use@openai-bundled"]
+enabled = true
+
+[plugins."documents@openai-primary-runtime"]
+enabled = true
+
+[plugins."spreadsheets@openai-primary-runtime"]
+enabled = true
+
+[plugins."presentations@openai-primary-runtime"]
+enabled = true
+
+[plugins."coderabbit@openai-curated"]
+enabled = true
+
+[plugins."hyperframes@openai-curated"]
+enabled = true
+
+[plugins."remotion@openai-curated"]
+enabled = true
+
+[plugins."latex-tectonic@openai-bundled"]
+enabled = true
+
+[plugins."sentry@openai-curated"]
+enabled = true
+
+[plugins."linear@openai-curated"]
+enabled = true
+
+[plugins."hugging-face@openai-curated"]
+enabled = true
+
+[plugins."chatgpt-apps@openai-curated"]
+enabled = true
+
+[plugins."codex-security@openai-curated"]
+enabled = true
+
+[plugins."canva@openai-curated"]
+enabled = true
+
+[plugins."figma@openai-curated"]
+enabled = true
+
+[[skills.config]]
+path = '%USERPROFILE%\.codex\skills\sentry\SKILL.md'
+enabled = false
+
+[[skills.config]]
+path = '%USERPROFILE%\.codex\skills\figma\SKILL.md'
+enabled = false
+
+[[skills.config]]
+path = '%USERPROFILE%\.agents\skills\algorithmic-art\SKILL.md'
+enabled = true
+
+[[skills.config]]
+path = '%USERPROFILE%\.agents\skills\canvas-design\SKILL.md'
+enabled = true
+
+[[skills.config]]
+path = '%USERPROFILE%\.codex\skills\chatgpt-apps\SKILL.md'
+enabled = true
+
+[[skills.config]]
+path = '%USERPROFILE%\.codex\skills\figma-implement-design\SKILL.md'
+enabled = false
+
+[marketplaces.openai-bundled]
+last_updated = "2026-04-30T05:59:31Z"
+source_type = "local"
+source = '\\?\%USERPROFILE%\.codex\.tmp\bundled-marketplaces\openai-bundled'
+
+[marketplaces.openai-primary-runtime]
+last_updated = "2026-04-30T07:54:26Z"
+source_type = "local"
+source = '\\?\%USERPROFILE%\.cache\codex-runtimes\codex-primary-runtime\plugins\openai-primary-runtime'
+
+[windows]
+sandbox = "elevated"
+
+# ============================================================
+# End oh-my-codex
+

@@ -1,4 +1,4 @@
-local wezterm = require 'wezterm'
+﻿local wezterm = require 'wezterm'
 local nf = wezterm.nerdfonts
 
 local M = {}
@@ -173,8 +173,7 @@ function M.tab_key(target)
   return read_value(target, 'tab_id', 'tab_id')
 end
 
--- 保存人工设置的标签页标题。
-function M.set_manual_tab_title(target, title)
+-- 淇濆瓨浜哄伐璁剧疆鐨勬爣绛鹃〉鏍囬銆?function M.set_manual_tab_title(target, title)
   local key = M.tab_key(target)
   if not key then
     return
@@ -224,8 +223,7 @@ function M.current_working_dir(target)
   return value
 end
 
--- 只保留最后一级目录名，用于需要展示工作目录时的简短形式。
-function M.working_dir_name(target)
+-- 鍙繚鐣欐渶鍚庝竴绾х洰褰曞悕锛岀敤浜庨渶瑕佸睍绀哄伐浣滅洰褰曟椂鐨勭畝鐭舰寮忋€?function M.working_dir_name(target)
   local cwd = M.current_working_dir(target)
   if not cwd or cwd == '' then
     return nil
@@ -257,8 +255,7 @@ function M.is_shell_exe(exe)
   return shell_exes[exe] == true
 end
 
--- 判断当前 pane 对应的 shell 类型。
-function M.current_terminal_label(target)
+-- 鍒ゆ柇褰撳墠 pane 瀵瑰簲鐨?shell 绫诲瀷銆?function M.current_terminal_label(target)
   local exe = M.process_exe(target)
   local title = M.title(target):lower()
   local domain = M.domain_name(target)
@@ -352,8 +349,7 @@ function M.ssh_target(target)
   return nil
 end
 
--- 为状态栏、启动菜单等位置提供统一图标。
-function M.icon_for_label(label)
+-- 涓虹姸鎬佹爮銆佸惎鍔ㄨ彍鍗曠瓑浣嶇疆鎻愪緵缁熶竴鍥炬爣銆?function M.icon_for_label(label)
   local lower = (label or ''):lower()
 
   if lower == 'nushell' or lower == 'nu' then

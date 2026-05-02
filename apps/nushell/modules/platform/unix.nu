@@ -1,7 +1,6 @@
-# Linux 平台公共逻辑
+﻿# Linux 骞冲彴鍏叡閫昏緫
 #
-# WSL、Termux、macOS 有各自覆盖，避免同名命令重复定义。
-
+# WSL銆乀ermux銆乵acOS 鏈夊悇鑷鐩栵紝閬垮厤鍚屽悕鍛戒护閲嶅瀹氫箟銆?
 if ((is-linux) and (not (is-wsl)) and (not (is-termux))) {
   $env.NU_PLATFORM = 'linux'
 

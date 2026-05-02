@@ -1,8 +1,6 @@
-# Nushell 环境入口
+﻿# Nushell 鐜鍏ュ彛
 #
-# 这里只放最薄的一层环境变量定义。
-# 大多数行为配置都应放在 config.nu 和 modules 目录中。
-
+# 杩欓噷鍙斁鏈€钖勭殑涓€灞傜幆澧冨彉閲忓畾涔夈€?# 澶у鏁拌涓洪厤缃兘搴旀斁鍦?config.nu 鍜?modules 鐩綍涓€?
 $env.NU_CONFIG_ROOT = $nu.default-config-dir
 $env.NU_MODULE_ROOT = ($nu.default-config-dir | path join 'modules')
 $env.NU_DOC_ROOT = ($nu.default-config-dir | path join 'docs')

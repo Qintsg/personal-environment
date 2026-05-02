@@ -1,4 +1,4 @@
-# WSL 平台差异
+﻿# WSL 骞冲彴宸紓
 
 if ((is-wsl)) {
   $env.NU_PLATFORM = 'wsl'

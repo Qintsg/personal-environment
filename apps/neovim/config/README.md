@@ -1,8 +1,8 @@
-<h1 align="center">IceNvim</h1>
+﻿<h1 align="center">IceNvim</h1>
 
 <div align="center">
 
-*Please consider starring the project ✨✨✨. Your support is much appreciated.*
+*Please consider starring the project 鉁ㄢ湪鉁? Your support is much appreciated.*
 
 [![Minimum Neovim Version](https://img.shields.io/badge/Minimum_Neovim_Version-0.12.0-blueviolet.svg?style=for-the-badge&color=90E59A&logoColor=white)](https://github.com/neovim/neovim)
 [![Supported OS](https://img.shields.io/badge/Supported_OS-MacOS_/_Windows_/_Linux-blueviolet.svg?style=for-the-badge&color=violet&logoColor=white)](https://github.com/neovim/neovim)

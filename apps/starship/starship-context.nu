@@ -1,4 +1,4 @@
-def __root [] {
+﻿def __root [] {
   (pwd | str replace --all '\' '/')
 }
 
@@ -29,23 +29,23 @@ def __is-termux [] {
 def __contexts [] {
   {
     python: {
-      icon: '󰌠'
+      icon: '蟀尃'
       markers: ['pyproject.toml', 'requirements.txt', '.python-version', '.venv', 'venv', 'uv.lock', 'poetry.lock']
     }
     node: {
-      icon: '󰎙'
+      icon: '蟀帣'
       markers: ['package.json', '.nvmrc', 'node_modules', 'pnpm-lock.yaml', 'yarn.lock', 'package-lock.json', 'npm-shrinkwrap.json', 'bun.lock', 'bun.lockb']
     }
     rust: {
-      icon: ''
+      icon: '顬?
       markers: ['Cargo.toml', 'Cargo.lock']
     }
     java: {
-      icon: ''
+      icon: '顗?
       markers: ['pom.xml', 'build.gradle', 'build.gradle.kts', 'settings.gradle', 'settings.gradle.kts', 'gradlew']
     }
     go: {
-      icon: ''
+      icon: '顦?
       markers: ['go.mod', 'go.work']
     }
   }

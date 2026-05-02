@@ -140,6 +140,61 @@ function Export-TreeTextFiles {
     }
 }
 
+function Export-SkillInventory {
+    param(
+        [array]$Roots,
+        [string]$Destination,
+        [string]$Label
+    )
+
+    $lines = New-Object System.Collections.Generic.List[string]
+    $lines.Add('# Agent Skills Inventory') | Out-Null
+    $lines.Add('') | Out-Null
+    $lines.Add("Exported at: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')") | Out-Null
+    $lines.Add('') | Out-Null
+
+    foreach ($root in $Roots) {
+        $name = $root.Name
+        $path = $root.Path
+        $lines.Add("## $name") | Out-Null
+        $lines.Add('') | Out-Null
+
+        if (-not (Test-Path -LiteralPath $path)) {
+            $lines.Add('- Not found.') | Out-Null
+            $lines.Add('') | Out-Null
+            continue
+        }
+
+        $skills = Get-ChildItem -LiteralPath $path -Directory | Sort-Object Name
+        if (-not $skills) {
+            $lines.Add('- No skill directories found.') | Out-Null
+            $lines.Add('') | Out-Null
+            continue
+        }
+
+        foreach ($skill in $skills) {
+            $skillFile = Join-Path $skill.FullName 'SKILL.md'
+            $description = ''
+            if (Test-Path -LiteralPath $skillFile) {
+                $skillText = Get-Content -LiteralPath $skillFile -Raw
+                $heading = [regex]::Match($skillText, '(?m)^#\s+(.+)$')
+                if ($heading.Success) {
+                    $description = $heading.Groups[1].Value.Trim()
+                }
+            }
+
+            if ([string]::IsNullOrWhiteSpace($description)) {
+                $lines.Add('- `' + $skill.Name + '`') | Out-Null
+            } else {
+                $lines.Add('- `' + $skill.Name + '` - ' + $description) | Out-Null
+            }
+        }
+        $lines.Add('') | Out-Null
+    }
+
+    Write-SafeFile -Destination $Destination -Content ($lines -join "`n") -Label $Label
+}
+
 # Direct file exports.
 Export-TextFile -Source (Join-Path $userProfile '.gitconfig') -Destination 'apps/git/config.gitconfig' -Label 'git config'
 Export-TextFile -Source (Join-Path $appData 'Code\User\settings.json') -Destination 'apps/visual-studio-code/settings.json' -Label 'vscode settings'
@@ -157,6 +212,9 @@ Export-TextFile -Source (Join-Path $appData 'nushell\env.nu') -Destination 'apps
 Export-TextFile -Source (Join-Path $appData 'nushell\modules\shell\config.nu') -Destination 'apps/nushell/modules-shell-config.nu' -Label 'nushell module config'
 Export-TextFile -Source (Join-Path $appData 'GitHub CLI\config.yml') -Destination 'apps/github-cli/config.yml' -Label 'github cli config'
 Export-TextFile -Source (Join-Path $appData 'neovide\config.toml') -Destination 'apps/neovide/config.toml' -Label 'neovide config'
+Export-TextFile -Source (Join-Path $userProfile '.codex\config.toml') -Destination 'apps/codex/config.toml' -Label 'codex config'
+Export-TextFile -Source (Join-Path $userProfile '.codex\AGENTS.md') -Destination 'apps/codex/AGENTS.md' -Label 'codex global agents'
+Export-TextFile -Source (Join-Path $userProfile '.codex\version.json') -Destination 'apps/codex/version.json' -Label 'codex version'
 
 # Profile exports.
 $profilePaths = @(
@@ -175,6 +233,8 @@ foreach ($profilePath in $profilePaths) {
 Export-TreeTextFiles -SourceRoot (Join-Path $appData 'nushell\modules') -DestinationRoot 'apps/nushell/modules' -Extensions @('.nu', '.json', '.toml') -ExcludePathParts @() -LabelPrefix 'nushell modules'
 Export-TreeTextFiles -SourceRoot (Join-Path $userProfile '.config\wezterm') -DestinationRoot 'apps/wezterm/config' -Extensions @('.lua', '.toml') -ExcludePathParts @('\fonts\') -LabelPrefix 'wezterm'
 Export-TreeTextFiles -SourceRoot (Join-Path $localAppData 'nvim') -DestinationRoot 'apps/neovim/config' -Extensions @('.lua', '.json', '.toml', '.md', '.gitignore') -ExcludePathParts @('\.git\', '\bin\', '\screenshots\') -LabelPrefix 'neovim'
+Export-TreeTextFiles -SourceRoot (Join-Path $userProfile '.codex\rules') -DestinationRoot 'apps/codex/rules' -Extensions @('.rules', '.md', '.txt', '.json', '.toml') -ExcludePathParts @() -LabelPrefix 'codex rules'
+Export-TreeTextFiles -SourceRoot (Join-Path $userProfile '.config\opencode') -DestinationRoot 'apps/opencode/config' -Extensions @('.md', '.json', '.jsonc', '.ts', '.mjs', '.gitignore', 'package.json', 'package-lock.json', 'bun.lock') -ExcludePathParts @('\node_modules\', '\mcp-data\', '\.git\', '\messages\', '\parts\') -LabelPrefix 'opencode config'
 
 # Command exports.
 Export-CommandOutput -Command 'code' -Arguments @('--list-extensions', '--show-versions') -Destination 'apps/visual-studio-code/extensions.md' -Label 'vscode extensions'
@@ -193,6 +253,17 @@ Export-CommandOutput -Command 'cargo' -Arguments @('install', '--list') -Destina
 Export-CommandOutput -Command 'dotnet' -Arguments @('tool', 'list', '--global') -Destination 'apps/dotnet-sdk/global-tools.md' -Label 'dotnet global tools'
 Export-CommandOutput -Command 'uv' -Arguments @('tool', 'list') -Destination 'apps/uv/tools.md' -Label 'uv tools'
 
+Export-SkillInventory -Roots @(
+    [pscustomobject]@{ Name = 'Codex skills'; Path = (Join-Path $userProfile '.codex\skills') },
+    [pscustomobject]@{ Name = 'Agent skills'; Path = (Join-Path $userProfile '.agents\skills') },
+    [pscustomobject]@{ Name = 'OpenCode skills'; Path = (Join-Path $userProfile '.config\opencode\skills') }
+) -Destination 'apps/codex/skills-inventory.md' -Label 'agent skills inventory'
+
+Export-TextFile -Source (Join-Path $userProfile '.agents\.skill-lock.json') -Destination 'apps/codex/agent-skill-lock.json' -Label 'agent skill lock'
+Export-TextFile -Source (Join-Path $userProfile '.opencode\package.json') -Destination 'apps/opencode/runtime-package.json' -Label 'opencode runtime package'
+Export-TextFile -Source (Join-Path $userProfile '.opencode\package-lock.json') -Destination 'apps/opencode/runtime-package-lock.json' -Label 'opencode runtime package lock'
+Export-TextFile -Source (Join-Path $userProfile '.opencode\bun.lock') -Destination 'apps/opencode/runtime-bun.lock' -Label 'opencode runtime bun lock'
+
 # Docker Desktop exports. Registry credentials are intentionally skipped.
 Export-TextFile -Source (Join-Path $appData 'Docker\settings-store.json') -Destination 'apps/docker-desktop/settings-store.json' -Label 'docker settings store'
 Export-TextFile -Source (Join-Path $appData 'Docker\settings.json') -Destination 'apps/docker-desktop/settings.json' -Label 'docker settings'
@@ -205,6 +276,12 @@ Write-SafeFile -Destination 'apps/azure-cli/credentials-skipped.md' -Content "# 
 Write-SafeFile -Destination 'apps/termius/credentials-skipped.md' -Content "# Termius credentials skipped`n`nSkipped Termius application data because it may contain SSH hosts, private keys, session logs, cookies, or sync state.`n" -Label 'termius credentials skipped note'
 
 Write-SafeFile -Destination 'apps/ztools/config-skipped.md' -Content "# ZTools config skipped`n`nSkipped ZTools application data because it contains browser storage, cookies, cache files, clipboard images, local databases, and plugin runtime state. npm-installed ZTools packages are tracked separately.`n" -Label 'ztools config skipped note'
+
+Write-SafeFile -Destination 'apps/codex/credentials-skipped.md' -Content "# Codex credentials and runtime state skipped`n`nSkipped Codex auth, environment, sessions, archived sessions, browser data, cache, logs, sqlite databases, plugin cache, sandbox state, memories, model cache, and other runtime state because they may contain credentials, prompts, private workspace history, or large generated data.`n" -Label 'codex credentials skipped note'
+
+Write-SafeFile -Destination 'apps/codexmanager/credentials-skipped.md' -Content "# CodexManager credentials skipped`n`nSkipped `%USERPROFILE%\.codex_manager\auths` because it contains authentication profiles or tokens.`n" -Label 'codexmanager credentials skipped note'
+
+Write-SafeFile -Destination 'apps/opencode/credentials-skipped.md' -Content "# OpenCode credentials and runtime state skipped`n`nSkipped OpenCode messages, parts, node_modules, mcp-data, memory logs, browser/runtime state, and other generated data. Exported only text configuration, package manifests, commands, plugins, and skills after generic redaction.`n" -Label 'opencode credentials skipped note'
 
 $summary = @()
 $summary += '# Config Export Summary'

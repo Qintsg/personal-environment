@@ -1,4 +1,4 @@
--- Predefined colorschemes
+﻿-- Predefined colorschemes
 Ice.colorschemes = {
     ["cyberdream-dark"] = {
         name = "cyberdream",

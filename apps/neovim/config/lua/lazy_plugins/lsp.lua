@@ -1,4 +1,4 @@
-local function extend_unique(dst, items)
+﻿local function extend_unique(dst, items)
   local seen = {}
   for _, item in ipairs(dst) do
     seen[item] = true

@@ -1,3 +1,3 @@
-(node:16780) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(node:72936) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
 (Use `Cursor --trace-deprecation ...` to show where the warning was created)
 

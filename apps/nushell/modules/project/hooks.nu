@@ -1,9 +1,7 @@
-# 项目 hooks
+﻿# 椤圭洰 hooks
 #
-# 进入目录后自动：
-# 1. 识别项目根目录
-# 2. 识别语言栈
-# 3. 尝试接入 direnv
+# 杩涘叆鐩綍鍚庤嚜鍔細
+# 1. 璇嗗埆椤圭洰鏍圭洰褰?# 2. 璇嗗埆璇█鏍?# 3. 灏濊瘯鎺ュ叆 direnv
 
 def --env __project_env_refresh [] {
   let root = (project-root)

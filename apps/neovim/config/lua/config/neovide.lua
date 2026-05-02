@@ -1,4 +1,4 @@
-local M = {}
+﻿local M = {}
 
 local default_guifont = table.concat({
   "JetBrainsMono Nerd Font Mono",

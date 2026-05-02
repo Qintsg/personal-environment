@@ -1,4 +1,4 @@
-local wezterm = require 'wezterm'
+﻿local wezterm = require 'wezterm'
 local util = require 'modules.util'
 local metrics = require 'modules.metrics'
 
@@ -21,8 +21,7 @@ local function spacer(dst)
 end
 
 return function(_, _)
-  -- 右上角状态栏只保留当前终端、当前工具、CPU 和内存。
-  wezterm.on('update-status', function(window, pane)
+  -- 鍙充笂瑙掔姸鎬佹爮鍙繚鐣欏綋鍓嶇粓绔€佸綋鍓嶅伐鍏枫€丆PU 鍜屽唴瀛樸€?  wezterm.on('update-status', function(window, pane)
     local cells = {}
     local sample = metrics.sample()
 

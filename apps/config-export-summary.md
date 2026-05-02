@@ -1,6 +1,6 @@
-# Config Export Summary
+﻿# Config Export Summary
 
-Exported at: 2026-05-02 12:38:16
+Exported at: 2026-05-02 15:43:03
 
 ## Exported
 
@@ -17,6 +17,9 @@ Exported at: 2026-05-02 12:38:16
 - nushell module config
 - github cli config
 - neovide config
+- codex config
+- codex global agents
+- codex version
 - powershell profile Microsoft.PowerShell_profile.ps1
 - nushell modules/core\helpers.nu
 - nushell modules/integrations\atuin.nu
@@ -100,8 +103,27 @@ Exported at: 2026-05-02 12:38:16
 - neovim/lua\plugins\lazy.lua
 - neovim/lua\plugins\utils.lua
 - neovim/lua\user\hints.lua
+- codex rules/default.rules
+- opencode config/.gitignore
+- opencode config/AGENTS.md
+- opencode config/dcp.jsonc
+- opencode config/opencode-synced.jsonc
+- opencode config/opencode-synced.overrides.jsonc
+- opencode config/opencode.json
+- opencode config/package-lock.json
+- opencode config/package.json
+- opencode config/shell-strategy-zh.md
+- opencode config/command\context.md
+- opencode config/plugin\context-usage.ts
+- opencode config/plugin\tokenizer-aliases.json
+- opencode config/plugin\tokenizer-registry.d.ts
+- opencode config/plugin\tokenizer-registry.mjs
+- opencode config/plugin\shell-strategy\.gitignore
+- opencode config/plugin\shell-strategy\package.json
+- opencode config/plugin\shell-strategy\README.md
+- opencode config/plugin\shell-strategy\shell_strategy.md
+- opencode config/skills\plans-and-specs\SKILL.md
 - vscode insiders extensions
-- cursor extensions
 - scoop config
 - scoop buckets
 - chocolatey config
@@ -113,13 +135,20 @@ Exported at: 2026-05-02 12:38:16
 - rustup show
 - cargo install list
 - dotnet global tools
-- uv tools
+- agent skills inventory
+- agent skill lock
+- opencode runtime package
+- opencode runtime package lock
+- opencode runtime bun lock
 - docker settings store
 - docker credentials skipped note
 - github cli credentials skipped note
 - azure cli credentials skipped note
 - termius credentials skipped note
 - ztools config skipped note
+- codex credentials skipped note
+- codexmanager credentials skipped note
+- opencode credentials skipped note
 
 ## Safety Handling
 

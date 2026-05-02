@@ -1,4 +1,4 @@
-# 项目命令集合
+﻿# 椤圭洰鍛戒护闆嗗悎
 
 def repo-root [] {
   project-root
@@ -21,7 +21,7 @@ def repo-open [] {
       } else if (has-cmd open) {
         ^open $root
       } else {
-        print $"无法打开路径：($root)"
+        print $"鏃犳硶鎵撳紑璺緞锛?$root)"
       }
     }
   }

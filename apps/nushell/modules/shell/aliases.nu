@@ -1,4 +1,4 @@
-# Global aliases and small cross-platform helpers
+﻿# Global aliases and small cross-platform helpers
 
 alias g = git
 alias gs = git status --short --branch
@@ -47,7 +47,7 @@ def --env project [] {
   let target = (__first-existing $candidates)
 
   if $target == null {
-    print '未找到可用项目目录。'
+    print '鏈壘鍒板彲鐢ㄩ」鐩洰褰曘€?
   } else {
     cd $target
   }
@@ -64,7 +64,7 @@ def --env desktop [] {
   let target = (__first-existing $candidates)
 
   if $target == null {
-    print '未找到 Desktop 目录。'
+    print '鏈壘鍒?Desktop 鐩綍銆?
   } else {
     cd $target
   }
@@ -85,11 +85,11 @@ def vi [...args: string] {
 }
 
 def weather [] {
-  ^curl -fsSL 'https://wttr.in/上海?lang=zh'
+  ^curl -fsSL 'https://wttr.in/涓婃捣?lang=zh'
 }
 
 def wttr [] {
-  ^curl -fsSL 'https://wttr.in/上海?lang=zh&0'
+  ^curl -fsSL 'https://wttr.in/涓婃捣?lang=zh&0'
 }
 
 alias h = tldr

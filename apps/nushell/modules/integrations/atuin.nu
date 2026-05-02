@@ -1,7 +1,6 @@
-# Atuin 集成
+﻿# Atuin 闆嗘垚
 #
-# 先提供显式命令入口，后续如需更深绑定可以再扩展。
-
+# 鍏堟彁渚涙樉寮忓懡浠ゅ叆鍙ｏ紝鍚庣画濡傞渶鏇存繁缁戝畾鍙互鍐嶆墿灞曘€?
 if ((has-cmd atuin)) {
   def ah [] {
     ^atuin search --interactive

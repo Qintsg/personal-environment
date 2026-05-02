@@ -1,7 +1,6 @@
-# 项目 overlay
+﻿# 椤圭洰 overlay
 #
-# 这里放所有项目级通用命令。
-
+# 杩欓噷鏀炬墍鏈夐」鐩骇閫氱敤鍛戒护銆?
 export def pj-root [] {
   project-root
 }

@@ -1,8 +1,8 @@
-return function(wezterm, config)
+﻿return function(wezterm, config)
   local act = wezterm.action
   local fonts = require 'modules.fonts'
 
-  -- 字体优先级：
+  -- 瀛椾綋浼樺厛绾э細
   -- 1. JetBrainsMono Nerd Font
   -- 2. JetBrains Mono
   -- 3. Cascadia Mono
@@ -17,30 +17,25 @@ return function(wezterm, config)
   config.use_ime = true
   config.treat_left_ctrlalt_as_altgr = false
 
-  -- 使用系统风格的集成标题栏按钮，减少边框占用。
-  config.window_decorations = 'INTEGRATED_BUTTONS|RESIZE'
+  -- 浣跨敤绯荤粺椋庢牸鐨勯泦鎴愭爣棰樻爮鎸夐挳锛屽噺灏戣竟妗嗗崰鐢ㄣ€?  config.window_decorations = 'INTEGRATED_BUTTONS|RESIZE'
   config.integrated_title_button_style = 'Windows'
   config.integrated_title_button_alignment = 'Right'
   config.integrated_title_buttons = { 'Hide', 'Maximize', 'Close' }
 
-  -- 保持单行标签栏，右侧保留新建标签页按钮。
-  config.enable_tab_bar = true
+  -- 淇濇寔鍗曡鏍囩鏍忥紝鍙充晶淇濈暀鏂板缓鏍囩椤垫寜閽€?  config.enable_tab_bar = true
   config.hide_tab_bar_if_only_one_tab = false
   config.use_fancy_tab_bar = true
   config.show_tab_index_in_tab_bar = false
   config.show_new_tab_button_in_tab_bar = true
 
-  -- 适度留白，保持更接近 Windows Terminal 的容器感。
-  config.window_padding = {
+  -- 閫傚害鐣欑櫧锛屼繚鎸佹洿鎺ヨ繎 Windows Terminal 鐨勫鍣ㄦ劅銆?  config.window_padding = {
     left = 12,
     right = 12,
     top = 8,
     bottom = 8,
   }
 
-  -- 鼠标选择时只保留选择，不自动复制。
-  -- Ctrl + 左键用于打开鼠标下方的超链接。
-  config.mouse_bindings = {
+  -- 榧犳爣閫夋嫨鏃跺彧淇濈暀閫夋嫨锛屼笉鑷姩澶嶅埗銆?  -- Ctrl + 宸﹂敭鐢ㄤ簬鎵撳紑榧犳爣涓嬫柟鐨勮秴閾炬帴銆?  config.mouse_bindings = {
     {
       event = { Down = { streak = 1, button = 'Left' } },
       mods = 'CTRL',
@@ -93,8 +88,7 @@ return function(wezterm, config)
     },
   }
 
-  -- 关闭标签页或窗口时不再弹确认框。
-  config.window_close_confirmation = 'NeverPrompt'
+  -- 鍏抽棴鏍囩椤垫垨绐楀彛鏃朵笉鍐嶅脊纭妗嗐€?  config.window_close_confirmation = 'NeverPrompt'
   config.skip_close_confirmation_for_processes_named = {
     'nu',
     'nu.exe',
@@ -112,8 +106,7 @@ return function(wezterm, config)
     'ssh.exe',
   }
 
-  -- 状态栏刷新频率保持适中，避免频繁采样影响交互。
-  config.status_update_interval = 3000
+  -- 鐘舵€佹爮鍒锋柊棰戠巼淇濇寔閫備腑锛岄伩鍏嶉绻侀噰鏍峰奖鍝嶄氦浜掋€?  config.status_update_interval = 3000
   config.initial_cols = 120
   config.initial_rows = 32
 end

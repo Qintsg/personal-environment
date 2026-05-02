@@ -1,10 +1,7 @@
-# Python / uv 虚拟环境工作流
-#
-# 提供：
-# - venv-create / venv-enter / venv-exit / venv-python
+﻿# Python / uv 铏氭嫙鐜宸ヤ綔娴?#
+# 鎻愪緵锛?# - venv-create / venv-enter / venv-exit / venv-python
 # - uv-create / uv-enter / uv-exit / uv-python
-# - 自动检测 .venv 并提示进入
-
+# - 鑷姩妫€娴?.venv 骞舵彁绀鸿繘鍏?
 const __venv_activate_overlay = path self venv-activate-shim.nu
 
 def __venv_dir [root: string] {
@@ -39,13 +36,13 @@ def __venv_exists [root?: string] {
 def --env __venv_activate [label: string] {
   let root = (pwd)
   if not (__venv_exists $root) {
-    print "当前目录没有 .venv"
+    print "褰撳墠鐩綍娌℃湁 .venv"
     return
   }
 
   let activate_path = (__venv_activate_path $root)
   if not ($activate_path | path exists) {
-    print $".venv 中缺少 activate.nu：($activate_path)"
+    print $".venv 涓己灏?activate.nu锛?$activate_path)"
     return
   }
 
@@ -63,7 +60,7 @@ def --env __venv_activate [label: string] {
   }
 
   let venv_path = (__venv_dir $root)
-  print $"已通过 activate.nu 进入虚拟环境：($label) -> ($venv_path)"
+  print $"宸查€氳繃 activate.nu 杩涘叆铏氭嫙鐜锛?$label) -> ($venv_path)"
 }
 
 def --env __venv_deactivate [] {
@@ -78,7 +75,7 @@ def --env __venv_deactivate [] {
   try {
     deactivate
   } catch {
-    print "当前没有可退出的 activate overlay"
+    print "褰撳墠娌℃湁鍙€€鍑虹殑 activate overlay"
   }
 
   if $old_path != null {
@@ -102,7 +99,7 @@ def --env __venv_deactivate [] {
   hide-env VIRTUAL_ENV_PROMPT --ignore-errors
   hide-env VIRTUAL_PREFIX --ignore-errors
   hide-env PYTHON_ENV_PROVIDER --ignore-errors
-  print "已退出虚拟环境"
+  print "宸查€€鍑鸿櫄鎷熺幆澧?
 }
 
 export def venv-create [] {
@@ -114,12 +111,12 @@ export def venv-create [] {
   }
 
   if $python_bin == null {
-    print "未找到 Python，可执行文件不存在。"
+    print "鏈壘鍒?Python锛屽彲鎵ц鏂囦欢涓嶅瓨鍦ㄣ€?
     return
   }
 
   run-external $python_bin '-m' 'venv' (__venv_dir $root)
-  print "已创建 .venv"
+  print "宸插垱寤?.venv"
 }
 
 def --env venv-enter [] {
@@ -133,7 +130,7 @@ def --env venv-exit [] {
 export def venv-python [...args: string] {
   let root = (pwd)
   if not (__venv_exists $root) {
-    print "当前目录没有 .venv"
+    print "褰撳墠鐩綍娌℃湁 .venv"
     return
   }
 
@@ -144,12 +141,12 @@ export def venv-python [...args: string] {
 export def uv-create [] {
   let root = (pwd)
   if ((which uv | is-empty)) {
-    print "当前环境未安装 uv。"
+    print "褰撳墠鐜鏈畨瑁?uv銆?
     return
   }
 
   run-external uv 'venv' (__venv_dir $root)
-  print "已通过 uv 创建 .venv"
+  print "宸查€氳繃 uv 鍒涘缓 .venv"
 }
 
 def --env uv-enter [] {
@@ -163,7 +160,7 @@ def --env uv-exit [] {
 export def uv-python [...args: string] {
   let root = (pwd)
   if not (__venv_exists $root) {
-    print "当前目录没有 .venv"
+    print "褰撳墠鐩綍娌℃湁 .venv"
     return
   }
 
@@ -180,12 +177,12 @@ def __prompt_venv_enter [] {
   if (__venv_exists $root) {
     if (((__venv_activate_path $root) | path exists)) {
       if ((which uv | is-empty)) {
-        print "检测到当前目录存在 .venv，可执行 venv-enter 进入虚拟环境。"
+        print "妫€娴嬪埌褰撳墠鐩綍瀛樺湪 .venv锛屽彲鎵ц venv-enter 杩涘叆铏氭嫙鐜銆?
       } else {
-        print "检测到当前目录存在 .venv，可执行 venv-enter 或 uv-enter 进入虚拟环境。"
+        print "妫€娴嬪埌褰撳墠鐩綍瀛樺湪 .venv锛屽彲鎵ц venv-enter 鎴?uv-enter 杩涘叆铏氭嫙鐜銆?
       }
     } else {
-      print "检测到当前目录存在 .venv，但缺少 activate.nu。"
+      print "妫€娴嬪埌褰撳墠鐩綍瀛樺湪 .venv锛屼絾缂哄皯 activate.nu銆?
     }
   }
 }

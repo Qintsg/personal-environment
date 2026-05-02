@@ -1,10 +1,8 @@
-# Termux / Android 平台差异
+﻿# Termux / Android 骞冲彴宸紓
 #
-# 典型场景：
-# - Termux 原生 shell
-# - Termux 中的 Debian / proot 容器
-# - 从上述环境发起的 SSH 客户端会话
-
+# 鍏稿瀷鍦烘櫙锛?# - Termux 鍘熺敓 shell
+# - Termux 涓殑 Debian / proot 瀹瑰櫒
+# - 浠庝笂杩扮幆澧冨彂璧风殑 SSH 瀹㈡埛绔細璇?
 if ((is-termux)) {
   $env.NU_PLATFORM = 'termux'
 

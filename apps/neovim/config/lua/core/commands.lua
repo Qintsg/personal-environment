@@ -1,4 +1,4 @@
-local function config_window(win, buf)
+﻿local function config_window(win, buf)
     vim.keymap.set("n", "q", "<C-w>c", { buffer = buf })
     vim.api.nvim_set_option_value("number", false, { win = win })
     vim.api.nvim_set_option_value("relativenumber", false, { win = win })
@@ -21,11 +21,11 @@ vim.api.nvim_create_user_command("IceAbout", function()
 
     vim.api.nvim_buf_set_lines(buf, 0, -1, false, {
         "",
-        "一个美观、强大且高度可定制的 Neovim 配置。",
+        "涓€涓編瑙傘€佸己澶т笖楂樺害鍙畾鍒剁殑 Neovim 閰嶇疆銆?,
         "",
-        "作者：Shaobin Jiang",
+        "浣滆€咃細Shaobin Jiang",
         "",
-        "地址：https://github.com/Shaobin-Jiang/IceNvim",
+        "鍦板潃锛歨ttps://github.com/Shaobin-Jiang/IceNvim",
         "",
         string.format("Copyright (c) 2022-%s Shaobin Jiang", os.date "%Y"),
     })
@@ -37,9 +37,9 @@ vim.api.nvim_create_user_command("IceAbout", function()
         row = top,
         col = left,
         border = "rounded",
-        title = "关于 IceNvim",
+        title = "鍏充簬 IceNvim",
         title_pos = "center",
-        footer = "按 q 关闭窗口",
+        footer = "鎸?q 鍏抽棴绐楀彛",
         footer_pos = "center",
     })
 
@@ -93,9 +93,9 @@ vim.api.nvim_create_user_command("IceCheckIcons", function()
         row = top,
         col = left,
         border = "rounded",
-        title = "检查 Nerd Font 图标",
+        title = "妫€鏌?Nerd Font 鍥炬爣",
         title_pos = "center",
-        footer = "按 q 关闭窗口",
+        footer = "鎸?q 鍏抽棴绐楀彛",
         footer_pos = "center",
     })
 
@@ -157,7 +157,7 @@ vim.api.nvim_create_user_command("IceCheckPlugins", function()
                     row = row,
                     col = col,
                     border = "rounded",
-                    title = string.format("可能过时的插件：%d 个", #stale_plugins),
+                    title = string.format("鍙兘杩囨椂鐨勬彃浠讹細%d 涓?, #stale_plugins),
                     title_pos = "center",
                 })
 
@@ -199,9 +199,9 @@ end, { nargs = 0 })
 vim.api.nvim_create_user_command("IceUpdate", function()
     vim.system({ "git", "pull" }, { cwd = vim.fn.stdpath "config", text = true }, function(out)
         if out.code == 0 then
-            vim.notify("IceNvim 已是最新")
+            vim.notify("IceNvim 宸叉槸鏈€鏂?)
         else
-            vim.notify("IceNvim 更新失败：" .. out.stderr, vim.log.levels.WARN)
+            vim.notify("IceNvim 鏇存柊澶辫触锛? .. out.stderr, vim.log.levels.WARN)
         end
     end)
 end, { nargs = 0 })
@@ -216,7 +216,7 @@ end, { nargs = "+", complete = "command" })
 
 vim.api.nvim_create_user_command("IceTokei", function()
     if vim.fn.executable "tokei" == 0 then
-        vim.notify("未安装 Tokei。", vim.log.levels.WARN)
+        vim.notify("鏈畨瑁?Tokei銆?, vim.log.levels.WARN)
         return
     end
 
@@ -224,7 +224,7 @@ vim.api.nvim_create_user_command("IceTokei", function()
 
     require("core.utils").system({ "tokei" }, { cwd = pwd, text = true }, function(out)
         if out.code ~= 0 then
-            vim.notify("Tokei 发生异常：" .. out.stderr, vim.log.levels.WARN)
+            vim.notify("Tokei 鍙戠敓寮傚父锛? .. out.stderr, vim.log.levels.WARN)
             return
         end
 
@@ -250,9 +250,9 @@ vim.api.nvim_create_user_command("IceTokei", function()
             row = top,
             col = left,
             border = "rounded",
-            title = "Tokei 统计 " .. pwd,
+            title = "Tokei 缁熻 " .. pwd,
             title_pos = "center",
-            footer = "按 q 关闭窗口",
+            footer = "鎸?q 鍏抽棴绐楀彛",
             footer_pos = "center",
         })
 
@@ -285,7 +285,7 @@ vim.api.nvim_create_user_command("IceYank", function(args)
             redir @+>
             silent %s
             redir END
-            lua vim.notify("内容已复制到系统剪贴板")
+            lua vim.notify("鍐呭宸插鍒跺埌绯荤粺鍓创鏉?)
         ]],
         args.args
     ))
