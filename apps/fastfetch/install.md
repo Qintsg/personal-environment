@@ -6,7 +6,7 @@
 
 ## 当前记录
 
-- 来源：scoop
+- 来源：scoop main
 - 当前版本：2.62.1
 - 包 ID：`fastfetch`
 
@@ -19,3 +19,4 @@ scoop install fastfetch
 ## 备注
 
 - 当前记录来自 Scoop 清单。
+

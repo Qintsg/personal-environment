@@ -1,4 +1,4 @@
-﻿require "core.basic"
+require "core.basic"
 require "core.commands"
 require "core.ft"
 require "core.keymap"

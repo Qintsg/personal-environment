@@ -19,3 +19,4 @@ npm install -g @abhiz123/todoist-mcp-server
 ## 备注
 
 - 不在仓库中记录 Todoist token 或账号信息。
+

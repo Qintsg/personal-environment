@@ -6,7 +6,7 @@
 
 ## 当前记录
 
-- 来源：cargo
+- 来源：cargo install
 - 当前版本：0.21.14
 - 包 ID：`trunk`
 
@@ -19,3 +19,4 @@ cargo install trunk
 ## 备注
 
 - 当前记录来自 `cargo install --list`。
+

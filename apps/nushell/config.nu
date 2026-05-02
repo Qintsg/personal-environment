@@ -1,12 +1,15 @@
-﻿# Nushell 涓婚厤缃叆鍙?#
-# 璁捐鍘熷垯锛?# 1. 鍏变韩鏍稿績閫昏緫
-# 2. 骞冲彴宸紓鎷嗗埌鐙珛妯″潡
-# 3. 鏈満绉佹湁淇℃伅鏀惧埌 local 瑕嗙洊灞?# 4. 椤圭洰鑳藉姏閫氳繃 hooks 鍜?overlay 鎺ュ叆
+# Nushell 主配置入口
+#
+# 设计原则：
+# 1. 共享核心逻辑
+# 2. 平台差异拆到独立模块
+# 3. 本机私有信息放到 local 覆盖层
+# 4. 项目能力通过 hooks 和 overlay 接入
 
 source modules/core/helpers.nu
 source modules/shell/config.nu
 source modules/shell/aliases.nu
-# Starship 缁熶竴璧?vendor autoload 鎺ュ叆锛岄伩鍏嶄笌鎵嬪姩 PROMPT_* 璁剧疆閲嶅
+# Starship 统一走 vendor autoload 接入，避免与手动 PROMPT_* 设置重复
 source modules/platform/windows.nu
 source modules/platform/unix.nu
 source modules/platform/termux.nu

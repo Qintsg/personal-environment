@@ -7,7 +7,7 @@
 ## 当前记录
 
 - 来源：winget
-- 当前版本：0.41.0
+- 当前版本：v0.41.0
 - 包 ID：`shinchiro.mpv`
 
 ## 安装方式
@@ -19,3 +19,4 @@ winget install --id shinchiro.mpv --exact --accept-package-agreements --accept-s
 ## 备注
 
 - 当前记录来自 Windows 已安装程序清单。
+

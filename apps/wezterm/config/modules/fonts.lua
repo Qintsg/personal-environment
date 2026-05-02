@@ -1,4 +1,4 @@
-﻿local wezterm = require 'wezterm'
+local wezterm = require 'wezterm'
 
 local M = {}
 
@@ -132,7 +132,8 @@ function M.available_families()
     end
   end
 
-  -- 鍗充娇灏氭湭瀹夎鎺ㄨ崘瀛椾綋锛屼篃淇濊瘉浣跨敤 WezTerm 鍐呯疆鍙敤瀛椾綋锛屼笉瑙﹀彂缂哄瓧浣撹鍛娿€?  if #families == 0 then
+  -- 即使尚未安装推荐字体，也保证使用 WezTerm 内置可用字体，不触发缺字体警告。
+  if #families == 0 then
     table.insert(families, 'JetBrains Mono')
   end
   table.insert(families, 'Symbols Nerd Font Mono')
@@ -175,20 +176,20 @@ $packs = @(
 
 Write-Host ''
 Write-Host '========================================='
-Write-Host ' WezTerm 瀛椾綋瀹夎'
+Write-Host ' WezTerm 字体安装'
 Write-Host '========================================='
-Write-Host "瀹夎鐩綍: $fontRoot"
+Write-Host "安装目录: $fontRoot"
 Write-Host ''
 
 $total = $packs.Count
 $index = 0
 foreach ($pack in $packs) {
   $index++
-  Write-Host ("[{0}/{1}] 澶勭悊 {2}" -f $index, $total, $pack.family) -ForegroundColor Cyan
+  Write-Host ("[{0}/{1}] 处理 {2}" -f $index, $total, $pack.family) -ForegroundColor Cyan
   $release = Invoke-RestMethod -Uri ("https://api.github.com/repos/{0}/{1}/releases/latest" -f $pack.owner, $pack.repo) -Headers @{ 'User-Agent' = 'wezterm-font-bootstrap' }
   $asset = $release.assets | Where-Object { $_.name -like $pack.asset } | Select-Object -First 1
   if (-not $asset) {
-    throw "鎵句笉鍒板瓧浣撹祫婧愶細$($pack.family)"
+    throw "找不到字体资源：$($pack.family)"
   }
 
   $tmp = Join-Path $env:TEMP ("wezterm-font-" + [guid]::NewGuid().ToString())
@@ -197,28 +198,28 @@ foreach ($pack in $packs) {
   New-Item -ItemType Directory -Force -Path $tmp | Out-Null
   New-Item -ItemType Directory -Force -Path $extract | Out-Null
 
-  Write-Host ("  涓嬭浇: {0}" -f $asset.name)
+  Write-Host ("  下载: {0}" -f $asset.name)
   & curl.exe -L --progress-bar $asset.browser_download_url -o $zip
-  if ($LASTEXITCODE -ne 0) { throw "涓嬭浇澶辫触锛?($pack.family)" }
+  if ($LASTEXITCODE -ne 0) { throw "下载失败：$($pack.family)" }
 
-  Write-Host "  瑙ｅ帇涓?.."
+  Write-Host "  解压中..."
   Expand-Archive -Path $zip -DestinationPath $extract -Force
 
-  Write-Host "  澶嶅埗瀛椾綋鏂囦欢..."
+  Write-Host "  复制字体文件..."
   Get-ChildItem -Path $extract -Recurse -Include *.ttf,*.otf | ForEach-Object {
     Copy-Item $_.FullName -Destination $fontRoot -Force
   }
 
   Set-Content -Path $pack.marker -Value $release.tag_name -Encoding UTF8
   Remove-Item -Path $tmp -Recurse -Force -ErrorAction SilentlyContinue
-  Write-Host ("  瀹屾垚: {0}" -f $pack.family) -ForegroundColor Green
+  Write-Host ("  完成: {0}" -f $pack.family) -ForegroundColor Green
   Write-Host ''
 }
 
-Write-Host '鍏ㄩ儴瀛椾綋瀹夎瀹屾垚銆? -ForegroundColor Green
-Write-Host '璇疯繑鍥?WezTerm 鍚庢寜 Ctrl+Shift+R 閲嶈浇閰嶇疆銆?
+Write-Host '全部字体安装完成。' -ForegroundColor Green
+Write-Host '请返回 WezTerm 后按 Ctrl+Shift+R 重载配置。'
 Write-Host ''
-Read-Host '鎸夊洖杞﹀叧闂鏍囩椤?
+Read-Host '按回车关闭此标签页'
 ]]
 
   return {
@@ -262,13 +263,13 @@ os.makedirs(font_root, exist_ok=True)
 
 print("")
 print("=========================================")
-print(" WezTerm 瀛椾綋瀹夎")
+print(" WezTerm 字体安装")
 print("=========================================")
-print("瀹夎鐩綍:", font_root)
+print("安装目录:", font_root)
 print("")
 
 for index, pack in enumerate(packs, start=1):
-    print(f"[{index}/{len(packs)}] 澶勭悊 {pack['family']}")
+    print(f"[{index}/{len(packs)}] 处理 {pack['family']}")
     req = urllib.request.Request(
         f"https://api.github.com/repos/{pack['owner']}/{pack['repo']}/releases/latest",
         headers={'User-Agent': 'wezterm-font-bootstrap'}
@@ -282,9 +283,9 @@ for index, pack in enumerate(packs, start=1):
             asset = item
             break
     if asset is None:
-        raise RuntimeError(f"鎵句笉鍒板瓧浣撹祫婧愶細{pack['family']}")
+        raise RuntimeError(f"找不到字体资源：{pack['family']}")
 
-    print(f"  涓嬭浇: {asset['name']}")
+    print(f"  下载: {asset['name']}")
     with tempfile.TemporaryDirectory(prefix='wezterm-font-') as tmp:
         zip_path = os.path.join(tmp, 'font.zip')
         extract_dir = os.path.join(tmp, 'extract')
@@ -310,11 +311,11 @@ for index, pack in enumerate(packs, start=1):
                 sys.stdout.write("\n")
                 sys.stdout.flush()
 
-        print("  瑙ｅ帇涓?..")
+        print("  解压中...")
         with zipfile.ZipFile(zip_path) as zf:
             zf.extractall(extract_dir)
 
-        print("  澶嶅埗瀛椾綋鏂囦欢...")
+        print("  复制字体文件...")
         for root, _, files in os.walk(extract_dir):
             for name in files:
                 if name.lower().endswith(('.ttf', '.otf')):
@@ -323,12 +324,12 @@ for index, pack in enumerate(packs, start=1):
     with open(pack['marker'], 'w', encoding='utf-8') as fp:
         fp.write(release.get('tag_name', 'installed'))
 
-    print(f"  瀹屾垚: {pack['family']}")
+    print(f"  完成: {pack['family']}")
     print("")
 
-print("鍏ㄩ儴瀛椾綋瀹夎瀹屾垚銆?)
-print("璇烽噸鍚疻ezTerm閲嶈浇閰嶇疆銆?)
-input("鎸夊洖杞﹀叧闂鏍囩椤?)
+print("全部字体安装完成。")
+print("请重启WezTerm重载配置。")
+input("按回车关闭此标签页")
 ]]
 
   return {
@@ -358,20 +359,20 @@ function M.register_prompt(wezterm)
 
     window:perform_action(
       wezterm.action.InputSelector({
-        title = '妫€娴嬪埌缂哄皯鎺ㄨ崘瀛椾綋',
+        title = '检测到缺少推荐字体',
         choices = {
           {
             id = 'install',
-            label = '鎵撳紑瀛椾綋瀹夎椤甸潰骞跺紑濮嬩笅杞?,
+            label = '打开字体安装页面并开始下载',
           },
           {
             id = 'skip',
-            label = '鏈璺宠繃',
+            label = '本次跳过',
           },
         },
         action = wezterm.action_callback(function(inner_window, inner_pane, id)
           if id ~= 'install' then
-            inner_window:toast_notification('WezTerm 瀛椾綋', '宸茶烦杩囧瓧浣撳畨瑁?, nil, 3000)
+            inner_window:toast_notification('WezTerm 字体', '已跳过字体安装', nil, 3000)
             return
           end
 
@@ -383,8 +384,8 @@ function M.register_prompt(wezterm)
           end
 
           inner_window:toast_notification(
-            'WezTerm 瀛椾綋',
-            '鍗冲皢鎵撳紑瀛椾綋瀹夎鏍囩椤碉細' .. table.concat(names, '銆?),
+            'WezTerm 字体',
+            '即将打开字体安装标签页：' .. table.concat(names, '、'),
             nil,
             4000
           )

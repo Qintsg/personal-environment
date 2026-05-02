@@ -1,4 +1,4 @@
-﻿{
+{
   "editor.unicodeHighlight.nonBasicASCII": false,
   "editor.language.brackets": [],
   "files.autoSave": "afterDelay",
@@ -57,14 +57,14 @@
       "id": "ROOT"
     }
   ],
-  "http.proxyAuthorization": null,
+  "http.proxyAuthorization": "<redacted>",
   "http.proxyStrictSSL": false,
   "http.proxySupport": "on",
   "python.analysis.typeCheckingMode": "standard",
   "chat.tools.terminal.autoApprove": {
     "git add": true,
     "git commit": true,
-    "/^cd \"e:\\\\Projects\\\\WisdomEdu\\\\wisdom-edu-api\" ; python -c \"\nimport pandas as pd\n# Read the knowledge graph Excel\nxls = pd\\.ExcelFile\\('璧勬枡/鏅烘収鏁欒偛骞冲彴-璇剧▼璧勬簮/澶ф暟鎹浘璋辨瀯寤篭\.xlsx'\\)\nprint\\('=== 鐭ヨ瘑鍥捐氨 Sheet names:', xls\\.sheet_names\\)\nfor sheet in xls\\.sheet_names:\n    df = pd\\.read_excel\\(xls, sheet_name=sheet\\)\n    print\\(f'\\\\n--- Sheet: \\{sheet\\} ---'\\)\n    print\\('Columns:', list\\(df\\.columns\\)\\)\n    print\\('Rows:', len\\(df\\)\\)\n    print\\(df\\.head\\(5\\)\\.to_string\\(\\)\\)\n\"\n$/": {
+    "/^cd \"e:\\\\Projects\\\\WisdomEdu\\\\wisdom-edu-api\" ; python -c \"\nimport pandas as pd\n# Read the knowledge graph Excel\nxls = pd\\.ExcelFile\\('资料/智慧教育平台-课程资源/大数据图谱构建\\.xlsx'\\)\nprint\\('=== 知识图谱 Sheet names:', xls\\.sheet_names\\)\nfor sheet in xls\\.sheet_names:\n    df = pd\\.read_excel\\(xls, sheet_name=sheet\\)\n    print\\(f'\\\\n--- Sheet: \\{sheet\\} ---'\\)\n    print\\('Columns:', list\\(df\\.columns\\)\\)\n    print\\('Rows:', len\\(df\\)\\)\n    print\\(df\\.head\\(5\\)\\.to_string\\(\\)\\)\n\"\n$/": {
       "approve": true,
       "matchCommandLine": true
     },
@@ -95,7 +95,7 @@
   "redhat.telemetry.enabled": true,
   "workbench.browser.enableChatTools": true,
   "python.createEnvironment.trigger": "off",
-  "remote.SSH.configFile": "C:\\Users\\qinta\\.ssh\\config",
+  "remote.SSH.configFile": "%USERPROFILE%\\.ssh\\config",
   "github.copilot.chat.localeOverride": "zh-CN",
   "chat.tips.enabled": false,
   "github.copilot.enable": {
@@ -104,7 +104,7 @@
     "scminput": false,
     "plaintext": true
   },
-  "github.copilot.chat.anthropic.thinking.budgetTokens": "<redacted>"
+  "github.copilot.chat.anthropic.thinking.budgetTokens": 32000,
   "github.copilot.chat.responsesApiContextManagement.enabled": true,
   "github.copilot.chat.gpt54LargePrompt.enabled": true,
   "terminal.integrated.defaultProfile.windows": "Nushell",

@@ -6,7 +6,7 @@
 
 ## 当前记录
 
-- 来源：scoop
+- 来源：scoop main
 - 当前版本：2026-03-19
 - 包 ID：`cacert`
 
@@ -19,3 +19,4 @@ scoop install cacert
 ## 备注
 
 - 当前记录来自 Scoop 清单。
+

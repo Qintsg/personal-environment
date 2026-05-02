@@ -19,3 +19,4 @@ winget install --id Canonical.Ubuntu.2404 --exact --accept-package-agreements --
 ## 备注
 
 - 这是 WSL 发行版记录。
+

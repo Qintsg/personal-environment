@@ -1,4 +1,4 @@
-﻿local utils = require "core.utils"
+local utils = require "core.utils"
 
 local config_path = vim.fn.stdpath "config"
 

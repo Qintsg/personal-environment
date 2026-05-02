@@ -7,7 +7,7 @@
 ## 当前记录
 
 - 来源：winget
-- 当前版本：rustup 1.29.0
+- 当前版本：1.29.0
 - 包 ID：`Rustlang.Rustup`
 
 ## 安装方式
@@ -19,3 +19,4 @@ winget install --id Rustlang.Rustup --exact --accept-package-agreements --accept
 ## 备注
 
 - 本机已检测到 `cargo` 和 `rustup` 命令。
+

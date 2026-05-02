@@ -19,3 +19,4 @@ winget install --id Baidu.BaiduNetdisk --exact --accept-package-agreements --acc
 ## 备注
 
 - 不在仓库中记录账号或同步目录内容。
+

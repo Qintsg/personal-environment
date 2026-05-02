@@ -19,3 +19,4 @@ npm install -g opencode-codex-usage
 ## 备注
 
 - 当前记录来自 npm 全局包清单。
+

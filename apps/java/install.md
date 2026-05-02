@@ -6,8 +6,8 @@
 
 ## 当前记录
 
-- 来源：winget / 注册表扫描
-- 当前版本：JDK 21.0.11、JDK 25.0.2、Java 8 Update 481、Java 1.4.2
+- 来源：winget
+- 当前版本：25.0.2.0
 - 包 ID：`Oracle.JDK.21`
 
 ## 安装方式
@@ -19,3 +19,4 @@ winget install --id Oracle.JDK.21 --exact --accept-package-agreements --accept-s
 ## 备注
 
 - 本机存在多个 Java 版本；旧版本是否需要保留需按项目确认。
+

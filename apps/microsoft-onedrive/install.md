@@ -19,3 +19,4 @@ winget install --id Microsoft.OneDrive --exact --accept-package-agreements --acc
 ## 备注
 
 - 不在仓库中记录同步目录内容或账号信息。
+

@@ -6,16 +6,17 @@
 
 ## 当前记录
 
-- 来源：winget、choco、scoop
-- 当前版本：3.14.4 / 3.10.11
-- 包 ID：`Python.Python.3.14`
+- 来源：choco
+- 当前版本：3.14.4
+- 包 ID：`python`
 
 ## 安装方式
 
 ```powershell
-winget install --id Python.Python.3.14 --exact --accept-package-agreements --accept-source-agreements --disable-interactivity
+choco install python -y
 ```
 
 ## 备注
 
 - 本机同时存在多个 Python 版本；恢复时按项目需要安装。
+

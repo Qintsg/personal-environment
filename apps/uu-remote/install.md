@@ -19,3 +19,4 @@ winget install --id NetEase.UURemote --exact --accept-package-agreements --accep
 ## 备注
 
 - 不在仓库中记录远程连接凭据。
+

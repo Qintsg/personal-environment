@@ -7,7 +7,7 @@
 ## 当前记录
 
 - 来源：winget
-- 当前版本：26.3.1
+- 当前版本：Unknown
 - 包 ID：`DeepL.DeepL`
 
 ## 安装方式
@@ -19,3 +19,4 @@ winget install --id DeepL.DeepL --exact --accept-package-agreements --accept-sou
 ## 备注
 
 - 当前记录来自 Windows 已安装程序清单。
+

@@ -1,4 +1,4 @@
-﻿return function(wezterm, config)
+return function(wezterm, config)
   local target = tostring(wezterm.target_triple or ''):lower()
 
   config.window_padding = {

@@ -1,0 +1,207 @@
+{
+    "apps": [
+        {
+            "Source": "main",
+            "Updated": "2026-04-27T08:33:57.0109752+08:00",
+            "Name": "7zip",
+            "Info": "",
+            "Version": "26.00"
+        },
+        {
+            "Source": "extras",
+            "Updated": "2026-04-13T20:31:07.7630718+08:00",
+            "Name": "alacritty",
+            "Info": "",
+            "Version": "0.17.0"
+        },
+        {
+            "Source": "extras",
+            "Updated": "2026-04-27T09:01:59.6263453+08:00",
+            "Name": "altsendme",
+            "Info": "",
+            "Version": "0.3.5"
+        },
+        {
+            "Source": "main",
+            "Updated": "2026-04-12T10:03:21.0745426+08:00",
+            "Name": "cacert",
+            "Info": "",
+            "Version": "2026-03-19"
+        },
+        {
+            "Source": "main",
+            "Updated": "2026-04-27T08:33:49.6873041+08:00",
+            "Name": "clink",
+            "Info": "",
+            "Version": "1.9.20"
+        },
+        {
+            "Source": "main",
+            "Updated": "2026-04-27T08:31:12.0033826+08:00",
+            "Name": "cmake",
+            "Info": "",
+            "Version": "4.3.2"
+        },
+        {
+            "Source": "main",
+            "Updated": "2026-04-12T16:01:47.3268092+08:00",
+            "Name": "croc",
+            "Info": "",
+            "Version": "10.4.2"
+        },
+        {
+            "Source": "main",
+            "Updated": "2026-04-27T08:33:59.3753012+08:00",
+            "Name": "curl",
+            "Info": "",
+            "Version": "8.19.0_8"
+        },
+        {
+            "Source": "main",
+            "Updated": "2026-04-12T10:05:35.7693733+08:00",
+            "Name": "dark",
+            "Info": "",
+            "Version": "3.14.1"
+        },
+        {
+            "Source": "main",
+            "Updated": "2026-04-27T08:47:40.765008+08:00",
+            "Name": "fastfetch",
+            "Info": "",
+            "Version": "2.62.1"
+        },
+        {
+            "Source": "main",
+            "Updated": "2026-04-12T10:03:40.3549992+08:00",
+            "Name": "fd",
+            "Info": "",
+            "Version": "10.4.2"
+        },
+        {
+            "Source": "main",
+            "Updated": "2026-04-12T12:30:45.151894+08:00",
+            "Name": "gcc",
+            "Info": "",
+            "Version": "15.2.0"
+        },
+        {
+            "Source": "main",
+            "Updated": "2026-04-12T12:37:50.5456276+08:00",
+            "Name": "go",
+            "Info": "",
+            "Version": "1.26.2"
+        },
+        {
+            "Source": "main",
+            "Updated": "2026-04-12T10:03:19.7006231+08:00",
+            "Name": "gzip",
+            "Info": "",
+            "Version": "1.3.12"
+        },
+        {
+            "Source": "nerd-fonts",
+            "Updated": "2026-04-12T12:22:15.5078813+08:00",
+            "Name": "JetBrainsMono-NF-Mono",
+            "Info": "",
+            "Version": "3.4.0"
+        },
+        {
+            "Source": "extras",
+            "Updated": "2026-04-30T13:01:49.0889755+08:00",
+            "Name": "localsend",
+            "Info": "",
+            "Version": "1.17.0"
+        },
+        {
+            "Source": "main",
+            "Updated": "2026-04-12T10:05:10.2835019+08:00",
+            "Name": "mingw",
+            "Info": "",
+            "Version": "15.2.0-rt_v13-rev1"
+        },
+        {
+            "Source": "main",
+            "Updated": "2026-04-27T08:49:03.0544448+08:00",
+            "Name": "neovim",
+            "Info": "",
+            "Version": "0.12.2"
+        },
+        {
+            "Source": "main",
+            "Updated": "2026-04-16T17:38:35.7888114+08:00",
+            "Name": "nodejs-lts",
+            "Info": "",
+            "Version": "24.15.0"
+        },
+        {
+            "Source": "main",
+            "Updated": "2026-04-12T10:06:31.075984+08:00",
+            "Name": "python",
+            "Info": "",
+            "Version": "3.14.4"
+        },
+        {
+            "Source": "main",
+            "Updated": "2026-04-12T10:03:45.2470824+08:00",
+            "Name": "ripgrep",
+            "Info": "",
+            "Version": "15.1.0"
+        },
+        {
+            "Source": "main",
+            "Updated": "2026-04-14T09:51:14.0708176+08:00",
+            "Name": "scoop-search",
+            "Info": "",
+            "Version": "2.1.0"
+        },
+        {
+            "Source": "main",
+            "Updated": "2026-04-12T09:03:07.007575+08:00",
+            "Name": "tealdeer",
+            "Info": "",
+            "Version": "1.8.1"
+        },
+        {
+            "Source": "main",
+            "Updated": "2026-04-12T10:06:33.6333153+08:00",
+            "Name": "tree-sitter",
+            "Info": "",
+            "Version": "0.26.8"
+        },
+        {
+            "Source": "main",
+            "Updated": "2026-04-12T10:03:34.8733873+08:00",
+            "Name": "wget",
+            "Info": "",
+            "Version": "1.21.4"
+        },
+        {
+            "Source": "main",
+            "Updated": "2026-04-12T12:22:07.7888596+08:00",
+            "Name": "yarn",
+            "Info": "",
+            "Version": "1.22.22"
+        }
+    ],
+    "buckets": [
+        {
+            "Name": "main",
+            "Source": "https://github.com/ScoopInstaller/Main.git",
+            "Updated": "2026-04-30T12:37:20+08:00",
+            "Manifests": 1508
+        },
+        {
+            "Name": "extras",
+            "Source": "https://github.com/ScoopInstaller/Extras",
+            "Updated": "2026-04-30T12:24:42+08:00",
+            "Manifests": 2305
+        },
+        {
+            "Name": "nerd-fonts",
+            "Source": "https://github.com/matthewjberger/scoop-nerd-fonts",
+            "Updated": "2026-04-18T23:36:56+08:00",
+            "Manifests": 367
+        }
+    ]
+}
+

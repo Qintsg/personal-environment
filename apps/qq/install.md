@@ -19,3 +19,4 @@ winget install --id Tencent.QQ.NT --exact --accept-package-agreements --accept-s
 ## 备注
 
 - 不在仓库中记录账号或聊天数据。
+

@@ -19,3 +19,4 @@ npm install -g @google/gemini-cli
 ## 备注
 
 - 不在仓库中记录 API key 或登录凭据。
+

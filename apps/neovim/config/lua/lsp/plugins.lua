@@ -1,4 +1,4 @@
-﻿local symbols = Ice.symbols
+local symbols = Ice.symbols
 
 Ice.plugins["flutter-tools"] = {
     "nvim-flutter/flutter-tools.nvim",

@@ -7,7 +7,7 @@
 ## 当前记录
 
 - 来源：winget
-- 当前版本：13.1、13.2
+- 当前版本：13.2
 - 包 ID：`Nvidia.CUDA`
 
 ## 安装方式
@@ -19,3 +19,4 @@ winget install --id Nvidia.CUDA --exact --accept-package-agreements --accept-sou
 ## 备注
 
 - 本机存在多个 CUDA Toolkit 版本记录。
+

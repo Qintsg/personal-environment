@@ -6,16 +6,17 @@
 
 ## 当前记录
 
-- 来源：winget、scoop
+- 来源：scoop main
 - 当前版本：1.26.2
-- 包 ID：`GoLang.Go`
+- 包 ID：`go`
 
 ## 安装方式
 
 ```powershell
-winget install --id GoLang.Go --exact --accept-package-agreements --accept-source-agreements --disable-interactivity
+scoop install go
 ```
 
 ## 备注
 
 - Scoop 中也记录了 `go`。
+

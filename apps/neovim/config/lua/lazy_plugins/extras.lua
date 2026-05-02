@@ -1,4 +1,4 @@
-﻿return {
+return {
   { import = "lazyvim.plugins.extras.ui.dashboard-nvim" },
   { import = "lazyvim.plugins.extras.editor.telescope" },
   { import = "lazyvim.plugins.extras.editor.neo-tree" },

@@ -19,3 +19,4 @@ npm install -g @github/copilot
 ## 备注
 
 - 不在仓库中记录 GitHub token 或授权信息。
+

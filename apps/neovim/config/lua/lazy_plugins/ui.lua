@@ -1,4 +1,4 @@
-﻿local palette = {
+local palette = {
   bg = "#fafafa",
   bg_dark = "#f0f2f5",
   bg_sidebar = "#f4f4f5",
@@ -20,8 +20,8 @@ local function dashboard_footer()
   local stats = require("lazy").stats()
   local ms = math.floor(stats.startuptime * 100 + 0.5) / 100
   return {
-    "ff 鏌ユ壘鏂囦欢   fr 鏈€杩戞枃浠?  e 鏂囦欢鏍?  sg 鍏ㄦ枃鎼滅储   k 蹇嵎閿?,
-    string.format("宸插姞杞?%d/%d 涓彃浠讹紝鍚姩鑰楁椂 %.2fms", stats.loaded, stats.count, ms),
+    "ff 查找文件   fr 最近文件   e 文件树   sg 全文搜索   k 快捷键",
+    string.format("已加载 %d/%d 个插件，启动耗时 %.2fms", stats.loaded, stats.count, ms),
   }
 end
 
@@ -36,7 +36,7 @@ end
 
 local function root_label()
   local root = vim.fn.fnamemodify(LazyVim.root(), ":~")
-  return " 飦?" .. root .. " "
+  return "  " .. root .. " "
 end
 
 local function title_label()
@@ -44,7 +44,7 @@ local function title_label()
   if name == "" then
     return ""
   end
-  return " 飬?" .. name .. " "
+  return "  " .. name .. " "
 end
 
 local function right_label()
@@ -53,7 +53,7 @@ local function right_label()
   if os_name == "Windows_NT" then
     os_name = "Windows"
   end
-  return string.format(" 璇硶 %s 路 绯荤粺 %s ", ft, os_name)
+  return string.format(" 语法 %s · 系统 %s ", ft, os_name)
 end
 
 local function winbar_enabled()
@@ -152,15 +152,15 @@ return {
         spacing = 6,
       })
       opts.spec = vim.list_extend(opts.spec or {}, {
-        { "<leader>b", group = "缂撳啿鍖? },
-        { "<leader>c", group = "浠ｇ爜" },
-        { "<leader>f", group = "鏂囦欢" },
+        { "<leader>b", group = "缓冲区" },
+        { "<leader>c", group = "代码" },
+        { "<leader>f", group = "文件" },
         { "<leader>g", group = "Git" },
         { "<leader>h", group = "Git Hunk" },
-        { "<leader>l", group = "鎻掍欢绠＄悊" },
-        { "<leader>s", group = "鎼滅储" },
-        { "<leader>u", group = "鐣岄潰" },
-        { "<leader>x", group = "璇婃柇/鍒楄〃" },
+        { "<leader>l", group = "插件管理" },
+        { "<leader>s", group = "搜索" },
+        { "<leader>u", group = "界面" },
+        { "<leader>x", group = "诊断/列表" },
       })
     end,
   },
@@ -170,13 +170,13 @@ return {
     opts = function(_, opts)
       local logo = {
         " ",
-        "                    鈻熲枅鈻堚枅鈻?                   ",
-        "                   鈻熲枅鈻堚枅鈻堚枅鈻?                  ",
-        "                鈻熲枅鈻堚枅鈻?鈻溾枅鈻堚枅鈻?                 ",
-        "               鈻熲枅鈻堚枦     鈻溾枅鈻堚枡                 ",
-        "               鈻溾枅鈻堚枡     鈻熲枅鈻堚枦                 ",
-        "                鈻溾枅鈻堚枅鈻?鈻熲枅鈻堚枅鈻?                 ",
-        "                  鈻溾枅鈻堚枅鈻堚枅鈻?                   ",
+        "                    ▟███▙                    ",
+        "                   ▟█████▙                   ",
+        "                ▟███▛ ▜███▙                  ",
+        "               ▟██▛     ▜██▙                 ",
+        "               ▜██▙     ▟██▛                 ",
+        "                ▜███▙ ▟███▛                  ",
+        "                  ▜█████▛                    ",
         "                   VSCODE                    ",
         "                   Qintsg                    ",
         " ",
@@ -190,17 +190,17 @@ return {
       opts.config = opts.config or {}
       opts.config.header = logo
       opts.config.center = {
-        { icon = "[f] ", desc = "鏌ユ壘鏂囦欢", action = 'lua LazyVim.pick("files")()', key = "f" },
-        { icon = "[r] ", desc = "鏈€杩戞枃浠?, action = 'lua LazyVim.pick("oldfiles")()', key = "r" },
-        { icon = "[e] ", desc = "鏂囦欢鏍?, action = "Neotree toggle", key = "e" },
-        { icon = "[g] ", desc = "鍏ㄦ枃鎼滅储", action = 'lua LazyVim.pick("live_grep")()', key = "g" },
-        { icon = "[n] ", desc = "鏂板缓鏂囦欢", action = "ene | startinsert", key = "n" },
-        { icon = "[t] ", desc = "缁堢", action = 'lua Snacks.terminal()', key = "t" },
-        { icon = "[s] ", desc = "鎭㈠浼氳瘽", action = 'lua require("persistence").load()', key = "s" },
-        { icon = "[m] ", desc = "宸ュ叿绠＄悊", action = "Mason", key = "m" },
-        { icon = "[k] ", desc = "蹇嵎閿彁绀?, action = 'lua require("user.hints").show()', key = "k" },
-        { icon = "[l] ", desc = "鎻掍欢绠＄悊", action = "Lazy", key = "l" },
-        { icon = "[q] ", desc = "閫€鍑?Neovim", action = "qa", key = "q" },
+        { icon = "[f] ", desc = "查找文件", action = 'lua LazyVim.pick("files")()', key = "f" },
+        { icon = "[r] ", desc = "最近文件", action = 'lua LazyVim.pick("oldfiles")()', key = "r" },
+        { icon = "[e] ", desc = "文件树", action = "Neotree toggle", key = "e" },
+        { icon = "[g] ", desc = "全文搜索", action = 'lua LazyVim.pick("live_grep")()', key = "g" },
+        { icon = "[n] ", desc = "新建文件", action = "ene | startinsert", key = "n" },
+        { icon = "[t] ", desc = "终端", action = 'lua Snacks.terminal()', key = "t" },
+        { icon = "[s] ", desc = "恢复会话", action = 'lua require("persistence").load()', key = "s" },
+        { icon = "[m] ", desc = "工具管理", action = "Mason", key = "m" },
+        { icon = "[k] ", desc = "快捷键提示", action = 'lua require("user.hints").show()', key = "k" },
+        { icon = "[l] ", desc = "插件管理", action = "Lazy", key = "l" },
+        { icon = "[q] ", desc = "退出 Neovim", action = "qa", key = "q" },
       }
       opts.config.footer = dashboard_footer
 
@@ -230,27 +230,27 @@ return {
       opts.default_component_configs = vim.tbl_deep_extend("force", opts.default_component_configs or {}, {
         indent = {
           with_expanders = true,
-          expander_collapsed = "飸?,
-          expander_expanded = "飸?,
+          expander_collapsed = "",
+          expander_expanded = "",
           expander_highlight = "NeoTreeExpander",
         },
         icon = {
-          folder_closed = "顥?,
-          folder_open = "顥?,
-          folder_empty = "飷?,
-          default = "顦?,
+          folder_closed = "",
+          folder_open = "",
+          folder_empty = "",
+          default = "",
         },
         git_status = {
           symbols = {
-            added = "鈼?,
-            modified = "鈼?,
-            deleted = "鉁?,
-            renamed = "蟀仌",
-            untracked = "鈼?,
-            ignored = "飸?,
-            unstaged = "鈼?,
-            staged = "鈻?,
-            conflict = "顪?,
+            added = "●",
+            modified = "●",
+            deleted = "✖",
+            renamed = "󰁕",
+            untracked = "◌",
+            ignored = "",
+            unstaged = "●",
+            staged = "■",
+            conflict = "",
           },
         },
       })
@@ -286,7 +286,7 @@ return {
         lualine_b = {
           {
             "branch",
-            icon = "飷?,
+            icon = "",
             color = { bg = palette.bg_dark, fg = palette.fg },
           },
           {
@@ -310,11 +310,11 @@ return {
         lualine_x = {
           {
             "diagnostics",
-            symbols = { error = "飦?", warn = "飦?", info = "飦?", hint = "飪?" },
+            symbols = { error = " ", warn = " ", info = " ", hint = " " },
           },
           {
             "diff",
-            symbols = { added = "飪?", modified = "飬?", removed = "飬?" },
+            symbols = { added = " ", modified = " ", removed = " " },
           },
         },
         lualine_y = {
@@ -323,7 +323,7 @@ return {
         lualine_z = {
           {
             function()
-              return os.date("蟊憜 %H:%M")
+              return os.date("󱑆 %H:%M")
             end,
             color = { bg = palette.bg_status, fg = palette.bg_dark, gui = "bold" },
           },
@@ -335,7 +335,7 @@ return {
           {
             root_label,
             color = "LualineChip",
-            separator = { left = "顐?, right = "顐? },
+            separator = { left = "", right = "" },
             cond = winbar_enabled,
             padding = 0,
           },
@@ -345,7 +345,7 @@ return {
           {
             title_label,
             color = "LualineTitle",
-            separator = { left = "顐?, right = "顐? },
+            separator = { left = "", right = "" },
             cond = function()
               return winbar_enabled() and title_label() ~= ""
             end,
@@ -358,7 +358,7 @@ return {
           {
             right_label,
             color = "LualineMeta",
-            separator = { left = "顐?, right = "顐? },
+            separator = { left = "", right = "" },
             cond = winbar_enabled,
             padding = 0,
           },

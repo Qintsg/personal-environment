@@ -1,8 +1,8 @@
-﻿[user]
+[user]
 	email = <email>
 	name = Qintsg
 [core]
-	editor = \"C:\\Users\\qinta\\AppData\\Local\\Programs\\Microsoft VS Code\\bin\\code\" --wait
+	editor = \"%USERPROFILE%\\AppData\\Local\\Programs\\Microsoft VS Code\\bin\\code\" --wait
 [safe]
 	directory = *
 [filter "lfs"]

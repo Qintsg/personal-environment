@@ -19,3 +19,4 @@ winget install --id Microsoft.WindowsTerminal --exact --accept-package-agreement
 ## 备注
 
 - 当前记录来自 `winget list`。
+

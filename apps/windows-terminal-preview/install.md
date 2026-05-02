@@ -19,3 +19,4 @@ winget install --id Microsoft.WindowsTerminal.Preview --exact --accept-package-a
 ## 备注
 
 - 当前记录来自 `winget list`。
+

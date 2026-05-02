@@ -20,16 +20,19 @@ function ConvertTo-SafeContent {
         $safe = $safe -replace [regex]::Escape($userProfile), '%USERPROFILE%'
         $safe = $safe -replace [regex]::Escape($userProfile.Replace('\', '/')), '%USERPROFILE%'
     }
+    $safe = $safe -replace '(?i)C:\\\\Users\\\\[^\\/"\r\n]+', '%USERPROFILE%'
+    $safe = $safe -replace '(?i)C:\\Users\\[^\\/"\r\n]+', '%USERPROFILE%'
+    $safe = $safe -replace '(?i)C:/Users/[^/\\":\r\n]+', '%USERPROFILE%'
 
     $safe = $safe -replace '(?i)[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}', '<email>'
     $safe = $safe -replace '(?i)(https?://)([^\s/@:]+):([^\s/@]+)@', '$1<redacted>@'
     $safe = $safe -replace '(?i)(Bearer\s+)[A-Za-z0-9._~+\-/]+=*', '$1<redacted>'
     $safe = $safe -replace '(?i)(authorization:\s*)(.+)', '$1<redacted>'
 
-    $secretKeys = 'token|secret|password|passwd|api[_-]?key|apikey|credential|cookie|private[_-]?key|client[_-]?secret|access[_-]?key|refresh[_-]?token|auth[_-]?token|session[_-]?(id|token|key)'
-    $safe = $safe -replace ("(?im)^([^\r\n#;]*(" + $secretKeys + ")[^\r\n:=]*\s*[:=]\s*).+$"), '$1<redacted>'
-    $safe = $safe -replace ("(?im)(`"[^`"\r\n]*(" + $secretKeys + ")[^`"\r\n]*`"\s*:\s*)`"[^`"\r\n]*`""), '$1"<redacted>"'
-    $safe = $safe -replace ("(?im)(`"[^`"\r\n]*(" + $secretKeys + ")[^`"\r\n]*`"\s*:\s*)[^,}\r\n]+"), '$1"<redacted>"'
+    $secretKeys = 'secret|password|passwd|api[_-]?key|apikey|authorization|credential|cookie|private[_-]?key|client[_-]?secret|access[_-]?key|access[_-]?token|refresh[_-]?token|auth[_-]?token|session[_-]?(id|token|key)|(^|[_\.-])token([_\.-]|$)'
+    $safe = $safe -replace ("(?im)^(\s*[A-Za-z0-9_.-]*(" + $secretKeys + ")[A-Za-z0-9_.-]*\s*[:=]\s*).+$"), '$1<redacted>'
+    $safe = $safe -replace ("(?im)(^|[,{]\s*)(`"[^`"\r\n:,{]*(" + $secretKeys + ")[^`"\r\n:,{]*`"\s*:\s*)`"[^`"\r\n]*`""), '$1$2"<redacted>"'
+    $safe = $safe -replace ("(?im)(^|[,{]\s*)(`"[^`"\r\n:,{]*(" + $secretKeys + ")[^`"\r\n:,{]*`"\s*:\s*)[^,}\r\n]+"), '$1$2"<redacted>"'
 
     return $safe.TrimEnd() + "`n"
 }
@@ -84,6 +87,30 @@ function Export-CommandOutput {
     Write-SafeFile -Destination $Destination -Content $output -Label $Label
 }
 
+function Export-YarnConfig {
+    $cmd = Get-Command 'yarn' -ErrorAction SilentlyContinue
+    if (-not $cmd) { return }
+
+    $output = & yarn config list --json 2>&1 | Out-String
+    if ([string]::IsNullOrWhiteSpace($output)) { return }
+
+    $items = New-Object System.Collections.Generic.List[object]
+    foreach ($line in ($output -split "`r?`n")) {
+        if ([string]::IsNullOrWhiteSpace($line)) { continue }
+        try {
+            $items.Add(($line | ConvertFrom-Json)) | Out-Null
+        } catch {
+            $items.Add([pscustomobject]@{
+                type = 'raw'
+                data = $line
+            }) | Out-Null
+        }
+    }
+
+    if ($items.Count -eq 0) { return }
+    Write-SafeFile -Destination 'apps/yarn/config.json' -Content ($items | ConvertTo-Json -Depth 20) -Label 'yarn config'
+}
+
 function Export-TreeTextFiles {
     param(
         [string]$SourceRoot,
@@ -124,10 +151,12 @@ Export-TextFile -Source (Join-Path $appData 'Cursor\User\keybindings.json') -Des
 Export-TextFile -Source (Join-Path $localAppData 'Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json') -Destination 'apps/windows-terminal/settings.json' -Label 'windows terminal settings'
 Export-TextFile -Source (Join-Path $localAppData 'Packages\Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe\LocalState\settings.json') -Destination 'apps/windows-terminal-preview/settings.json' -Label 'windows terminal preview settings'
 Export-TextFile -Source (Join-Path $userProfile '.config\starship.toml') -Destination 'apps/starship/starship.toml' -Label 'starship config'
+Export-TextFile -Source (Join-Path $userProfile '.config\starship-context.nu') -Destination 'apps/starship/starship-context.nu' -Label 'starship context helper'
 Export-TextFile -Source (Join-Path $appData 'nushell\config.nu') -Destination 'apps/nushell/config.nu' -Label 'nushell config'
 Export-TextFile -Source (Join-Path $appData 'nushell\env.nu') -Destination 'apps/nushell/env.nu' -Label 'nushell env'
 Export-TextFile -Source (Join-Path $appData 'nushell\modules\shell\config.nu') -Destination 'apps/nushell/modules-shell-config.nu' -Label 'nushell module config'
 Export-TextFile -Source (Join-Path $appData 'GitHub CLI\config.yml') -Destination 'apps/github-cli/config.yml' -Label 'github cli config'
+Export-TextFile -Source (Join-Path $appData 'neovide\config.toml') -Destination 'apps/neovide/config.toml' -Label 'neovide config'
 
 # Profile exports.
 $profilePaths = @(
@@ -143,6 +172,7 @@ foreach ($profilePath in $profilePaths) {
 }
 
 # Directory exports for text-only configs.
+Export-TreeTextFiles -SourceRoot (Join-Path $appData 'nushell\modules') -DestinationRoot 'apps/nushell/modules' -Extensions @('.nu', '.json', '.toml') -ExcludePathParts @() -LabelPrefix 'nushell modules'
 Export-TreeTextFiles -SourceRoot (Join-Path $userProfile '.config\wezterm') -DestinationRoot 'apps/wezterm/config' -Extensions @('.lua', '.toml') -ExcludePathParts @('\fonts\') -LabelPrefix 'wezterm'
 Export-TreeTextFiles -SourceRoot (Join-Path $localAppData 'nvim') -DestinationRoot 'apps/neovim/config' -Extensions @('.lua', '.json', '.toml', '.md', '.gitignore') -ExcludePathParts @('\.git\', '\bin\', '\screenshots\') -LabelPrefix 'neovim'
 
@@ -155,7 +185,7 @@ Export-CommandOutput -Command 'scoop' -Arguments @('bucket', 'list') -Destinatio
 Export-CommandOutput -Command 'choco' -Arguments @('config', 'list', '--limit-output') -Destination 'apps/chocolatey/config.md' -Label 'chocolatey config'
 Export-CommandOutput -Command 'npm' -Arguments @('config', 'list', '--json') -Destination 'apps/npm/config.json' -Label 'npm config'
 Export-CommandOutput -Command 'pnpm' -Arguments @('config', 'list', '--json') -Destination 'apps/pnpm/config.json' -Label 'pnpm config'
-Export-CommandOutput -Command 'yarn' -Arguments @('config', 'list', '--json') -Destination 'apps/yarn/config.json' -Label 'yarn config'
+Export-YarnConfig
 Export-CommandOutput -Command 'python' -Arguments @('-m', 'pip', 'config', 'list') -Destination 'apps/python/pip-config.md' -Label 'pip config'
 Export-CommandOutput -Command 'go' -Arguments @('env', '-json') -Destination 'apps/go/go-env.json' -Label 'go env'
 Export-CommandOutput -Command 'rustup' -Arguments @('show') -Destination 'apps/rust/rustup-show.md' -Label 'rustup show'

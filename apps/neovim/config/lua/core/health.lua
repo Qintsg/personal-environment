@@ -1,4 +1,4 @@
-﻿local M = {}
+local M = {}
 
 -- Checks whether the cmd is executable and determines how to behave if it is not
 --

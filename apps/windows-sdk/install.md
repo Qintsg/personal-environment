@@ -6,8 +6,8 @@
 
 ## 当前记录
 
-- 来源：winget / 注册表扫描
-- 当前版本：10.0.22621.5040、10.0.26100.7705
+- 来源：winget
+- 当前版本：10.0.26100.7705
 - 包 ID：`Microsoft.WindowsSDK.10.0.26100`
 
 ## 安装方式
@@ -19,3 +19,4 @@ winget install --id Microsoft.WindowsSDK.10.0.26100 --exact --accept-package-agr
 ## 备注
 
 - 本机存在多个 Windows SDK 版本记录。
+

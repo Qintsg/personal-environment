@@ -19,3 +19,4 @@ winget install --id JetBrains.Toolbox --exact --accept-package-agreements --acce
 ## 备注
 
 - JetBrains 系列 IDE 当前主要通过 Toolbox 管理。
+

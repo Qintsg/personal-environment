@@ -19,3 +19,4 @@ winget install --id Tencent.WeCom --exact --accept-package-agreements --accept-s
 ## 备注
 
 - 不在仓库中记录账号或工作区数据。
+

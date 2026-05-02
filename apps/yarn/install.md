@@ -6,7 +6,7 @@
 
 ## 当前记录
 
-- 来源：scoop
+- 来源：scoop main
 - 当前版本：1.22.22
 - 包 ID：`yarn`
 
@@ -19,3 +19,4 @@ scoop install yarn
 ## 备注
 
 - 本机 `yarn` 命令来自 Scoop。
+

@@ -19,3 +19,4 @@ winget install --id CharlesMilette.TranslucentTB --exact --accept-package-agreem
 ## 备注
 
 - 当前记录来自 Windows 已安装程序清单。
+

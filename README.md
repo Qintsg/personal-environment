@@ -26,8 +26,15 @@
 - 不提交 `.env`、token、私钥、账号密码、授权文件等敏感内容。
 - 删除不用的旧目录，保持结构简单。
 
+## 同步脚本
+
+- 使用 `scripts/export-packages.ps1` 同步本机软件包清单、包管理器原始导出和可恢复安装记录。
+- 使用 `scripts/export-configs.ps1` 同步白名单内的常用配置文件，并在写入前做通用脱敏。
+- 导出后优先复核 `apps/package-export-summary.md` 和 `apps/config-export-summary.md`。
+
 ## 文档索引
 
+- [软件与包总览](SOFTWARE_OVERVIEW.md)
 - [程序存放规则](docs/程序存放规则.md)
 - [软件记录规范](docs/软件记录规范.md)
 - [配置存放规则](docs/配置存放规则.md)

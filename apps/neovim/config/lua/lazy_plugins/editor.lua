@@ -1,4 +1,4 @@
-﻿return {
+return {
   {
     "MagicDuck/grug-far.nvim",
     cmd = "GrugFar",
@@ -8,7 +8,7 @@
         function()
           require("grug-far").open()
         end,
-        desc = "鏌ユ壘骞舵浛鎹?,
+        desc = "查找并替换",
       },
     },
     opts = {
@@ -30,7 +30,7 @@
             local node = state.tree:get_node()
             vim.fn.setreg("+", node:get_id(), "c")
           end,
-          desc = "澶嶅埗璺緞鍒板壀璐存澘",
+          desc = "复制路径到剪贴板",
         },
       })
       opts.filesystem = vim.tbl_deep_extend("force", opts.filesystem or {}, {

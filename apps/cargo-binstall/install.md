@@ -6,7 +6,7 @@
 
 ## 当前记录
 
-- 来源：cargo
+- 来源：cargo install
 - 当前版本：1.18.1
 - 包 ID：`cargo-binstall`
 
@@ -19,3 +19,4 @@ cargo install cargo-binstall
 ## 备注
 
 - 当前记录来自 `cargo install --list`。
+

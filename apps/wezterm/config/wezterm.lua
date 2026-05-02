@@ -1,8 +1,9 @@
-﻿local wezterm = require 'wezterm'
+local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 local fonts = require 'modules.fonts'
 
--- 鍏佽浠庡綋鍓嶉厤缃洰褰曠洿鎺?require 鑷畾涔夋ā鍧椼€?package.path = package.path
+-- 允许从当前配置目录直接 require 自定义模块。
+package.path = package.path
     .. ';' .. wezterm.config_dir .. '/?.lua'
     .. ';' .. wezterm.config_dir .. '/?/init.lua'
 

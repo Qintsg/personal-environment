@@ -19,3 +19,4 @@ npm install -g mcp-all-in-one
 ## 备注
 
 - 不在仓库中记录 MCP 服务凭据。
+

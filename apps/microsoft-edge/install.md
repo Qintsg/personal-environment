@@ -7,7 +7,7 @@
 ## 当前记录
 
 - 来源：winget
-- 当前版本：148.0.3967.34
+- 当前版本：148.0.3967.42
 - 包 ID：`Microsoft.Edge`
 
 ## 安装方式
@@ -19,3 +19,4 @@ winget install --id Microsoft.Edge --exact --accept-package-agreements --accept-
 ## 备注
 
 - 当前记录来自 Windows 已安装程序清单。
+

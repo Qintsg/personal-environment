@@ -6,7 +6,7 @@
 
 ## 当前记录
 
-- 来源：scoop / 注册表扫描
+- 来源：scoop main
 - 当前版本：0.12.2
 - 包 ID：`neovim`
 
@@ -19,3 +19,4 @@ scoop install neovim
 ## 备注
 
 - 本机同时检测到 Scoop 和注册表安装记录。
+

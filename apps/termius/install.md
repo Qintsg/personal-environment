@@ -19,3 +19,4 @@ winget install --id Termius.Termius --exact --accept-package-agreements --accept
 ## 备注
 
 - 不在仓库中记录 SSH 主机、私钥、账号或同步数据。
+

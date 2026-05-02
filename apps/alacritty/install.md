@@ -6,16 +6,18 @@
 
 ## 当前记录
 
-- 来源：scoop
+- 来源：scoop extras
 - 当前版本：0.17.0
 - 包 ID：`alacritty`
 
 ## 安装方式
 
 ```powershell
+scoop bucket add extras
 scoop install alacritty
 ```
 
 ## 备注
 
 - 当前记录来自 Scoop 清单。
+

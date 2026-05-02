@@ -20,3 +20,4 @@ scoop install altsendme
 ## 备注
 
 - 当前记录来自 Scoop 清单。
+

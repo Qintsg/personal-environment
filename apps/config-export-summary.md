@@ -1,6 +1,6 @@
-﻿# Config Export Summary
+# Config Export Summary
 
-Exported at: 2026-04-30 15:15:58
+Exported at: 2026-05-02 12:38:16
 
 ## Exported
 
@@ -11,11 +11,35 @@ Exported at: 2026-04-30 15:15:58
 - windows terminal settings
 - windows terminal preview settings
 - starship config
+- starship context helper
 - nushell config
 - nushell env
 - nushell module config
 - github cli config
+- neovide config
 - powershell profile Microsoft.PowerShell_profile.ps1
+- nushell modules/core\helpers.nu
+- nushell modules/integrations\atuin.nu
+- nushell modules/integrations\carapace.nu
+- nushell modules/integrations\direnv.nu
+- nushell modules/integrations\plugins.nu
+- nushell modules/integrations\zoxide.nu
+- nushell modules/local\example.local.nu
+- nushell modules/local\local.nu
+- nushell modules/local\login.local.nu
+- nushell modules/platform\macos.nu
+- nushell modules/platform\termux.nu
+- nushell modules/platform\unix.nu
+- nushell modules/platform\windows.nu
+- nushell modules/platform\wsl.nu
+- nushell modules/project\commands.nu
+- nushell modules/project\hooks.nu
+- nushell modules/project\overlay.nu
+- nushell modules/project\venv-activate-shim.nu
+- nushell modules/project\venv.nu
+- nushell modules/shell\aliases.nu
+- nushell modules/shell\config.nu
+- nushell modules/shell\prompt.nu
 - wezterm/terminal-profiles.toml
 - wezterm/wezterm.lua
 - wezterm/modules\fonts.lua
@@ -76,8 +100,8 @@ Exported at: 2026-04-30 15:15:58
 - neovim/lua\plugins\lazy.lua
 - neovim/lua\plugins\utils.lua
 - neovim/lua\user\hints.lua
-- vscode extensions
 - vscode insiders extensions
+- cursor extensions
 - scoop config
 - scoop buckets
 - chocolatey config
@@ -89,6 +113,7 @@ Exported at: 2026-04-30 15:15:58
 - rustup show
 - cargo install list
 - dotnet global tools
+- uv tools
 - docker settings store
 - docker credentials skipped note
 - github cli credentials skipped note

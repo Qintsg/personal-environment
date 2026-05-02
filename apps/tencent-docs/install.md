@@ -19,3 +19,4 @@ winget install --id Tencent.TencentDocs --exact --accept-package-agreements --ac
 ## 备注
 
 - 当前记录来自 Windows 已安装程序清单。
+

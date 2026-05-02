@@ -19,3 +19,4 @@ npm install -g @wonderwhy-er/desktop-commander
 ## 备注
 
 - npm 清单中未返回版本号。
+

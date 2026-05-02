@@ -1,3 +1,3 @@
-﻿-- bootstrap lazy.nvim, LazyVim and user plugins
+-- bootstrap lazy.nvim, LazyVim and user plugins
 require("config.lazy")
 

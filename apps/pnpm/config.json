@@ -1,6 +1,6 @@
-﻿{
+{
   "@jsr:registry": "https://npm.jsr.io/",
-  "globalconfig": "C:\\Users\\qinta\\AppData\\Local\\pnpm\\config\\rc",
+  "globalconfig": "%USERPROFILE%\\AppData\\Local\\pnpm\\config\\rc",
   "json": true,
   "npm-globalconfig": "C:\\Program Files\\nodejs\\etc\\npmrc",
   "registry": "http://registry.npmmirror.com",

@@ -19,3 +19,4 @@ winget install --id SST.OpenCodeDesktop --exact --accept-package-agreements --ac
 ## 备注
 
 - npm 全局工具中也记录了 `opencode-ai`。
+

@@ -6,7 +6,7 @@
 
 ## 当前记录
 
-- 来源：cargo
+- 来源：cargo install
 - 当前版本：2.10.1
 - 包 ID：`tauri-cli`
 
@@ -19,3 +19,4 @@ cargo install tauri-cli
 ## 备注
 
 - 当前记录来自 `cargo install --list`。
+

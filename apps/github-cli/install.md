@@ -19,3 +19,4 @@ winget install --id GitHub.cli --exact --accept-package-agreements --accept-sour
 ## 备注
 
 - 本机已检测到 `gh` 相关安装记录。
+

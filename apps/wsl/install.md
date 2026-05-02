@@ -19,3 +19,4 @@ winget install --id Microsoft.WSL --exact --accept-package-agreements --accept-s
 ## 备注
 
 - 当前记录来自 `winget list`。
+

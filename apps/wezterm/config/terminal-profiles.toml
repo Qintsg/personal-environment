@@ -1,31 +1,41 @@
-﻿# WezTerm 缁堢閰嶇疆娓呭崟
+# WezTerm 终端配置清单
 # ----------------------------------------------------------------------
-# 淇敼杩欎釜鏂囦欢鍚庯紝鍦?WezTerm 涓寜 Ctrl+Shift+R 閲嶈浇閰嶇疆銆?#
-# 杩欎釜鏂囦欢鎺у埗涓や欢浜嬶細
-# 1. 榛樿鎵撳紑鍝釜缁堢锛坉efault_profile锛?# 2. 鍙抽敭鏍囩鏍忔渶鍙充晶鐨勫姞鍙锋寜閽椂锛岃彍鍗曢噷鏄剧ず鍝簺缁堢
+# 修改这个文件后，在 WezTerm 中按 Ctrl+Shift+R 重载配置。
 #
-# 鏀寔鐨勭被鍨嬶細
-# - type = "command" : 鍚姩鏈湴鍙墽琛岀▼搴?# - type = "ssh"     : 閫氳繃 ssh.exe 杩炴帴杩滅▼涓绘満
-# - type = "wsl"     : 鎵撳紑鎸囧畾鐨?WSL 鍙戣鐗?#
-# 甯哥敤瀛楁锛?# - id       : 鍞竴鏍囪瘑
-# - label    : 鑿滃崟鏄剧ず鍚嶇О
-# - icon     : 鍥炬爣璇箟鍚嶏紝渚?Lua 閰嶇疆璇嗗埆
-# - enabled  : 涓?false 鏃堕殣钘忚椤癸紝浣嗕繚鐣欓厤缃?# - default  : 涓?true 鏃朵綔涓洪粯璁ょ粓绔?# - cwd      : 鍚姩鐩綍锛屾敮鎸?~/ 鍜?%USERPROFILE%
+# 这个文件控制两件事：
+# 1. 默认打开哪个终端（default_profile）
+# 2. 右键标签栏最右侧的加号按钮时，菜单里显示哪些终端
 #
-# command 绫诲瀷甯哥敤瀛楁锛?# - program_candidates : 鎸夐『搴忓皾璇曠殑鍙墽琛岀▼搴?# - args               : 浼犵粰绋嬪簭鐨勫弬鏁?#
-# SSH 鏈€绠€鍗曞啓娉曪細澶嶇敤 ~/.ssh/config
+# 支持的类型：
+# - type = "command" : 启动本地可执行程序
+# - type = "ssh"     : 通过 ssh.exe 连接远程主机
+# - type = "wsl"     : 打开指定的 WSL 发行版
+#
+# 常用字段：
+# - id       : 唯一标识
+# - label    : 菜单显示名称
+# - icon     : 图标语义名，供 Lua 配置识别
+# - enabled  : 为 false 时隐藏该项，但保留配置
+# - default  : 为 true 时作为默认终端
+# - cwd      : 启动目录，支持 ~/ 和 %USERPROFILE%
+#
+# command 类型常用字段：
+# - program_candidates : 按顺序尝试的可执行程序
+# - args               : 传给程序的参数
+#
+# SSH 最简单写法：复用 ~/.ssh/config
 # [[profiles]]
 # id = "ssh-work"
-# label = "SSH 宸ヤ綔鏈?
+# label = "SSH 工作机"
 # icon = "ssh"
 # type = "ssh"
 # host = "work-server"
 # use_ssh_config = true
 #
-# SSH 鐩磋繛鍐欐硶锛氱洿鎺ュ～鍐欏湴鍧€銆佺鍙ｃ€佺敤鎴峰拰瀵嗛挜
+# SSH 直连写法：直接填写地址、端口、用户和密钥
 # [[profiles]]
 # id = "ssh-prod"
-# label = "SSH 鐢熶骇鏈?
+# label = "SSH 生产机"
 # icon = "ssh"
 # type = "ssh"
 # host_name = "1.2.3.4"
@@ -68,7 +78,7 @@ enabled = true
 
 [[profiles]]
 id = "cmd"
-label = "鍛戒护鎻愮ず绗?
+label = "命令提示符"
 icon = "cmd"
 type = "command"
 program_candidates = [
@@ -93,7 +103,8 @@ args = ["--login", "-i"]
 cwd = "~"
 enabled = true
 
-# 鏈満瀹夎 MSYS2 鎴?mingw64 鍚庯紝鎶?enabled 鏀规垚 true 鍗冲彲鍚敤銆?[[profiles]]
+# 本机安装 MSYS2 或 mingw64 后，把 enabled 改成 true 即可启用。
+[[profiles]]
 id = "mingw64"
 label = "mingw64"
 icon = "mingw64"
@@ -135,9 +146,10 @@ distribution = "Ubuntu-26.04"
 cwd = "~"
 enabled = true
 
-# 鑷畾涔夌粓绔ず渚嬨€?[[profiles]]
+# 自定义终端示例。
+[[profiles]]
 id = "custom-example"
-label = "鑷畾涔夌粓绔ず渚?
+label = "自定义终端示例"
 icon = "terminal"
 type = "command"
 program_candidates = [

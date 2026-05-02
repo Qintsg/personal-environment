@@ -19,3 +19,4 @@ winget install --id Netbird.Netbird --exact --accept-package-agreements --accept
 ## 备注
 
 - 不在仓库中记录网络凭据或设备密钥。
+

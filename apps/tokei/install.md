@@ -6,16 +6,17 @@
 
 ## 当前记录
 
-- 来源：winget / npm
-- 当前版本：12.1.2 / 0.3.5
-- 包 ID：`XAMPPRocky.Tokei`
+- 来源：npm 全局包
+- 当前版本：0.3.5
+- 包 ID：`tokei`
 
 ## 安装方式
 
 ```powershell
-winget install --id XAMPPRocky.Tokei --exact --accept-package-agreements --accept-source-agreements --disable-interactivity
+npm install -g tokei
 ```
 
 ## 备注
 
 - npm 全局包中也存在 `tokei`。
+

@@ -6,7 +6,7 @@
 
 ## 当前记录
 
-- 来源：scoop
+- 来源：scoop main
 - 当前版本：15.2.0-rt_v13-rev1
 - 包 ID：`mingw`
 
@@ -19,3 +19,4 @@ scoop install mingw
 ## 备注
 
 - 当前记录来自 Scoop 清单。
+

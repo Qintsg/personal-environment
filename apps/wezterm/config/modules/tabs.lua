@@ -1,4 +1,4 @@
-﻿local util = require 'modules.util'
+local util = require 'modules.util'
 local profiles = require 'modules.profiles'
 
 local function trim(text)
@@ -76,8 +76,10 @@ local function ssh_target_from_pane(pane)
   return nil
 end
 
--- 鏍囩椤佃鍒欎繚鎸佹瀬绠€锛?-- 1. 浜哄伐鏍囬浼樺厛
--- 2. 缁堢鍐呴儴涓诲姩淇敼杩囨爣棰樻椂浣跨敤璇ユ爣棰?-- 3. 鍚﹀垯鏄剧ず榛樿 shell 鍚嶇О
+-- 标签页规则保持极简：
+-- 1. 人工标题优先
+-- 2. 终端内部主动修改过标题时使用该标题
+-- 3. 否则显示默认 shell 名称
 local function default_shell_name(pane)
   local exe = basename(pane.foreground_process_name or ''):lower()
   local title = trim(pane.title or ''):lower()
@@ -149,7 +151,8 @@ local function internal_title_candidate(pane, default_name)
     return nil
   end
 
-  -- cmd銆乥ash銆乸wsh 甯稿父鎶婃爣棰樻敼鎴愯矾寰勶紝杩欑鎯呭喌浠嶇劧鍥為€€鍒伴粯璁ゅ悕绉般€?  if lower:match('^[a-z]:[\\/]') or lower:match('^/[a-z0-9._%-]+') or lower:match('^~[\\/]') then
+  -- cmd、bash、pwsh 常常把标题改成路径，这种情况仍然回退到默认名称。
+  if lower:match('^[a-z]:[\\/]') or lower:match('^/[a-z0-9._%-]+') or lower:match('^~[\\/]') then
     return nil
   end
 
@@ -201,7 +204,7 @@ return function(wezterm, config)
     local title = ok and title_or_err or 'Tab Error'
 
     if not ok then
-      wezterm.log_error('format-tab-title 鏍囬鐢熸垚澶辫触锛? .. tostring(title_or_err))
+      wezterm.log_error('format-tab-title 标题生成失败：' .. tostring(title_or_err))
     end
 
     title = wezterm.truncate_right(title, math.max(8, max_width - 2))

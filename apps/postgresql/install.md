@@ -19,3 +19,4 @@ winget install --id PostgreSQL.PostgreSQL.18 --exact --accept-package-agreements
 ## 备注
 
 - 当前记录来自 Windows 已安装程序清单。
+

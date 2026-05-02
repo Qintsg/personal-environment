@@ -6,8 +6,8 @@
 
 ## 当前记录
 
-- 来源：winget / choco
-- 当前版本：17.14.31
+- 来源：winget
+- 当前版本：> 17.14.31
 - 包 ID：`Microsoft.VisualStudio.2022.BuildTools`
 
 ## 安装方式
@@ -19,3 +19,4 @@ winget install --id Microsoft.VisualStudio.2022.BuildTools --exact --accept-pack
 ## 备注
 
 - Chocolatey 中也记录了 `visualstudio2022buildtools`。
+

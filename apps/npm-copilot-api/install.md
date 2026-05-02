@@ -19,3 +19,4 @@ npm install -g copilot-api
 ## 备注
 
 - 不在仓库中记录 token 或授权信息。
+

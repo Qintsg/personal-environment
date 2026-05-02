@@ -7,7 +7,7 @@
 ## 当前记录
 
 - 来源：winget
-- 当前版本：1.118.0
+- 当前版本：1.119.0
 - 包 ID：`Microsoft.VisualStudioCode.Insiders`
 
 ## 安装方式
@@ -19,3 +19,4 @@ winget install --id Microsoft.VisualStudioCode.Insiders --exact --accept-package
 ## 备注
 
 - 当前记录来自 Windows 已安装程序清单。
+

@@ -6,7 +6,7 @@
 
 ## 当前记录
 
-- 来源：scoop
+- 来源：scoop main
 - 当前版本：4.3.2
 - 包 ID：`cmake`
 
@@ -19,3 +19,4 @@ scoop install cmake
 ## 备注
 
 - 当前记录来自 Scoop 清单。
+

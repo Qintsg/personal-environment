@@ -19,3 +19,4 @@ winget install --id Microsoft.NuGet --exact --accept-package-agreements --accept
 ## 备注
 
 - 当前记录来自 Windows 已安装程序清单。
+

@@ -1,4 +1,4 @@
-﻿-- Configuration for each individual plugin
+-- Configuration for each individual plugin
 ---@diagnostic disable: need-check-nil
 local config = {}
 local symbols = Ice.symbols
@@ -61,7 +61,7 @@ config.avante = {
                 model = "gpt-5 mini",
                 extra_request_body = {
                     temperature = 0.75,
-                    max_tokens = <redacted>
+                    max_tokens = 20480,
                 },
             },
         },

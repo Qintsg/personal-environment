@@ -19,3 +19,4 @@ winget install --id Tencent.WeChat.Universal --exact --accept-package-agreements
 ## 备注
 
 - 不在仓库中记录账号或聊天数据。
+

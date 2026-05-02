@@ -1,4 +1,4 @@
-﻿{
+{
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
     "actions": [],
@@ -57,7 +57,7 @@
     {
         "defaults": 
         {
-            "backgroundImage": "C:\\Users\\qinta\\Pictures\\\u604b.jpg",
+            "backgroundImage": "%USERPROFILE%\\Pictures\\\u604b.jpg",
             "backgroundImageOpacity": 0.14,
             "colorScheme": "One Half Light",
             "experimental.rainbowSuggestions": true,

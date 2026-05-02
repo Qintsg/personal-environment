@@ -20,3 +20,4 @@ scoop install localsend
 ## 备注
 
 - 当前记录来自 Scoop 清单。
+

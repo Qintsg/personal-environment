@@ -1,16 +1,21 @@
-﻿return function(wezterm, config)
-  -- 涓婚鍚嶇О锛欶luent Terminal Dark
-  -- 鍙傝€冩柟鍚戯細
-  -- 1. Windows Terminal 鐨勬繁鑹蹭腑鎬ф潗璐ㄦ劅鍜屾洿瀹炵殑椤堕儴妗嗘灦
-  -- 2. 鏂囩珷閲屾彁鍒扮殑 WezTerm 鑳屾櫙妯＄硦鎬濊矾锛屾湰璐ㄤ笂杩樻槸瀹樻柟鐨?win32_system_backdrop
-  -- 3. 瀹樻柟鏂囨。寤鸿 Mica/Tabbed 鍦?Windows 涓婃惌閰?window_background_opacity = 0 浣跨敤
+return function(wezterm, config)
+  -- 主题名称：Fluent Terminal Dark
+  -- 参考方向：
+  -- 1. Windows Terminal 的深色中性材质感和更实的顶部框架
+  -- 2. 文章里提到的 WezTerm 背景模糊思路，本质上还是官方的 win32_system_backdrop
+  -- 3. 官方文档建议 Mica/Tabbed 在 Windows 上搭配 window_background_opacity = 0 使用
 
-  -- 鏇存帴杩?Windows Terminal 鐨?Win11 椋庢牸銆?  -- 姣旇捣 Acrylic锛屽畠鏇寸ǔ锛屼篃鏇翠笉瀹规槗鍑虹幇鍋忕櫧闆炬劅銆?  config.win32_system_backdrop = 'Tabbed'
+  -- 更接近 Windows Terminal 的 Win11 风格。
+  -- 比起 Acrylic，它更稳，也更不容易出现偏白雾感。
+  config.win32_system_backdrop = 'Tabbed'
 
-  -- 鎸夊畼鏂瑰缓璁妸绯荤粺鑳屾櫙灞備氦缁?Windows 鏈韩銆?  config.window_background_opacity = 0
+  -- 按官方建议把系统背景层交给 Windows 本身。
+  config.window_background_opacity = 0
   config.text_background_opacity = 0
 
-  -- 涓嶇敤绾壊瀹炲績鑳屾櫙锛屾敼鎴愭繁鑹蹭腑鎬ц挋鐗?+ 鏋佽交寰喎鑹叉煋灞傘€?  -- 杩欐牱鑳戒繚鐣欐瘺鐜荤拑锛屽悓鏃朵笉鑷充簬鎶婂唴瀹瑰尯娲楃櫧銆?  config.background = {
+  -- 不用纯色实心背景，改成深色中性蒙版 + 极轻微冷色染层。
+  -- 这样能保留毛玻璃，同时不至于把内容区洗白。
+  config.background = {
     {
       source = {
         Color = '#080c12',
@@ -49,7 +54,9 @@
     },
   }
 
-  -- 棰滆壊鍙傝€?Windows Terminal 鐨勬繁鑹蹭腑鎬у簳锛?  -- 涓昏儗鏅帴杩戠偔鐏拌摑锛屽己璋冭壊淇濈暀鍐疯摑銆?  config.colors = {
+  -- 颜色参考 Windows Terminal 的深色中性底：
+  -- 主背景接近炭灰蓝，强调色保留冷蓝。
+  config.colors = {
     foreground = '#F3F3F3',
     background = '#0d1218',
     cursor_bg = '#4CC2FF',
@@ -111,7 +118,8 @@
     },
   }
 
-  -- 椤舵爮鍜屾爣绛炬爮鏇村疄涓€浜涳紝妯′豢 Windows Terminal 閭ｇ妗嗘灦涓庡唴瀹瑰垎灞傘€?  config.window_frame = {
+  -- 顶栏和标签栏更实一些，模仿 Windows Terminal 那种框架与内容分层。
+  config.window_frame = {
     font = wezterm.font({ family = 'Segoe UI', weight = 'Bold' }),
     font_size = 11.5,
     active_titlebar_bg = 'rgba(12, 16, 22, 0.78)',

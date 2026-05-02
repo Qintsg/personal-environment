@@ -1,0 +1,21 @@
+frame = "full"
+maximized = false
+tabs = false
+vsync = true
+srgb = true
+idle = true
+title-hidden = false
+mouse-cursor-icon = "i-beam"
+grid = "132x40"
+neovim-bin = "C:\\Program Files\\Neovim\\bin\\nvim.exe"
+
+[font]
+normal = [
+  "JetBrainsMono Nerd Font Mono",
+  "Maple Mono NF CN",
+  "CaskaydiaCove Nerd Font",
+]
+size = 13.0
+edging = "subpixelantialias"
+hinting = "slight"
+

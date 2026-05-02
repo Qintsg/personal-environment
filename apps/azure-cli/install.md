@@ -19,3 +19,4 @@ winget install --id Microsoft.AzureCLI --exact --accept-package-agreements --acc
 ## 备注
 
 - 不在仓库中记录 Azure 登录凭据、订阅信息或 token。
+

@@ -13,9 +13,10 @@
 ## 安装方式
 
 ```powershell
-winget install --id Chocolatey.Chocolatey --exact --accept-package-agreements --accept-source-agreements --disable-interactivity
+choco install chocolatey -y
 ```
 
 ## 备注
 
 - 本机已检测到 `choco` 命令。
+

@@ -1,10 +1,11 @@
-﻿local profiles = require 'modules.profiles'
+local profiles = require 'modules.profiles'
 
 return function(wezterm, config)
   local act = wezterm.action
   local loaded = profiles.apply(config)
 
-  -- 鍙抽敭鏍囩鏍忕殑鍔犲彿鏃讹紝鍙樉绀虹敤鎴疯嚜瀹氫箟缁堢鍒楄〃锛屼笉浣跨敤 WezTerm 榛樿 Launcher銆?  wezterm.on('new-tab-button-click', function(window, pane, button)
+  -- 右键标签栏的加号时，只显示用户自定义终端列表，不使用 WezTerm 默认 Launcher。
+  wezterm.on('new-tab-button-click', function(window, pane, button)
     if button ~= 'Right' then
       return
     end
@@ -19,7 +20,7 @@ return function(wezterm, config)
 
     window:perform_action(
       act.InputSelector({
-        title = '閫夋嫨瑕佹墦寮€鐨勭粓绔?,
+        title = '选择要打开的终端',
         choices = choices,
         action = wezterm.action_callback(function(inner_window, inner_pane, id)
           if not id then

@@ -19,3 +19,4 @@ winget install --id Xiaomi.MiService --exact --accept-package-agreements --accep
 ## 备注
 
 - 当前记录来自 Windows 已安装程序清单。
+

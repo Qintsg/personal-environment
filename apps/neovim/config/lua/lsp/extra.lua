@@ -1,4 +1,4 @@
-﻿Ice.plugins.lspsaga = {
+Ice.plugins.lspsaga = {
     "nvimdev/lspsaga.nvim",
     cmd = "Lspsaga",
     opts = {

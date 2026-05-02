@@ -19,3 +19,4 @@ winget install --id Alibaba.aDrive --exact --accept-package-agreements --accept-
 ## 备注
 
 - 不在仓库中记录账号或同步目录内容。
+

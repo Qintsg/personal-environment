@@ -19,3 +19,4 @@ winget install --id KaringX.ClashMi --exact --accept-package-agreements --accept
 ## 备注
 
 - 不在仓库中记录代理节点或订阅地址。
+

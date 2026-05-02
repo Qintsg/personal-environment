@@ -7,7 +7,7 @@
 ## 当前记录
 
 - 来源：winget
-- 当前版本：8.12.12.44 以上
+- 当前版本：> 8.12.12.44
 - 包 ID：`AgileBits.1Password`
 
 ## 安装方式
@@ -19,3 +19,4 @@ winget install --id AgileBits.1Password --exact --accept-package-agreements --ac
 ## 备注
 
 - 不在仓库中记录任何密码库或密钥内容。
+

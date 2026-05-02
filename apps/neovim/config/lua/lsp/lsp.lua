@@ -1,4 +1,4 @@
-﻿local lsp = {}
+local lsp = {}
 
 -- For instructions on configuration, see official wiki:
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
@@ -101,7 +101,7 @@ lsp = {
                 vim.fs.joinpath(vim.fn.stdpath "data", "mason/packages/omnisharp/libexec/Omnisharp.dll"),
             },
             on_attach = function(client, _)
-                client.server_capabilities.semanticTokensProvider = <redacted>
+                client.server_capabilities.semanticTokensProvider = nil
             end,
         },
     },

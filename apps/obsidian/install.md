@@ -19,3 +19,4 @@ winget install --id Obsidian.Obsidian --exact --accept-package-agreements --acce
 ## 备注
 
 - 不在仓库中记录私有笔记库内容。
+

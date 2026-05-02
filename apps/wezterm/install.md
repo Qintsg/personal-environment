@@ -19,3 +19,4 @@ winget install --id wez.wezterm --exact --accept-package-agreements --accept-sou
 ## 备注
 
 - 当前记录来自 Windows 已安装程序清单。
+

@@ -1,4 +1,4 @@
-﻿local g = vim.g
+local g = vim.g
 local opt = vim.opt
 
 -- This MUST NOT be en_US, but en_US.UTF-8

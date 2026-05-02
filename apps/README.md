@@ -2,7 +2,7 @@
 
 本目录按“一个软件一个文件夹”的方式记录工具软件。每个软件目录至少包含 `install.md`，其中 Windows 是默认安装平台。
 
-当前已根据本机扫描结果生成 201 个软件目录，并对常见软件配置做了脱敏导出。
+当前已根据本机扫描结果生成 203 个软件目录，并对常见软件配置做了脱敏导出。
 
 ## 使用方式
 
@@ -10,12 +10,14 @@
 - 恢复安装：优先执行 `install.md` 中记录的包管理器命令。
 - 补充配置：在软件目录内新增 `config.md`、`extensions.md` 或实际配置文件。
 - 查看导出记录：参考 `config-export-summary.md`。
+- 查看完整包清单：参考 `package-export-summary.md` 和 `_inventory/` 下的原始导出。
 
 ## 来源范围
 
 - Windows 已安装程序注册表。
 - `winget`、`scoop`、`choco` 已安装清单。
 - `npm`、`cargo`、`dotnet tool` 全局工具清单。
+- AppX、pip、pnpm、yarn、Go binary 和 PowerShell module 快照。
 
 ## 配置导出
 

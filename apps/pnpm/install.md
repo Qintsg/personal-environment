@@ -19,3 +19,4 @@ npm install -g pnpm
 ## 备注
 
 - 本机已检测到 `pnpm` 命令。
+

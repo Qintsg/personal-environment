@@ -1,4 +1,4 @@
-﻿{
+{
     "window.autoDetectColorScheme": true,
     "workbench.preferredLightColorTheme": "Dark 2026",
     "chat.tips.enabled": false,
@@ -26,7 +26,7 @@
     "github.copilot.chat.workspace.maxDiffSizeBeforeUsingExternalIngest": 1000,
     "chat.agent.maxRequests": 500,
     "github.copilot.chat.agentHistorySummarizationMode": "",
-    "github.copilot.chat.anthropic.thinking.budgetTokens": "<redacted>"
+    "github.copilot.chat.anthropic.thinking.budgetTokens": 32000,
     "github.copilot.chat.anthropic.thinking.forceExtendedThinking": true,
     "github.copilot.chat.cli.forkSessions.enabled": true,
     "github.copilot.chat.summarizeAgentConversationHistory.enabled": false,

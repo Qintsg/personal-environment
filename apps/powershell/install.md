@@ -19,3 +19,4 @@ winget install --id Microsoft.PowerShell --exact --accept-package-agreements --a
 ## 备注
 
 - 当前记录来自 `winget list`。
+

@@ -19,3 +19,4 @@ winget install --id Xiaomi.XiaomiCloud --exact --accept-package-agreements --acc
 ## 备注
 
 - 不在仓库中记录账号或同步数据。
+

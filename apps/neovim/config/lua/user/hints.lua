@@ -1,4 +1,4 @@
-﻿local M = {}
+local M = {}
 
 local function join(items)
   local parts = {}
@@ -18,67 +18,67 @@ end
 
 local function dashboard_items()
   return {
-    "f 鏌ユ壘鏂囦欢",
-    "r 鏈€杩戞枃浠?,
-    "e 鏂囦欢鏍?,
-    "g 鍏ㄦ枃鎼滅储",
-    "n 鏂板缓鏂囦欢",
-    "t 缁堢",
-    "k 蹇嵎閿?,
-    "q 閫€鍑?,
+    "f 查找文件",
+    "r 最近文件",
+    "e 文件树",
+    "g 全文搜索",
+    "n 新建文件",
+    "t 终端",
+    "k 快捷键",
+    "q 退出",
   }
 end
 
 local function lazy_items()
   return {
-    "S 鍚屾鎻掍欢",
-    "U 鏇存柊鎻掍欢",
-    "I 瀹夎鎻掍欢",
-    "X 娓呯悊鎻掍欢",
-    "? 甯姪",
-    "q 鍏抽棴",
+    "S 同步插件",
+    "U 更新插件",
+    "I 安装插件",
+    "X 清理插件",
+    "? 帮助",
+    "q 关闭",
   }
 end
 
 local function mason_items()
   return {
-    "<CR> 鎵撳紑/瀹夎",
-    "i 瀹夎",
-    "u 鏇存柊",
-    "X 鍗歌浇",
-    "g? 甯姪",
+    "<CR> 打开/安装",
+    "i 安装",
+    "u 更新",
+    "X 卸载",
+    "g? 帮助",
   }
 end
 
 local function code_items(mode)
   if mode:find("i", 1, true) == 1 then
     return {
-      "Esc 杩斿洖鏅€氭ā寮?,
-      "<C-s> 淇濆瓨",
-      "<leader>ca 浠ｇ爜鎿嶄綔",
-      "K 鎮仠鏂囨。",
-      "gd 璺宠浆瀹氫箟",
+      "Esc 返回普通模式",
+      "<C-s> 保存",
+      "<leader>ca 代码操作",
+      "K 悬停文档",
+      "gd 跳转定义",
     }
   end
 
   return {
-    "<C-s> 淇濆瓨鏂囦欢",
-    "<leader>ff 鏂囦欢鎼滅储",
-    "<leader>fr 鏈€杩戞枃浠?,
-    "<leader>sg 鍏ㄦ枃鎼滅储",
-    "<leader>e 鏂囦欢鏍?,
-    "<leader>bd 鍏抽棴缂撳啿鍖?,
-    "<leader>fm 鏍煎紡鍖?,
-    "<leader>qq 閫€鍑?,
+    "<C-s> 保存文件",
+    "<leader>ff 文件搜索",
+    "<leader>fr 最近文件",
+    "<leader>sg 全文搜索",
+    "<leader>e 文件树",
+    "<leader>bd 关闭缓冲区",
+    "<leader>fm 格式化",
+    "<leader>qq 退出",
   }
 end
 
 local function neovide_items()
   return {
-    "<C-=> 鏀惧ぇ",
-    "<C--> 缂╁皬",
-    "<C-0> 閲嶇疆缂╂斁",
-    "<F11> 鍏ㄥ睆",
+    "<C-=> 放大",
+    "<C--> 缩小",
+    "<C-0> 重置缩放",
+    "<F11> 全屏",
     "<leader>uN Neovide",
   }
 end
@@ -111,65 +111,65 @@ function M.color()
 end
 
 local function all_lines()
-  local neovide_ready = vim.g.neovide and "宸茶繛鎺? or "鍚姩 Neovide 鍚庣敓鏁?
+  local neovide_ready = vim.g.neovide and "已连接" or "启动 Neovide 后生效"
   return {
-    "Qintsg 蹇嵎閿€昏",
+    "Qintsg 快捷键总览",
     "",
-    "鏈€甯哥敤",
-    "  <C-s>        淇濆瓨褰撳墠鏂囦欢",
-    "  <leader>ff   鏌ユ壘鏂囦欢",
-    "  <leader>fr   鎵撳紑鏈€杩戞枃浠?,
-    "  <leader>e    鍒囨崲鏂囦欢鏍?,
-    "  <leader>bd   鍏抽棴褰撳墠缂撳啿鍖?,
-    "  <leader>qq   閫€鍑?Neovim",
+    "最常用",
+    "  <C-s>        保存当前文件",
+    "  <leader>ff   查找文件",
+    "  <leader>fr   打开最近文件",
+    "  <leader>e    切换文件树",
+    "  <leader>bd   关闭当前缓冲区",
+    "  <leader>qq   退出 Neovim",
     "",
-    "鎼滅储涓庤烦杞?,
-    "  <leader>sg   鍏ㄦ枃鎼滅储",
-    "  <leader>,    鍒囨崲缂撳啿鍖?,
-    "  gd           璺宠浆瀹氫箟",
-    "  gr           鏌ユ壘寮曠敤",
-    "  K            鎮仠鏂囨。",
+    "搜索与跳转",
+    "  <leader>sg   全文搜索",
+    "  <leader>,    切换缓冲区",
+    "  gd           跳转定义",
+    "  gr           查找引用",
+    "  K            悬停文档",
     "",
-    "浠ｇ爜鎿嶄綔",
-    "  <leader>ca   浠ｇ爜鎿嶄綔",
-    "  <leader>cr   閲嶅懡鍚嶇鍙?,
-    "  <leader>fm   鏍煎紡鍖栧綋鍓嶇紦鍐插尯",
-    "  gcc          娉ㄩ噴褰撳墠琛?,
-    "  <C-t>        鎵撳紑缁堢",
+    "代码操作",
+    "  <leader>ca   代码操作",
+    "  <leader>cr   重命名符号",
+    "  <leader>fm   格式化当前缓冲区",
+    "  gcc          注释当前行",
+    "  <C-t>        打开终端",
     "",
-    "绯荤粺涓庣晫闈?,
-    "  <leader>l    鎵撳紑 Lazy 鎻掍欢绠＄悊鍣?,
-    "  <leader>cm   鎵撳紑 Mason 宸ュ叿绠＄悊鍣?,
-    "  <leader>uh   鎵撳紑鎬诲揩鎹烽敭闈㈡澘",
-    "  <leader>uN   鎵撳紑 Neovide 蹇嵎閿?,
+    "系统与界面",
+    "  <leader>l    打开 Lazy 插件管理器",
+    "  <leader>cm   打开 Mason 工具管理器",
+    "  <leader>uh   打开总快捷键面板",
+    "  <leader>uN   打开 Neovide 快捷键",
     "",
-    "Neovide锛? .. neovide_ready .. "锛?,
-    "  <C-=>        鏀惧ぇ鐣岄潰",
-    "  <C-->        缂╁皬鐣岄潰",
-    "  <C-0>        閲嶇疆缂╂斁",
-    "  <F11>        鍒囨崲鍏ㄥ睆",
+    "Neovide（" .. neovide_ready .. "）",
+    "  <C-=>        放大界面",
+    "  <C-->        缩小界面",
+    "  <C-0>        重置缩放",
+    "  <F11>        切换全屏",
   }
 end
 
 local function neovide_lines()
   return {
-    "Neovide 蹇嵎閿?,
+    "Neovide 快捷键",
     "",
-    "甯哥敤",
-    "  <leader>uh   鎵撳紑鎬诲揩鎹烽敭闈㈡澘",
-    "  <leader>uN   浠呮煡鐪?Neovide 蹇嵎閿?,
+    "常用",
+    "  <leader>uh   打开总快捷键面板",
+    "  <leader>uN   仅查看 Neovide 快捷键",
     "",
-    "缂╂斁涓庣獥鍙?,
-    "  <C-=>        鏀惧ぇ鐣岄潰",
-    "  <C-->        缂╁皬鐣岄潰",
-    "  <C-0>        閲嶇疆缂╂斁",
-    "  <F11>        鍒囨崲鍏ㄥ睆",
+    "缩放与窗口",
+    "  <C-=>        放大界面",
+    "  <C-->        缩小界面",
+    "  <C-0>        重置缩放",
+    "  <F11>        切换全屏",
     "",
-    "褰撳墠浣撻獙",
-    "  閫忔槑搴?       0.96",
-    "  鍏夋爣鐗规晥      pixiedust",
-    "  鍒锋柊鐜?       120Hz",
-    "  鍦嗚闃村奖      宸插惎鐢?,
+    "当前体验",
+    "  透明度        0.96",
+    "  光标特效      pixiedust",
+    "  刷新率        120Hz",
+    "  圆角阴影      已启用",
   }
 end
 
@@ -202,7 +202,7 @@ function M.show(section)
     col = math.max(1, math.floor((vim.o.columns - (width + 6)) / 2)),
     style = "minimal",
     border = "rounded",
-    title = " 蹇嵎閿彁绀?",
+    title = " 快捷键提示 ",
     title_pos = "center",
   })
 

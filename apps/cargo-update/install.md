@@ -6,7 +6,7 @@
 
 ## 当前记录
 
-- 来源：cargo
+- 来源：cargo install
 - 当前版本：20.0.0
 - 包 ID：`cargo-update`
 
@@ -19,3 +19,4 @@ cargo install cargo-update
 ## 备注
 
 - 当前记录来自 `cargo install --list`。
+

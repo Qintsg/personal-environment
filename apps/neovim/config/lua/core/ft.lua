@@ -1,4 +1,4 @@
-﻿Ice.ft = {
+Ice.ft = {
     c = function ()
         vim.bo.tabstop = 2
     end,
