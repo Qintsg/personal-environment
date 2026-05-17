@@ -14,3 +14,4 @@ if (Test-Path($ChocolateyProfile)) {
   Import-Module "$ChocolateyProfile"
 }
 
+Set-Alias -Name sl -Value "C:\Program Files\sl\bin\sl.exe" -Option AllScope -Force

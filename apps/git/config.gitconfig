@@ -1,8 +1,6 @@
 ﻿[user]
 	email = <email>
 	name = Qintsg
-[core]
-	editor = \"%USERPROFILE%\\AppData\\Local\\Programs\\Microsoft VS Code\\bin\\code\" --wait
 [safe]
 	directory = *
 [filter "lfs"]
@@ -12,4 +10,6 @@
 	required = true
 [http]
 	sslbackend = schannel
+[credential "http://git.bbt.sspu.edu.cn"]
+	provider = generic
 

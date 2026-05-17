@@ -7,7 +7,7 @@
 ## 当前记录
 
 - 来源：winget
-- 当前版本：29.7.9.0
+- 当前版本：30.0.1.0
 - 包 ID：`JGraph.Draw`
 
 ## 安装方式
@@ -19,4 +19,3 @@ winget install --id JGraph.Draw --exact --accept-package-agreements --accept-sou
 ## 备注
 
 - 当前记录来自 Windows 已安装程序清单。
-

@@ -1,8 +1,22 @@
-# @koa/router
+﻿# @koa/router
 
-## 默认平台
+## 榛樿骞冲彴
 
-默认安装平台为 Windows；本文件中的安装命令默认在 Windows PowerShell 中执行。
+榛樿瀹夎骞冲彴涓?Windows锛涙湰鏂囦欢涓殑瀹夎鍛戒护榛樿鍦?Windows PowerShell 涓墽琛屻€?
+## 褰撳墠璁板綍
+
+- 鏉ユ簮锛歯pm 鍏ㄥ眬鍖?- 褰撳墠鐗堟湰锛?5.4.0
+- 鍖?ID锛歚@koa/router`
+
+## 瀹夎鏂瑰紡
+
+```powershell
+npm install -g @koa/router
+```
+
+## 澶囨敞
+
+- 杩欐槸鍏ㄥ眬 npm 鍖呰褰曪紱鍚庣画鍙‘璁ゆ槸鍚︿粛闇€鍏ㄥ眬瀹夎銆?
 
 ## 当前记录
 
@@ -15,8 +29,3 @@
 ```powershell
 npm install -g @koa/router
 ```
-
-## 备注
-
-- 这是全局 npm 包记录；后续可确认是否仍需全局安装。
-

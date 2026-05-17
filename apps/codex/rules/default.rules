@@ -36,4 +36,5 @@ prefix_rule(pattern=["C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell
 prefix_rule(pattern=["C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe", "-Command", "starship module custom.python_ctx --path E:/Projects/Meow-Bay/meowbay --config %USERPROFILE%/.config/starship.toml"], decision="allow")
 prefix_rule(pattern=["C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe", "-Command", "$env:STARSHIP_CONFIG='%USERPROFILE%\\.config\\starship.toml'; starship module --path E:/Projects/Meow-Bay/meowbay custom.python_ctx"], decision="allow")
 prefix_rule(pattern=["C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe", "-Command", "$pkg = rg --files E:\\Projects | rg \"package\\.json$\" | Select-Object -First 1; if (-not $pkg) { Write-Output 'missing-package'; exit 0 }; $project = Split-Path $pkg -Parent; $env:STARSHIP_CONFIG='%USERPROFILE%\\.config\\starship.toml'; starship module --path $project custom.node_ctx"], decision="allow")
-
+prefix_rule(pattern=["gh", "auth", "status"], decision="allow")
+prefix_rule(pattern=["git", "fetch", "origin", "develop"], decision="allow")

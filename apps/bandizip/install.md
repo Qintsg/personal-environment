@@ -7,7 +7,7 @@
 ## 当前记录
 
 - 来源：winget
-- 当前版本：7.42
+- 当前版本：7.43
 - 包 ID：`Bandisoft.Bandizip`
 
 ## 安装方式
@@ -19,4 +19,3 @@ winget install --id Bandisoft.Bandizip --exact --accept-package-agreements --acc
 ## 备注
 
 - 当前记录来自 Windows 已安装程序清单。
-

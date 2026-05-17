@@ -1,4 +1,4 @@
-param(
+﻿param(
     [string]$RepoRoot = (Split-Path -Parent $PSScriptRoot),
     [string]$OutputFile = 'SOFTWARE_STATUS.md'
 )

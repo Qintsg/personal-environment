@@ -1,5 +1,5 @@
 ﻿{
-  "AutoStart": false,
+  "AutoStart": true,
   "DesktopTerminalEnabled": true,
   "DisplayedOnboarding": true,
   "EnableDockerAI": true,
@@ -10,4 +10,3 @@
   "UpdateInstallTime": 0,
   "UseContainerdSnapshotter": true
 }
-

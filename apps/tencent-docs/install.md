@@ -7,7 +7,7 @@
 ## 当前记录
 
 - 来源：winget
-- 当前版本：3.10.26
+- 当前版本：3.10.29
 - 包 ID：`Tencent.TencentDocs`
 
 ## 安装方式
@@ -19,4 +19,3 @@ winget install --id Tencent.TencentDocs --exact --accept-package-agreements --ac
 ## 备注
 
 - 当前记录来自 Windows 已安装程序清单。
-

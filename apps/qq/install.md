@@ -7,7 +7,7 @@
 ## 当前记录
 
 - 来源：winget
-- 当前版本：9.9.29.47354
+- 当前版本：9.9.30.48762
 - 包 ID：`Tencent.QQ.NT`
 
 ## 安装方式
@@ -19,4 +19,3 @@ winget install --id Tencent.QQ.NT --exact --accept-package-agreements --accept-s
 ## 备注
 
 - 不在仓库中记录账号或聊天数据。
-

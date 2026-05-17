@@ -7,7 +7,7 @@
 ## 当前记录
 
 - 来源：winget
-- 当前版本：5.0.8.6006
+- 当前版本：5.0.8.6009
 - 包 ID：`Tencent.WeCom`
 
 ## 安装方式
@@ -19,4 +19,3 @@ winget install --id Tencent.WeCom --exact --accept-package-agreements --accept-s
 ## 备注
 
 - 不在仓库中记录账号或工作区数据。
-

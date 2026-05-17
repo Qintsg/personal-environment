@@ -11,32 +11,32 @@
     "keybindings": 
     [
         {
-            "id": "Terminal.CopyToClipboard",
-            "keys": "ctrl+c"
+            "id": "Terminal.OpenNewTab",
+            "keys": "ctrl+t"
         },
         {
             "id": "Terminal.ToggleCommandPalette",
             "keys": "ctrl+p"
         },
         {
-            "id": "Terminal.OpenNewTab",
-            "keys": "ctrl+t"
+            "id": "Terminal.CopyToClipboard",
+            "keys": "ctrl+c"
         },
         {
             "id": "Terminal.PasteFromClipboard",
             "keys": "ctrl+v"
         },
         {
-            "id": "Terminal.DuplicatePaneAuto",
-            "keys": "alt+shift+d"
+            "id": "Terminal.ToggleMarkMode",
+            "keys": "ctrl+m"
         },
         {
             "id": null,
             "keys": "ctrl+shift+p"
         },
         {
-            "id": "Terminal.ToggleMarkMode",
-            "keys": "ctrl+m"
+            "id": "Terminal.DuplicatePaneAuto",
+            "keys": "alt+shift+d"
         },
         {
             "id": null,
@@ -160,6 +160,12 @@
                 "guid": "{9e448b37-2185-490b-9311-aed1e4f5c385}",
                 "hidden": false,
                 "name": "Fish"
+            },
+            {
+                "guid": "{47dbd92c-2f86-5849-b78f-24d7e862a709}",
+                "hidden": false,
+                "name": "kali-linux",
+                "source": "Microsoft.WSL"
             }
         ]
     },
@@ -170,4 +176,3 @@
     "themes": [],
     "useAcrylicInTabRow": false
 }
-

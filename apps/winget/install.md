@@ -7,7 +7,7 @@
 ## 当前记录
 
 - 来源：winget
-- 当前版本：1.29.139.0
+- 当前版本：1.29.179.0
 - 包 ID：`Microsoft.AppInstaller`
 
 ## 安装方式
@@ -19,4 +19,3 @@ winget install --id Microsoft.AppInstaller --exact --accept-package-agreements -
 ## 备注
 
 - `winget` 通常随 App Installer 提供。
-

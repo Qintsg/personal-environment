@@ -7,7 +7,7 @@
 ## 当前记录
 
 - 来源：winget
-- 当前版本：8.3.9
+- 当前版本：8.4.0
 - 包 ID：`Baidu.BaiduNetdisk`
 
 ## 安装方式
@@ -19,4 +19,3 @@ winget install --id Baidu.BaiduNetdisk --exact --accept-package-agreements --acc
 ## 备注
 
 - 不在仓库中记录账号或同步目录内容。
-

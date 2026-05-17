@@ -1,0 +1,72 @@
+# 本地工具运行状态
+.omx/
+.cache/
+.tmp/
+tmp/
+temp/
+
+# 环境变量与本机私有配置
+.env
+.env.*
+!.env.example
+*.local
+*.local.*
+*.secret
+*.secrets
+secrets.*
+credentials.*
+
+# 密钥、证书和授权文件
+*.pem
+*.key
+*.p12
+*.pfx
+*.cer
+*.crt
+*.der
+*.jks
+*.keystore
+id_rsa
+id_rsa.*
+id_ed25519
+id_ed25519.*
+known_hosts
+hosts.yml
+
+# 令牌、会话和本地数据库
+*token*
+*session*
+*.sqlite
+*.sqlite3
+*.db
+*.db-shm
+*.db-wal
+cookies*
+Cookies*
+
+# 日志、缓存和构建产物
+*.log
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+desktop.ini
+node_modules/
+dist/
+build/
+coverage/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+__pycache__/
+*.py[cod]
+
+# 编辑器和 IDE 本机状态
+.vscode/.ropeproject/
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/usage.statistics.xml
+.idea/shelf/

@@ -41,6 +41,13 @@
     "terminal.integrated.fontFamily": "\"JetBrainsMono Nerd Font Mono\", \"JetBrainsMono Nerd Font\", \"Consolas\", \"monospace\"",
     "github.copilot.chat.githubMcpServer.channel": "insiders",
     "security.workspace.trust.untrustedFiles": "open",
-    "security.promptForLocalFileProtocolHandling": false
+    "security.promptForLocalFileProtocolHandling": false,
+    "redhat.telemetry.enabled": true,
+    "claudeCode.allowDangerouslySkipPermissions": true,
+    "claudeCode.disableLoginPrompt": true,
+    "claudeCode.enableNewConversationShortcut": true,
+    "claudeCode.initialPermissionMode": "bypassPermissions",
+    "claudeCode.preferredLocation": "panel",
+    "chatgpt.cliExecutable": "",
+    "explorer.confirmDelete": false
 }
-

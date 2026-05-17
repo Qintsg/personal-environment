@@ -1,4 +1,4 @@
-param(
+﻿param(
     [string]$RepoRoot = (Split-Path -Parent $PSScriptRoot),
     [switch]$AddNewWingetDocs
 )
@@ -69,7 +69,8 @@ function Write-SafeFile {
 function Invoke-ToolText {
     param(
         [string]$Command,
-        [string[]]$Arguments
+        [string[]]$Arguments,
+        [hashtable]$Environment = @{}
     )
 
     $cmd = Get-Command $Command -ErrorAction SilentlyContinue
@@ -78,12 +79,36 @@ function Invoke-ToolText {
         return $null
     }
 
+    $oldValues = @{}
+    foreach ($key in $Environment.Keys) {
+        $oldValues[$key] = [Environment]::GetEnvironmentVariable($key, 'Process')
+        [Environment]::SetEnvironmentVariable($key, [string]$Environment[$key], 'Process')
+    }
+
     try {
         return (& $Command @Arguments 2>&1 | Out-String)
     } catch {
         $skipped.Add("$Command failed: $($_.Exception.Message)") | Out-Null
         return $null
+    } finally {
+        foreach ($key in $Environment.Keys) {
+            [Environment]::SetEnvironmentVariable($key, $oldValues[$key], 'Process')
+        }
     }
+}
+
+function Test-PackageId {
+    param([string]$PackageId)
+
+    if ([string]::IsNullOrWhiteSpace($PackageId)) { return $false }
+    return $PackageId -match '^[A-Za-z0-9][A-Za-z0-9._@+\-]*[A-Za-z0-9]$|^[A-Za-z0-9]$'
+}
+
+function Test-VersionText {
+    param([string]$Version)
+
+    if ([string]::IsNullOrWhiteSpace($Version)) { return $false }
+    return $Version -match '^\d+(\.\d+){0,4}([\-+][A-Za-z0-9][A-Za-z0-9._\-+]*)?$'
 }
 
 function ConvertTo-Slug {
@@ -383,15 +408,20 @@ if ($cargoText) {
     }
 }
 
-$dotnetText = Invoke-ToolText -Command 'dotnet' -Arguments @('tool', 'list', '--global')
+$dotnetText = Invoke-ToolText -Command 'dotnet' -Arguments @('tool', 'list', '--global') -Environment @{
+    DOTNET_NOLOGO = '1'
+    DOTNET_CLI_TELEMETRY_OPTOUT = '1'
+    DOTNET_CLI_UI_LANGUAGE = 'en'
+}
 if ($dotnetText) {
     Write-SafeFile -Destination "$inventoryRoot/dotnet-global-tools.txt" -Content $dotnetText -Label 'dotnet global tools'
     foreach ($line in ($dotnetText -split "`r?`n")) {
-        if ($line -match '^\s*$' -or $line -match '^-+$' -or $line -match '包 ID|Package Id') { continue }
-        $parts = $line -split '\s+'
+        if ($line -match '^\s*$' -or $line -match '^-+$' -or $line -match 'Package Id|Version|Commands') { continue }
+        $parts = $line.Trim() -split '\s+'
         if ($parts.Count -lt 2) { continue }
         $id = $parts[0].Trim()
         $version = $parts[1].Trim()
+        if (-not (Test-PackageId $id) -or -not (Test-VersionText $version)) { continue }
         $slug = Resolve-AppSlug -Index $index -PackageId $id -Title $id -Prefix '' -AllowCreate $true
         Set-InstallDoc -Slug $slug -Title $id -Source 'dotnet tool' -Version $version -PackageId $id -InstallCommand "dotnet tool install --global $id" -Note '当前记录来自 dotnet tool list --global。'
     }

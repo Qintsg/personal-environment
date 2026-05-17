@@ -1,8 +1,23 @@
-# eslint
+﻿# eslint
 
-## 默认平台
+## 榛樿骞冲彴
 
-默认安装平台为 Windows；本文件中的安装命令默认在 Windows PowerShell 中执行。
+榛樿瀹夎骞冲彴涓?Windows锛涙湰鏂囦欢涓殑瀹夎鍛戒护榛樿鍦?Windows PowerShell 涓墽琛屻€?
+
+## 褰撳墠璁板綍
+
+- 鏉ユ簮锛歯pm 鍏ㄥ眬鍖?- 褰撳墠鐗堟湰锛?0.3.0
+- 鍖?ID锛歚eslint`
+
+## 瀹夎鏂瑰紡
+
+```powershell
+npm install -g eslint
+```
+
+## 澶囨敞
+
+- 褰撳墠璁板綍鏉ヨ嚜 npm 鍏ㄥ眬鍖呮竻鍗曘€?
 
 ## 当前记录
 
@@ -15,7 +30,3 @@
 ```powershell
 npm install -g eslint
 ```
-
-## 备注
-
-- 当前记录来自 npm 全局包清单。

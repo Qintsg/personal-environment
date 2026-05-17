@@ -7,7 +7,7 @@
 ## 当前记录
 
 - 来源：winget
-- 当前版本：1.25.0
+- 当前版本：1.25.1
 - 包 ID：`Starship.Starship`
 
 ## 安装方式
@@ -19,4 +19,3 @@ winget install --id Starship.Starship --exact --accept-package-agreements --acce
 ## 备注
 
 - 当前记录来自 Windows 已安装程序清单。
-

@@ -1,8 +1,23 @@
-# Yarn
+﻿# Yarn
 
-## 默认平台
+## 榛樿骞冲彴
 
-默认安装平台为 Windows；本文件中的安装命令默认在 Windows PowerShell 中执行。
+榛樿瀹夎骞冲彴涓?Windows锛涙湰鏂囦欢涓殑瀹夎鍛戒护榛樿鍦?Windows PowerShell 涓墽琛屻€?
+## 褰撳墠璁板綍
+
+- 鏉ユ簮锛歴coop main
+- 褰撳墠鐗堟湰锛?.22.22
+- 鍖?ID锛歚yarn`
+
+## 瀹夎鏂瑰紡
+
+```powershell
+scoop install yarn
+```
+
+## 澶囨敞
+
+- 鏈満 `yarn` 鍛戒护鏉ヨ嚜 Scoop銆?
 
 ## 当前记录
 
@@ -15,8 +30,3 @@
 ```powershell
 scoop install yarn
 ```
-
-## 备注
-
-- 本机 `yarn` 命令来自 Scoop。
-

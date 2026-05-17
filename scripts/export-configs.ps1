@@ -1,4 +1,4 @@
-param(
+﻿param(
     [string]$RepoRoot = (Split-Path -Parent $PSScriptRoot)
 )
 
@@ -76,13 +76,27 @@ function Export-CommandOutput {
         [string]$Command,
         [string[]]$Arguments,
         [string]$Destination,
-        [string]$Label
+        [string]$Label,
+        [hashtable]$Environment = @{}
     )
 
     $cmd = Get-Command $Command -ErrorAction SilentlyContinue
     if (-not $cmd) { return }
 
-    $output = & $Command @Arguments 2>&1 | Out-String
+    $oldValues = @{}
+    foreach ($key in $Environment.Keys) {
+        $oldValues[$key] = [Environment]::GetEnvironmentVariable($key, 'Process')
+        [Environment]::SetEnvironmentVariable($key, [string]$Environment[$key], 'Process')
+    }
+
+    try {
+        $output = & $Command @Arguments 2>&1 | Out-String
+    } finally {
+        foreach ($key in $Environment.Keys) {
+            [Environment]::SetEnvironmentVariable($key, $oldValues[$key], 'Process')
+        }
+    }
+
     if ([string]::IsNullOrWhiteSpace($output)) { return }
     Write-SafeFile -Destination $Destination -Content $output -Label $Label
 }
@@ -134,9 +148,10 @@ function Export-TreeTextFiles {
 
         $relative = $source.Substring($resolvedRoot.Length).TrimStart('\', '/')
         if ([string]::IsNullOrWhiteSpace($relative)) { return }
+        $relativeLabel = $relative -replace '\\', '/'
 
         $dest = Join-Path $DestinationRoot $relative
-        Export-TextFile -Source $source -Destination $dest -Label "$LabelPrefix/$relative"
+        Export-TextFile -Source $source -Destination $dest -Label "$LabelPrefix/$relativeLabel"
     }
 }
 
@@ -250,7 +265,11 @@ Export-CommandOutput -Command 'python' -Arguments @('-m', 'pip', 'config', 'list
 Export-CommandOutput -Command 'go' -Arguments @('env', '-json') -Destination 'apps/go/go-env.json' -Label 'go env'
 Export-CommandOutput -Command 'rustup' -Arguments @('show') -Destination 'apps/rust/rustup-show.md' -Label 'rustup show'
 Export-CommandOutput -Command 'cargo' -Arguments @('install', '--list') -Destination 'apps/rust/cargo-install-list.md' -Label 'cargo install list'
-Export-CommandOutput -Command 'dotnet' -Arguments @('tool', 'list', '--global') -Destination 'apps/dotnet-sdk/global-tools.md' -Label 'dotnet global tools'
+Export-CommandOutput -Command 'dotnet' -Arguments @('tool', 'list', '--global') -Destination 'apps/dotnet-sdk/global-tools.md' -Label 'dotnet global tools' -Environment @{
+    DOTNET_NOLOGO = '1'
+    DOTNET_CLI_TELEMETRY_OPTOUT = '1'
+    DOTNET_CLI_UI_LANGUAGE = 'en'
+}
 Export-CommandOutput -Command 'uv' -Arguments @('tool', 'list') -Destination 'apps/uv/tools.md' -Label 'uv tools'
 
 Export-SkillInventory -Roots @(

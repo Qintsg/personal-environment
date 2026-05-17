@@ -1,8 +1,16 @@
-{
+﻿{
   "name": "npm",
   "dependencies": {
     "@abhiz123/todoist-mcp-server": {
       "version": "0.1.0",
+      "overridden": false
+    },
+    "@anthropic-ai/claude-code": {
+      "version": "2.1.143",
+      "overridden": false
+    },
+    "@biomejs/biome": {
+      "version": "2.4.14",
       "overridden": false
     },
     "@danjdewhurst/todo-md-mcp": {
@@ -26,7 +34,15 @@
       "overridden": false
     },
     "@openai/codex": {
-      "version": "0.128.0",
+      "version": "0.130.0",
+      "overridden": false
+    },
+    "@redocly/cli": {
+      "version": "2.30.3",
+      "overridden": false
+    },
+    "@vue/cli": {
+      "version": "5.0.9",
       "overridden": false
     },
     "@wonderwhy-er/desktop-commander": {
@@ -38,6 +54,10 @@
     },
     "@ztools-center/ztools-api-types": {
       "version": "1.0.3",
+      "overridden": false
+    },
+    "artillery": {
+      "version": "2.0.31",
       "overridden": false
     },
     "bun": {
@@ -52,12 +72,60 @@
       "version": "4.3.1",
       "overridden": false
     },
+    "concurrently": {
+      "version": "9.2.1",
+      "overridden": false
+    },
     "copilot-api": {
       "version": "0.7.0",
       "overridden": false
     },
+    "create-next-app": {
+      "version": "16.2.4",
+      "overridden": false
+    },
+    "create-vite": {
+      "version": "9.0.6",
+      "overridden": false
+    },
+    "cross-env": {
+      "version": "10.1.0",
+      "overridden": false
+    },
+    "cypress": {
+      "version": "15.14.2",
+      "overridden": false
+    },
+    "depcheck": {
+      "version": "1.4.7",
+      "overridden": false
+    },
+    "dotenv-cli": {
+      "version": "11.0.0",
+      "overridden": false
+    },
     "eff-u-code": {
       "version": "2.2.2",
+      "overridden": false
+    },
+    "eslint": {
+      "version": "10.3.0",
+      "overridden": false
+    },
+    "jest": {
+      "version": "30.3.0",
+      "overridden": false
+    },
+    "lighthouse": {
+      "version": "13.2.0",
+      "overridden": false
+    },
+    "mapscii": {
+      "version": "0.3.1",
+      "overridden": false
+    },
+    "markdownlint-cli2": {
+      "version": "0.22.1",
       "overridden": false
     },
     "mcp-all-in-one": {
@@ -68,8 +136,36 @@
       "version": "1.0.8",
       "overridden": false
     },
+    "nodemon": {
+      "version": "3.1.14",
+      "overridden": false
+    },
+    "npkill": {
+      "version": "0.12.2",
+      "overridden": false
+    },
+    "npm-check-updates": {
+      "version": "22.1.0",
+      "overridden": false
+    },
+    "npm-check": {
+      "version": "6.0.1",
+      "overridden": false
+    },
+    "npm-run-all": {
+      "version": "4.1.5",
+      "overridden": false
+    },
+    "npm-why": {
+      "version": "5.0.1",
+      "overridden": false
+    },
     "npm": {
       "version": "11.13.0",
+      "overridden": false
+    },
+    "nx": {
+      "version": "22.7.1",
       "overridden": false
     },
     "oh-my-codex": {
@@ -88,22 +184,69 @@
       "version": "10.33.2",
       "overridden": false
     },
+    "prettier": {
+      "version": "3.8.3",
+      "overridden": false
+    },
     "repomix": {
       "version": "1.14.0",
+      "overridden": false
+    },
+    "rimraf": {
+      "version": "6.1.3",
+      "overridden": false
+    },
+    "semantic-release": {
+      "version": "25.0.3",
+      "overridden": false
+    },
+    "serve": {
+      "version": "14.2.6",
+      "overridden": false
+    },
+    "shx": {
+      "version": "0.4.0",
       "overridden": false
     },
     "soffice": {
       "version": "1.1.0",
       "overridden": false
     },
-    "tokei": {
-      "version": "0.3.5",
+    "stylelint": {
+      "version": "17.9.1",
+      "overridden": false
+    },
+    "terminal-parrot": {
+      "version": "1.0.4",
+      "overridden": false
+    },
+    "ts-node": {
+      "version": "10.9.2",
+      "overridden": false
+    },
+    "tsx": {
+      "version": "4.21.0",
+      "overridden": false
+    },
+    "turbo": {
+      "version": "2.9.7",
+      "overridden": false
+    },
+    "typescript": {
+      "version": "6.0.3",
+      "overridden": false
+    },
+    "vite": {
+      "version": "8.0.10",
       "overridden": false
     },
     "ztools-plugin-timestamp": {
       "version": "1.0.0",
       "overridden": false
+    },
+    "zx": {
+      "version": "8.8.5",
+      "overridden": false
     }
   }
 }
-

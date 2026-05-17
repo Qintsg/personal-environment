@@ -23,7 +23,7 @@
   "call": "",
   "cert": null,
   "cidr": null,
-  "color": false,
+  "color": true,
   "commit-hooks": true,
   "cpu": null,
   "depth": null,
@@ -38,7 +38,7 @@
   "diff-text": false,
   "diff-unified": 3,
   "dry-run": false,
-  "editor": "C:\\WINDOWS\\notepad.exe",
+  "editor": "nvim",
   "engine-strict": false,
   "expect-result-count": null,
   "expect-results": null,
@@ -158,7 +158,7 @@
   "tag-version-prefix": "v",
   "timing": false,
   "umask": 0,
-  "unicode": true,
+  "unicode": false,
   "update-notifier": true,
   "usage": false,
   "user-agent": "npm/{npm-version} node/{node-version} {platform} {arch} workspaces/{workspaces} {ci}",
@@ -173,4 +173,3 @@
   "yes": null,
   "npm-version": "11.13.0"
 }
-

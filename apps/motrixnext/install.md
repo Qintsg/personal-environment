@@ -7,7 +7,7 @@
 ## 当前记录
 
 - 来源：winget
-- 当前版本：3.8.5-beta.1
+- 当前版本：3.8.10
 - 包 ID：`AnInsomniacy.MotrixNext`
 
 ## 安装方式
@@ -19,4 +19,3 @@ winget install --id AnInsomniacy.MotrixNext --exact --accept-package-agreements 
 ## 备注
 
 - 当前记录来自 Windows 已安装程序清单。
-

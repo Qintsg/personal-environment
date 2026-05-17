@@ -7,7 +7,7 @@
 ## 当前记录
 
 - 来源：winget
-- 当前版本：1.25.923.0
+- 当前版本：1.25.1322.0
 - 包 ID：`Microsoft.WindowsTerminal.Preview`
 
 ## 安装方式
@@ -19,4 +19,3 @@ winget install --id Microsoft.WindowsTerminal.Preview --exact --accept-package-a
 ## 备注
 
 - 当前记录来自 `winget list`。
-

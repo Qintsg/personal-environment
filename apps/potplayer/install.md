@@ -6,14 +6,14 @@
 
 ## 当前记录
 
-- 来源：Microsoft Store / winget
+- 来源：winget
 - 当前版本：26.04.22.0
 - 包 ID：`XP8BSBGQW2DKS0`
 
 ## 安装方式
 
 ```powershell
-winget install --id XP8BSBGQW2DKS0 --source msstore --accept-package-agreements --accept-source-agreements --disable-interactivity
+winget install --id XP8BSBGQW2DKS0 --exact --accept-package-agreements --accept-source-agreements --disable-interactivity
 ```
 
 ## 备注

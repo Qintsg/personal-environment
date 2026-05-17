@@ -7,7 +7,7 @@
 ## 当前记录
 
 - 来源：winget
-- 当前版本：4.21.0.7755
+- 当前版本：4.22.1.7835
 - 包 ID：`NetEase.UURemote`
 
 ## 安装方式
@@ -19,4 +19,3 @@ winget install --id NetEase.UURemote --exact --accept-package-agreements --accep
 ## 备注
 
 - 不在仓库中记录远程连接凭据。
-

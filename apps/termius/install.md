@@ -7,7 +7,7 @@
 ## 当前记录
 
 - 来源：winget
-- 当前版本：9.37.6
+- 当前版本：9.38.2
 - 包 ID：`Termius.Termius`
 
 ## 安装方式
@@ -19,4 +19,3 @@ winget install --id Termius.Termius --exact --accept-package-agreements --accept
 ## 备注
 
 - 不在仓库中记录 SSH 主机、私钥、账号或同步数据。
-

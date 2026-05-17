@@ -7,7 +7,7 @@
 ## 当前记录
 
 - 来源：winget
-- 当前版本：2.11.0
+- 当前版本：2.12.0
 - 包 ID：`Romanitho.Winget-AutoUpdate`
 
 ## 安装方式

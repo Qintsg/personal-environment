@@ -7,7 +7,7 @@
 ## 当前记录
 
 - 来源：winget
-- 当前版本：1.0.1
+- 当前版本：1.1
 - 包 ID：`WireGuard.WireGuard`
 
 ## 安装方式

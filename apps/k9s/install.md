@@ -1,12 +1,28 @@
-# k9s
+﻿# k9s
 
-## 默认平台
+## 榛樿骞冲彴
 
-默认安装平台为 Windows；本文件中的安装命令默认在 Windows PowerShell 中执行。
+榛樿瀹夎骞冲彴涓?Windows锛涙湰鏂囦欢涓殑瀹夎鍛戒护榛樿鍦?Windows PowerShell 涓墽琛屻€?
+
+## 褰撳墠璁板綍
+
+- 鏉ユ簮锛歴coop main
+- 褰撳墠鐗堟湰锛?.50.18
+- 鍖?ID锛歚k9s`
+
+## 瀹夎鏂瑰紡
+
+```powershell
+scoop install k9s
+```
+
+## 澶囨敞
+
+- 褰撳墠璁板綍鏉ヨ嚜 Scoop 娓呭崟銆?
 
 ## 当前记录
 
-- 来源：scoop
+- 来源：scoop main
 - 当前版本：0.50.18
 - 包 ID：`k9s`
 
@@ -15,7 +31,3 @@
 ```powershell
 scoop install k9s
 ```
-
-## 备注
-
-- 当前记录来自 Scoop 清单。

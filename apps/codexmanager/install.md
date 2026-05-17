@@ -7,7 +7,7 @@
 ## 当前记录
 
 - 来源：winget
-- 当前版本：0.2.5
+- 当前版本：0.3.1
 - 包 ID：`RioArisk.CodexManager`
 
 ## 安装方式
@@ -19,4 +19,3 @@ winget install --id RioArisk.CodexManager --exact --accept-package-agreements --
 ## 备注
 
 - 当前记录来自 Windows 已安装程序清单。
-

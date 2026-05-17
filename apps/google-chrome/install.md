@@ -7,7 +7,7 @@
 ## 当前记录
 
 - 来源：winget
-- 当前版本：147.0.7727.138
+- 当前版本：148.0.7778.168
 - 包 ID：`Google.Chrome.EXE`
 
 ## 安装方式
@@ -19,4 +19,3 @@ winget install --id Google.Chrome.EXE --exact --accept-package-agreements --acce
 ## 备注
 
 - 当前记录来自 Windows 已安装程序清单。
-

@@ -7,7 +7,7 @@
 ## 当前记录
 
 - 来源：winget
-- 当前版本：8.0.5.0
+- 当前版本：8.0.7.0
 - 包 ID：`Appest.Dida`
 
 ## 安装方式
@@ -19,4 +19,3 @@ winget install --id Appest.Dida --exact --accept-package-agreements --accept-sou
 ## 备注
 
 - 当前记录来自 Windows 已安装程序清单。
-

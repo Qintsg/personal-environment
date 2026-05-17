@@ -1,2 +1,6 @@
-No tools installed
-
+﻿uv.exe : No tools installed
+所在位置 E:\Projects\Qintsg\personal-environment\scripts\export-packages.ps1:89 字符: 17
++         return (& $Command @Arguments 2>&1 | Out-String)
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (No tools installed:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError

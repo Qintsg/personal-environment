@@ -17,10 +17,6 @@
             "keys": "ctrl+t"
         },
         {
-            "id": "Terminal.ToggleCommandPalette",
-            "keys": "ctrl+p"
-        },
-        {
             "id": "Terminal.CopyToClipboard",
             "keys": "ctrl+c"
         },
@@ -33,7 +29,7 @@
             "keys": "ctrl+m"
         },
         {
-            "id": null,
+            "id": "Terminal.ToggleCommandPalette",
             "keys": "ctrl+shift+p"
         },
         {
@@ -60,9 +56,9 @@
     {
         "defaults":
         {
-            "backgroundImage": "%USERPROFILE%\\Pictures\\\u604b.jpg",
+            "backgroundImage": null,
             "backgroundImageOpacity": 0.14,
-            "colorScheme": "One Half Light",
+            "colorScheme": "VSCode Light Modern",
             "experimental.rainbowSuggestions": true,
             "experimental.repositionCursorWithMouse": true,
             "font":
@@ -127,6 +123,7 @@
             {
                 "guid": "{47302f9c-1ac4-566c-aa3e-8cf29889d6ab}",
                 "hidden": false,
+                "icon": "C:\\Program Files\\nu\\nu-custom.ico",
                 "name": "Nushell",
                 "source": "nu"
             },
@@ -163,6 +160,12 @@
                 "guid": "{9e448b37-2185-490b-9311-aed1e4f5c385}",
                 "hidden": false,
                 "name": "Fish"
+            },
+            {
+                "guid": "{47dbd92c-2f86-5849-b78f-24d7e862a709}",
+                "hidden": false,
+                "name": "kali-linux",
+                "source": "Microsoft.WSL"
             }
         ]
     },
@@ -175,4 +178,3 @@
     "useAcrylicInTabRow": false,
     "warning.multiLinePaste": "never"
 }
-

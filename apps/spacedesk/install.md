@@ -7,7 +7,7 @@
 ## 当前记录
 
 - 来源：winget
-- 当前版本：2.2.18.0
+- 当前版本：2.2.19.0
 - 包 ID：`Datronicsoft.SpacedeskDriver.Server`
 
 ## 安装方式
@@ -19,4 +19,3 @@ winget install --id Datronicsoft.SpacedeskDriver.Server --exact --accept-package
 ## 备注
 
 - 当前记录来自 Windows 已安装程序清单。
-

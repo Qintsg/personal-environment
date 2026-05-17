@@ -7,7 +7,7 @@
 ## 当前记录
 
 - 来源：winget
-- 当前版本：4.1.9.23
+- 当前版本：4.1.9.35
 - 包 ID：`Tencent.WeChat.Universal`
 
 ## 安装方式
@@ -19,4 +19,3 @@ winget install --id Tencent.WeChat.Universal --exact --accept-package-agreements
 ## 备注
 
 - 不在仓库中记录账号或聊天数据。
-

@@ -1,4 +1,3 @@
-﻿包 ID          版本               命令      
----------------------------------------
-ilspycmd      10.0.0.8330      ilspycmd
-
+﻿Package Id      Version          Commands
+-----------------------------------------
+ilspycmd        10.0.0.8330      ilspycmd

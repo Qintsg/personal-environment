@@ -7,7 +7,7 @@
 ## 当前记录
 
 - 来源：winget
-- 当前版本：3.12.3
+- 当前版本：3.15.0
 - 包 ID：`farion1231.CC-Switch`
 
 ## 安装方式
@@ -19,4 +19,3 @@ winget install --id farion1231.CC-Switch --exact --accept-package-agreements --a
 ## 备注
 
 - 当前记录来自 Windows 已安装程序清单。
-

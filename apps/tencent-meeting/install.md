@@ -7,7 +7,7 @@
 ## 当前记录
 
 - 来源：winget
-- 当前版本：3.42.3.424
+- 当前版本：3.43.3.406
 - 包 ID：`Tencent.TencentMeeting`
 
 ## 安装方式
@@ -19,4 +19,3 @@ winget install --id Tencent.TencentMeeting --exact --accept-package-agreements -
 ## 备注
 
 - 当前记录来自 Windows 已安装程序清单。
-

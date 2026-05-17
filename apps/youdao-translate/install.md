@@ -7,7 +7,7 @@
 ## 当前记录
 
 - 来源：winget
-- 当前版本：11.3.4.0
+- 当前版本：11.3.6.0
 - 包 ID：`Youdao.YoudaoTranslate`
 
 ## 安装方式
@@ -19,4 +19,3 @@ winget install --id Youdao.YoudaoTranslate --exact --accept-package-agreements -
 ## 备注
 
 - 当前记录来自 Windows 已安装程序清单。
-

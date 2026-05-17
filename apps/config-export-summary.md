@@ -1,6 +1,6 @@
 ﻿# Config Export Summary
 
-Exported at: 2026-05-02 15:43:03
+Exported at: 2026-05-17 21:46:31
 
 ## Exported
 
@@ -21,88 +21,88 @@ Exported at: 2026-05-02 15:43:03
 - codex global agents
 - codex version
 - powershell profile Microsoft.PowerShell_profile.ps1
-- nushell modules/core\helpers.nu
-- nushell modules/integrations\atuin.nu
-- nushell modules/integrations\carapace.nu
-- nushell modules/integrations\direnv.nu
-- nushell modules/integrations\plugins.nu
-- nushell modules/integrations\zoxide.nu
-- nushell modules/local\example.local.nu
-- nushell modules/local\local.nu
-- nushell modules/local\login.local.nu
-- nushell modules/platform\macos.nu
-- nushell modules/platform\termux.nu
-- nushell modules/platform\unix.nu
-- nushell modules/platform\windows.nu
-- nushell modules/platform\wsl.nu
-- nushell modules/project\commands.nu
-- nushell modules/project\hooks.nu
-- nushell modules/project\overlay.nu
-- nushell modules/project\venv-activate-shim.nu
-- nushell modules/project\venv.nu
-- nushell modules/shell\aliases.nu
-- nushell modules/shell\config.nu
-- nushell modules/shell\prompt.nu
+- nushell modules/core/helpers.nu
+- nushell modules/integrations/atuin.nu
+- nushell modules/integrations/carapace.nu
+- nushell modules/integrations/direnv.nu
+- nushell modules/integrations/plugins.nu
+- nushell modules/integrations/zoxide.nu
+- nushell modules/local/example.local.nu
+- nushell modules/local/local.nu
+- nushell modules/local/login.local.nu
+- nushell modules/platform/macos.nu
+- nushell modules/platform/termux.nu
+- nushell modules/platform/unix.nu
+- nushell modules/platform/windows.nu
+- nushell modules/platform/wsl.nu
+- nushell modules/project/commands.nu
+- nushell modules/project/hooks.nu
+- nushell modules/project/overlay.nu
+- nushell modules/project/venv-activate-shim.nu
+- nushell modules/project/venv.nu
+- nushell modules/shell/aliases.nu
+- nushell modules/shell/config.nu
+- nushell modules/shell/prompt.nu
 - wezterm/terminal-profiles.toml
 - wezterm/wezterm.lua
-- wezterm/modules\fonts.lua
-- wezterm/modules\keys.lua
-- wezterm/modules\launch.lua
-- wezterm/modules\metrics.lua
-- wezterm/modules\nvim_dashboard.lua
-- wezterm/modules\profiles.lua
-- wezterm/modules\status.lua
-- wezterm/modules\tabs.lua
-- wezterm/modules\theme.lua
-- wezterm/modules\ui.lua
-- wezterm/modules\util.lua
+- wezterm/modules/fonts.lua
+- wezterm/modules/keys.lua
+- wezterm/modules/launch.lua
+- wezterm/modules/metrics.lua
+- wezterm/modules/nvim_dashboard.lua
+- wezterm/modules/profiles.lua
+- wezterm/modules/status.lua
+- wezterm/modules/tabs.lua
+- wezterm/modules/theme.lua
+- wezterm/modules/ui.lua
+- wezterm/modules/util.lua
 - neovim/.gitignore
 - neovim/.stylua.toml
 - neovim/init.lua
 - neovim/lazy-lock.json
 - neovim/lazyvim.json
 - neovim/README.md
-- neovim/lua\config\autocmds.lua
-- neovim/lua\config\keymaps.lua
-- neovim/lua\config\lazy.lua
-- neovim/lua\config\neovide.lua
-- neovim/lua\config\options.lua
-- neovim/lua\core\basic.lua
-- neovim/lua\core\commands.lua
-- neovim/lua\core\ft.lua
-- neovim/lua\core\health.lua
-- neovim/lua\core\init.lua
-- neovim/lua\core\keymap.lua
-- neovim/lua\core\miscellaneous.lua
-- neovim/lua\core\symbols.lua
-- neovim/lua\core\utils.lua
-- neovim/lua\custom\init.lua
-- neovim/lua\custom\lib.lua
-- neovim/lua\custom\lsp_setup.lua
-- neovim/lua\custom\plugins\dashboard_home.lua
-- neovim/lua\custom\plugins\icenvim_i18n.lua
-- neovim/lua\custom\plugins\lazy_i18n.lua
-- neovim/lua\custom\plugins\mason_i18n.lua
-- neovim/lua\custom\plugins\session_support.lua
-- neovim/lua\custom\plugins\status_hints.lua
-- neovim/lua\lazy_plugins\editor.lua
-- neovim/lua\lazy_plugins\extras.lua
-- neovim/lua\lazy_plugins\frameworks.lua
-- neovim/lua\lazy_plugins\i18n.lua
-- neovim/lua\lazy_plugins\lsp.lua
-- neovim/lua\lazy_plugins\ui.lua
-- neovim/lua\lsp\completion.lua
-- neovim/lua\lsp\extra.lua
-- neovim/lua\lsp\format.lua
-- neovim/lua\lsp\init.lua
-- neovim/lua\lsp\lsp.lua
-- neovim/lua\lsp\plugins.lua
-- neovim/lua\plugins\colorscheme.lua
-- neovim/lua\plugins\config.lua
-- neovim/lua\plugins\init.lua
-- neovim/lua\plugins\lazy.lua
-- neovim/lua\plugins\utils.lua
-- neovim/lua\user\hints.lua
+- neovim/lua/config/autocmds.lua
+- neovim/lua/config/keymaps.lua
+- neovim/lua/config/lazy.lua
+- neovim/lua/config/neovide.lua
+- neovim/lua/config/options.lua
+- neovim/lua/core/basic.lua
+- neovim/lua/core/commands.lua
+- neovim/lua/core/ft.lua
+- neovim/lua/core/health.lua
+- neovim/lua/core/init.lua
+- neovim/lua/core/keymap.lua
+- neovim/lua/core/miscellaneous.lua
+- neovim/lua/core/symbols.lua
+- neovim/lua/core/utils.lua
+- neovim/lua/custom/init.lua
+- neovim/lua/custom/lib.lua
+- neovim/lua/custom/lsp_setup.lua
+- neovim/lua/custom/plugins/dashboard_home.lua
+- neovim/lua/custom/plugins/icenvim_i18n.lua
+- neovim/lua/custom/plugins/lazy_i18n.lua
+- neovim/lua/custom/plugins/mason_i18n.lua
+- neovim/lua/custom/plugins/session_support.lua
+- neovim/lua/custom/plugins/status_hints.lua
+- neovim/lua/lazy_plugins/editor.lua
+- neovim/lua/lazy_plugins/extras.lua
+- neovim/lua/lazy_plugins/frameworks.lua
+- neovim/lua/lazy_plugins/i18n.lua
+- neovim/lua/lazy_plugins/lsp.lua
+- neovim/lua/lazy_plugins/ui.lua
+- neovim/lua/lsp/completion.lua
+- neovim/lua/lsp/extra.lua
+- neovim/lua/lsp/format.lua
+- neovim/lua/lsp/init.lua
+- neovim/lua/lsp/lsp.lua
+- neovim/lua/lsp/plugins.lua
+- neovim/lua/plugins/colorscheme.lua
+- neovim/lua/plugins/config.lua
+- neovim/lua/plugins/init.lua
+- neovim/lua/plugins/lazy.lua
+- neovim/lua/plugins/utils.lua
+- neovim/lua/user/hints.lua
 - codex rules/default.rules
 - opencode config/.gitignore
 - opencode config/AGENTS.md
@@ -113,16 +113,16 @@ Exported at: 2026-05-02 15:43:03
 - opencode config/package-lock.json
 - opencode config/package.json
 - opencode config/shell-strategy-zh.md
-- opencode config/command\context.md
-- opencode config/plugin\context-usage.ts
-- opencode config/plugin\tokenizer-aliases.json
-- opencode config/plugin\tokenizer-registry.d.ts
-- opencode config/plugin\tokenizer-registry.mjs
-- opencode config/plugin\shell-strategy\.gitignore
-- opencode config/plugin\shell-strategy\package.json
-- opencode config/plugin\shell-strategy\README.md
-- opencode config/plugin\shell-strategy\shell_strategy.md
-- opencode config/skills\plans-and-specs\SKILL.md
+- opencode config/command/context.md
+- opencode config/plugin/context-usage.ts
+- opencode config/plugin/tokenizer-aliases.json
+- opencode config/plugin/tokenizer-registry.d.ts
+- opencode config/plugin/tokenizer-registry.mjs
+- opencode config/plugin/shell-strategy/.gitignore
+- opencode config/plugin/shell-strategy/package.json
+- opencode config/plugin/shell-strategy/README.md
+- opencode config/plugin/shell-strategy/shell_strategy.md
+- opencode config/skills/plans-and-specs/SKILL.md
 - vscode insiders extensions
 - scoop config
 - scoop buckets
@@ -156,4 +156,3 @@ Exported at: 2026-05-02 15:43:03
 - Email addresses were replaced with `<email>`.
 - Common token, password, secret, api key, cookie, and session fields were redacted.
 - Known high-risk credential files were skipped.
-

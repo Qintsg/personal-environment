@@ -7,7 +7,7 @@
 ## 当前记录
 
 - 来源：winget
-- 当前版本：26.2.2.2
+- 当前版本：26.2.3.2
 - 包 ID：`TheDocumentFoundation.LibreOffice`
 
 ## 安装方式
@@ -19,4 +19,3 @@ winget install --id TheDocumentFoundation.LibreOffice --exact --accept-package-a
 ## 备注
 
 - 当前记录来自 Windows 已安装程序清单。
-

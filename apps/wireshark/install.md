@@ -7,7 +7,7 @@
 ## 当前记录
 
 - 来源：winget
-- 当前版本：4.6.4
+- 当前版本：4.6.5
 - 包 ID：`WiresharkFoundation.Wireshark`
 
 ## 安装方式
@@ -19,4 +19,3 @@ winget install --id WiresharkFoundation.Wireshark --exact --accept-package-agree
 ## 备注
 
 - 本机同时存在 Npcap 和 USBPcap 记录。
-
